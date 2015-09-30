@@ -1,0 +1,52 @@
+Test 1/17: Incorrect.
+	ANSWER1
+Got:      0
+Expected: 3
+Test 2/17: Incorrect.
+	ANSWER2
+Got:      0
+Expected: 2
+ curDepth 2
+2: (run_test_search: Function not yet implemented, NotImplementedError raised)
+ curDepth 2
+3: (run_test_search: Function not yet implemented, NotImplementedError raised)
+4: (run_test_search: Function not yet implemented, NotImplementedError raised)
+5: (run_test_tree_search: Function not yet implemented, NotImplementedError raised)
+6: (run_test_tree_search: Function not yet implemented, NotImplementedError raised)
+7: (run_test_tree_search: Function not yet implemented, NotImplementedError raised)
+8: (run_test_search: Function not yet implemented, NotImplementedError raised)
+9: (run_test_search: Function not yet implemented, NotImplementedError raised)
+10: (run_test_search: Function not yet implemented, NotImplementedError raised)
+11: (run_test_search: Function not yet implemented, NotImplementedError raised)
+
+  0 1 2 3 4 5 6
+0              
+1              
+2              
+3              
+4              
+5     X   O    
+
+Error: You ran the search function for so short a time that it couldn't even come up with any answer at all!  Returning a random column choice...
+Test 13/17: Error.
+While running the following test case:
+	run_test_game
+Your code encountered the following error:
+
+Test 14/17: Incorrect.
+	COMPETE
+Got:      None
+Expected: Either True or False is ok, but you have to specify one or the other
+Test 15/17: Incorrect.
+	HOW_MANY_HOURS_THIS_PSET_TOOK
+Got:      
+Expected: [a number of hours]
+Test 16/17: Incorrect.
+	WHAT_I_FOUND_INTERESTING
+Got:      
+Expected: [an interesting thing]
+Test 17/17: Incorrect.
+	WHAT_I_FOUND_BORING
+Got:      
+Expected: [a number of hours]
+Passed 0 of 17 tests.

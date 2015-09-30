@@ -1,4 +1,8 @@
 from util import memoize, run_search_function
+import pprint
+import sys
+MAX = "MAX"
+MIN = "MIN"
 
 def basic_evaluate(board):
     """
@@ -56,8 +60,48 @@ def minimax(board, depth, eval_fn = basic_evaluate,
 
     Returns an integer, the column number of the column that the search determines you should add a token to
     """
-    raise NotImplementedError
+    print " curDepth " + str(depth)
+   
+    tup =  recursiveMinimax(board, 1, eval_fn, get_next_moves_fn, is_terminal_fn, MAX)
+    #print tup 
+    return tup[0]
 
+# Return Type (colNo, maxScore)
+def recursiveMinimax(board, depth, eval_fn, get_next_moves_fn, is_terminal_fn, max_min):
+    if (is_terminal_fn(depth, board)):
+        # -1 to indicate the terminal board case
+	score = eval_fn(board)
+    	return (-1, score) 
+			
+    # Get all its next moves:
+    all_moves = get_next_moves_fn(board)
+    # Min int value 
+    curMax = -sys.maxint - 1
+    # Max int value
+    curMin = sys.maxint
+    colNo = -1
+
+    if (max_min == MAX):
+    	# We have to maximize in this call
+        for game_board in all_moves:
+	   # Iterate over all moves and find the max
+	   retTuple = recursiveMinimax(game_board[1], depth - 1, eval_fn, get_next_moves_fn, is_terminal_fn, MIN)
+##	   print "Got tuples" + str(retTuple)
+           if (curMax < retTuple[1]):
+	      curMax = retTuple[1]
+              colNo = game_board[0]
+       
+#        print "Returning " + str((colNo, curMax)) 
+	return (colNo, curMax)		    
+    else:
+	for game_board in all_moves:
+            #Iterate over all moves to find the min.
+    	   retTuple = recursiveMinimax(game_board[1], depth - 1, eval_fn, get_next_moves_fn, is_terminal_fn, MAX)
+           if (curMin > retTuple[1]):
+	      curMin = retTuple[1]
+              colNo = game_board[0]
+        
+	return (colNo, curMin)		    
 
 def rand_select(board):
     """

@@ -150,10 +150,13 @@ def tree_eval(node):
     """
     Returns the static value of a node
     """
+    print node.node_type
     if node.value is not None:
 	if node.node_type == "MIN":
+	    print " Returning for label " + str(node.label) + " Value " + str(-node.value)		
 	    return -node.value
 	elif node.node_type == "MAX":
+	    print " Returning for label " + str(node.label) + " Value " + str(node.value)
 	    return node.value
         else:
             raise Exception("Unrecognized node type: %s" %(node.node_type))
@@ -161,7 +164,8 @@ def tree_eval(node):
         return None
 
 def TEST_1(expected):
-    from lab3 import alpha_beta_search
+#    from lab3 import alpha_beta_search
+    from lab3 import minimax
     tup_tree = ("A", None,
 		("B", None,
 		 ("C", None,
@@ -182,7 +186,7 @@ def TEST_1(expected):
 		)
     tree = make_tree(tup_tree)
     print "%s:\n%s" %("TREE_1", tree_as_string(tree))
-    v = alpha_beta_search(tree, 10,
+    v = minimax(tree, 5,
 			  tree_eval,
 			  tree_get_next_move,
 			  is_leaf)
@@ -190,7 +194,8 @@ def TEST_1(expected):
     print "EXPECTED: %s" %(expected)
     
 def TEST_2(expected):
-    from lab3 import alpha_beta_search
+#    from lab3 import alpha_beta_search
+    from lab3 import minimax
     tup_tree = ("A", None,
 		("B", None,
 		 ("C", None,
@@ -211,7 +216,7 @@ def TEST_2(expected):
 		)
     tree = make_tree(tup_tree)
     print "%s:\n%s" %("TREE_2", tree_as_string(tree))
-    v = alpha_beta_search(tree, 10,
+    v = minimax(tree, 10,
 			  tree_eval,
 			  tree_get_next_move,
 			  is_leaf)
@@ -265,6 +270,7 @@ def TEST_3(expected):
 
 if __name__ == "__main__":
     # Run basic tests using trees.
-    TEST_1("I")
-    TEST_2("B")
+    print "Runing basic tests "
+#    TEST_1("I")
+#    TEST_2("B")
     TEST_3("B")

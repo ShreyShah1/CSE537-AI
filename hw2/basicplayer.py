@@ -62,12 +62,13 @@ def minimax(board, depth, eval_fn = basic_evaluate,
     """
     print " curDepth " + str(depth)
    
-    tup =  recursiveMinimax(board, 1, eval_fn, get_next_moves_fn, is_terminal_fn, MAX)
+    tup =  recursiveMinimax(board, depth, eval_fn, get_next_moves_fn, is_terminal_fn, MAX)
     #print tup 
     return tup[0]
 
 # Return Type (colNo, maxScore)
 def recursiveMinimax(board, depth, eval_fn, get_next_moves_fn, is_terminal_fn, max_min):
+    print "Came for depth " + str(depth)
     if (is_terminal_fn(depth, board)):
         # -1 to indicate the terminal board case
 	score = eval_fn(board)

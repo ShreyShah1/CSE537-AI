@@ -99,7 +99,7 @@ def alpha_beta_search(board, depth,
 
 	tup =  recursiveAlphaBeta(board, depth, eval_fn, get_next_moves_fn, is_terminal_fn, MAX, Min, Max)
         board.nodes_expanded = nodes_expanded_alpha_beta
-   	print " Number of expanded nodes " +  str(nodes_expanded_alpha_beta)
+   	#print " Number of expanded nodes " +  str(nodes_expanded_alpha_beta)
    	return tup[0]
 	
 # Return Type (colNo, maxScore)
@@ -161,7 +161,7 @@ longest_streak_player = lambda board: alpha_beta_search(board, depth=4, eval_fn=
 
 ## This is the longest streak run function
 ##run_game(longest_streak_player, longest_streak_player, ConnectFourBoard(streak = True))
-#run_game(longest_streak_player,random_player, ConnectFourBoard(streak = True))
+run_game(longest_streak_player,random_player, ConnectFourBoard(streak = True))
 
 ## This player uses progressive deepening, so it can kick your ass while
 ## making efficient use of time:
@@ -169,7 +169,7 @@ ab_iterative_player = lambda board: \
     run_search_function(board,
                         search_fn=alpha_beta_search,
                         eval_fn=focused_evaluate, timeout=5)
-run_game(alphabeta_player, basic_player)
+#run_game(alphabeta_player, basic_player)
 
 ## Finally, come up with a better evaluation function than focused-evaluate.
 ## By providing a different function, you should be able to beat

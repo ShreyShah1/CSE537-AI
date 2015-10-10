@@ -536,7 +536,7 @@ class ConnectFourRunner(object):
             print "It's a tie!  No winner is declared."
             return 0
         else:
-            self._do_gameend(win_for_player)
+            s-elf._do_gameend(win_for_player)
             return win_for_player
 
     def run_game_longest_streak(self, verbose=True):
@@ -546,7 +546,7 @@ class ConnectFourRunner(object):
         
         win_for_player = []
 	total_nodes_expanded = 0
-
+	total_time = time.clock()
         while not self._board.is_game_over_longest_streak():            
             for callback, id, symbol in ( player1, player2 ):
                 if verbose:
@@ -578,12 +578,13 @@ class ConnectFourRunner(object):
 
                 if self._board.is_game_over_longest_streak():
                     break
-
+	total_time = time.clock() - total_time
 
         win_for_player = self._board.player_won_longest_streak()
 	global nodes_expanded
 	print "Total Nodes Expanded " + str(total_nodes_expanded)   		
-        if win_for_player == 0:
+        print "Total Time " + str(total_time)
+	if win_for_player == 0:
             print "It's a tie!  No winner is declared."
             return 0
         else:

@@ -3,6 +3,8 @@
 # Email: <Your Email>
 
 from util import INFINITY
+
+# Variable for calculating nodes for alpha and beta.
 global nodes_expanded_alpha_beta
     
 ### 1. Multiple choice
@@ -42,7 +44,7 @@ import tree_searcher
 #run_game(human_player, basic_player)
 
 ## Uncomment this line to play a game as black:
-#run_game(new_player, basic_player)
+run_game(new_player, basic_player)
 ## Or watch the computer play against itself:
 #run_game(basic_player, basic_player)
 
@@ -86,7 +88,6 @@ def alpha_beta_search(board, depth,
                       get_next_moves_fn=get_all_next_moves,
 		      is_terminal_fn=is_terminal):
 
-    	#print "CurDepth is " + str(depth)		
 	# Min int value 
 	Min = -sys.maxint - 1
 	# Max int value
@@ -94,12 +95,13 @@ def alpha_beta_search(board, depth,
         
         global nodes_expanded_alpha_beta
         nodes_expanded_alpha_beta = 0
-        ## Saving the current Max Player id ##
+
+        ## This setting helps us in new evaluate function for deciding whom to score ##
         board.set_current_max_player_id(board.get_current_player_id())
 
 	tup =  recursiveAlphaBeta(board, depth, eval_fn, get_next_moves_fn, is_terminal_fn, MAX, Min, Max)
         board.nodes_expanded = nodes_expanded_alpha_beta
-   	#print " Number of expanded nodes " +  str(nodes_expanded_alpha_beta)
+
    	return tup[0]
 	
 # Return Type (colNo, maxScore)
@@ -107,13 +109,12 @@ def recursiveAlphaBeta(board, depth, eval_fn, get_next_moves_fn, is_terminal_fn,
     
     global nodes_expanded_alpha_beta
     nodes_expanded_alpha_beta = nodes_expanded_alpha_beta + 1
-#    print " Alpha = " + str(alpha) + " Beta = " + str(beta) + " Label = " + str(board.label)
     if (is_terminal_fn(depth, board)):
         # -1 to indicate the terminal board case
 	score = eval_fn(board)
     	return (-1, score) 
 
-    # Get all its next moves:
+    # Get all its next moves.
     all_moves = get_next_moves_fn(board)
     colNo = -1
 
@@ -123,20 +124,19 @@ def recursiveAlphaBeta(board, depth, eval_fn, get_next_moves_fn, is_terminal_fn,
 	   # Iterate over all moves and update alpha.
 
 	   retTuple = recursiveAlphaBeta(game_board[1], depth - 1, eval_fn, get_next_moves_fn, is_terminal_fn, MIN, alpha, beta)
-##	   print "Got tuples" + str(retTuple)
 	      
            if (alpha < retTuple[1]):
 	      alpha = retTuple[1]
               colNo = game_board[0]
            if (alpha > beta):
-               # print " # Pruning here with alpha " + str(alpha) + " Beta " + str(beta)
+		''' Pruning the nodes here.
+                '''
                 break
  
-#        print "Returning " + str((colNo, curMax)) 
 	return (colNo, alpha)		    
     else:
 	for game_board in all_moves:
-            #Iterate over all moves to find the min.
+           #Iterate over all moves to find the min.
     	   retTuple = recursiveAlphaBeta(game_board[1], depth - 1, eval_fn, get_next_moves_fn, is_terminal_fn, MAX, alpha, beta)
 	  
            if (beta > retTuple[1]):
@@ -144,7 +144,8 @@ def recursiveAlphaBeta(board, depth, eval_fn, get_next_moves_fn, is_terminal_fn,
               colNo = game_board[0]
             
            if (alpha > beta):
-              #print " # Pruning here with alpha " + str(alpha) + " Beta " + str(beta)
+	      ''' Pruning the nodes here.
+              '''
               break
  
 	return (colNo, beta)
@@ -161,7 +162,7 @@ longest_streak_player = lambda board: alpha_beta_search(board, depth=4, eval_fn=
 
 ## This is the longest streak run function
 ##run_game(longest_streak_player, longest_streak_player, ConnectFourBoard(streak = True))
-run_game(longest_streak_player,random_player, ConnectFourBoard(streak = True))
+#run_game(longest_streak_player,random_player, ConnectFourBoard(streak = True))
 
 ## This player uses progressive deepening, so it can kick your ass while
 ## making efficient use of time:

@@ -70,11 +70,11 @@ def minimax(board, depth, eval_fn = basic_evaluate,
     """
     global nodes_expanded
     nodes_expanded = 0
-    ## Saving the current Max Player id ##
+     
+    ## This setting helps us in new evaluate function for deciding whom to score ##
     board.set_current_max_player_id(board.get_current_player_id())
 
     tup =  recursiveMinimax(board, depth, eval_fn, get_next_moves_fn, is_terminal_fn, MAX)
-    #print tup 
     board.nodes_expanded = nodes_expanded
     return tup[0]
 
@@ -88,7 +88,6 @@ def recursiveMinimax(board, depth, eval_fn, get_next_moves_fn, is_terminal_fn, m
 	score = eval_fn(board)
     	return (-1, score)  
     			
-    # Get all its next moves:
     all_moves = get_next_moves_fn(board)
     # Min int value 
     curMax = -sys.maxint - 1
@@ -101,20 +100,19 @@ def recursiveMinimax(board, depth, eval_fn, get_next_moves_fn, is_terminal_fn, m
         for game_board in all_moves:
 	   # Iterate over all moves and find the max
 	   retTuple = recursiveMinimax(game_board[1], depth - 1, eval_fn, get_next_moves_fn, is_terminal_fn, MIN)
-##	   print "Got tuples" + str(retTuple)
+           # Saving the max till now.
            if (curMax < retTuple[1]):
 	      curMax = retTuple[1]
               colNo = game_board[0]
        
-#        print "Returning " + str((colNo, curMax)) 
 	return (colNo, curMax)		    
     else:
 	for game_board in all_moves:
             #Iterate over all moves to find the min.
     	   retTuple = recursiveMinimax(game_board[1], depth - 1, eval_fn, get_next_moves_fn, is_terminal_fn, MAX)
+           # Saving the min till now.
            if (curMin > retTuple[1]):
 	      curMin = retTuple[1]
-
               colNo = game_board[0]
         
 	return (colNo, curMin)		    
@@ -127,76 +125,30 @@ def rand_select(board):
     moves = [move for move, new_board in get_all_next_moves(board)]
     return moves[random.randint(0, len(moves) - 1)]
 
-
-'''def new_evaluate(board): 
-   values = [[3, 4, 5, 7, 5, 4, 3], [4, 6, 8, 10, 8, 6, 4], [5, 8, 11, 13, 11, 8, 5], [5, 8, 11, 13, 11, 8, 5], [4, 6, 8, 10, 8, 6, 4], [3, 4, 5, 7, 5, 4, 3]]	
- #  if sys.stdout.encoding and 'UTF' in sys.stdout.encoding:
- #     print unicode(board)
- #  else:
- #     print str(board)
-
-   if board.is_game_over():
-       # If the game has been won, we know that it must have been
-       # won or ended by the previous move.
-       # The previous move was made by our opponent.
-       # Therefore, we can't have won, so return -1000.
-       # (note that this causes a tie to be treated like a loss)
-       score = -1000
-   else:
-      # Max value	
-      score = 138
-      for row in range(6):
-         for col in range(7):
-            if board.get_cell(row, col) == board.get_current_player_id():
-               score += values[row][col]
-            elif board.get_cell(row, col) == board.get_other_player_id():
-               score -= values[row][col]
-    
-#   print "Returning score" + str(score)
-   return score      
-'''
-
 def new_evaluate(board):
-   all_lengths = [-1,-1,2,3,-1,4,5,6]
+   ''' 
+   This function evaluates the board with a new heuristic.
+   If the opponent has one or more chains of length k(which is parameter for wining eg:4) then we simply
+   return a negative value.
+   Else we count the chains of the player whose score has to be maximized by 
+   score = (Chains of length 2)*100 + (Chains of length 3)*1000 + (Chains of length 4)*100000 and so on.
+   ''' 
+
+   all_lengths = [-1,-1,2,3,-1,4,5,6,7]
    score = 0
-   if 0:
-       # If the game has been won, we know that it must have been
-       # won or ended by the previous move.
-       # The previous move was made by our opponent.
-       # Therefore, we can't have won, so return -1000.
-       # (note that this causes a tie to be treated like a loss)
-       score = -1000
-   else:
-       '''       print " Current Player " + str(board.get_current_max_player_id())
-       print " Other Player Id " + str(board.get_current_min_player_id())
-       '''
-       cur_player_chain = board.all_chains(board.get_current_max_player_id())
-       other_player_chain = board.all_chains(board.get_current_min_player_id())
-
-       ''' print " Cur_player_chain " + str(cur_player_chain)  
-       print " Other_player_chain " + str(other_player_chain)'''
-
-       if board.k in other_player_chain:
-	  # Treating it as loss and not surely not going ahead move
-          score = -1000       
-       else:
-          for idx, length in enumerate(all_lengths): 
-              if length in cur_player_chain:
-	          ## This helps in weighing all the chains.   	
-	          score += cur_player_chain[length] * pow(10,idx)     	        	       
-   '''  
-   if sys.stdout.encoding and 'UTF' in sys.stdout.encoding:
-       print unicode(board)
-   else:
-       print str(board)	
    
-  
-   print " Score = " + str(score)
-   
-   if 4 in cur_player_chain:
-      print "###### I am winning ######### " + str(score)
-   print "######################################################" 
-   '''
+   cur_player_chain = board.all_chains(board.get_current_max_player_id())
+   other_player_chain = board.all_chains(board.get_current_min_player_id())
+
+
+   if board.k in other_player_chain:
+       # Treating it as loss and not surely not going ahead move
+       score = -1000       
+   else:
+       for idx, length in enumerate(all_lengths): 
+           if length in cur_player_chain:
+	      ## This helps in weighing all the chains.   	
+	      score += cur_player_chain[length] * pow(10,idx)     	        	       
    return score  	
 
 random_player = lambda board: rand_select(board)

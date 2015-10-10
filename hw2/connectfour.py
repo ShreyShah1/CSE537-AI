@@ -83,7 +83,9 @@ class ConnectFourBoard(object):
     board_symbol_mapping_ascii = { 0: ' ',
                                    1: 'X',
                                    2: 'O' }
+    # K says what number of pieces are needed to win.
     k = 4
+    # streak says whether the game is longest streak or not.
     streak = False    
     def __init__(self, board_array = None, board_already_won = None, modified_column = None, current_player = 1, previous_move = -1, nodes_expanded = 0, current_max_player = -1, k = 4, streak = False):
         """ Create a new ConnectFourBoard
@@ -346,7 +348,7 @@ current_max_player = self.get_current_max_player_id(), k = self.k, streak = self
     def player_won_longest_streak(self):
         """
         Returns the id# of the player who has won this game.
-        Return 0 if it has not yet been won.
+        Return 0 if it's a tie.
         """ 
         player1 = 1
         player2 = 2
@@ -379,7 +381,7 @@ current_max_player = self.get_current_max_player_id(), k = self.k, streak = self
         return ( self.is_win() != 0 or self.is_tie() )
     
     def is_game_over_longest_streak(self):
-        """ Return True if the game has equal to 20 coins """
+        """ Return True if the game has equal to MAX_NO_OF_COINS coins """
         total_number_coins = 0
         for i in xrange(self.board_height):
             for j in xrange(self.board_width):
@@ -507,9 +509,7 @@ class ConnectFourRunner(object):
                         new_column = callback(clone_board)
 			if(id == 1):
 				total_nodes_expanded += clone_board.nodes_expanded
-                        print "Player %s puts a token in column %s" % (id, new_column)
-			print "Player %s nodes expanded = %s" % (id, clone_board.nodes_expanded)
-#		   	print "Player %s (%s) puts a token in column %s" % (id, symbol, new_column)
+		   	print "Player %s (%s) puts a token in column %s" % (id, symbol, new_column)
 
                         self._board = self._board.do_move(new_column)
                         has_moved = True
@@ -536,11 +536,12 @@ class ConnectFourRunner(object):
             print "It's a tie!  No winner is declared."
             return 0
         else:
-            s-elf._do_gameend(win_for_player)
+            self._do_gameend(win_for_player)
             return win_for_player
 
     def run_game_longest_streak(self, verbose=True):
-        """ Run the test defined by this test runner.  Print and return the id of the winning player. """
+        """ Run the test defined by this test runner.  Print and return the id of the winning player
+        This is specially defined for the longest streak game. """
         player1 = (self.player1_callback, 1, self._board.board_symbol_mapping[1])
         player2 = (self.player2_callback, 2, self._board.board_symbol_mapping[2])
         
@@ -562,9 +563,7 @@ class ConnectFourRunner(object):
 			clone_board = self._board.clone()
                         new_column = callback(clone_board)
 			total_nodes_expanded += clone_board.nodes_expanded
-                        print "Player %s puts a token in column %s" % (id, new_column)
-			print "Player %s nodes expanded = %s" % (id, clone_board.nodes_expanded)
-#		   	print "Player %s (%s) puts a token in column %s" % (id, symbol, new_column)
+		   	print "Player %s (%s) puts a token in column %s" % (id, symbol, new_column)
 
                         self._board = self._board.do_move(new_column)
                         has_moved = True
@@ -622,5 +621,6 @@ def run_game(player1, player2, board = ConnectFourBoard()):
     if board.streak == False:
         return game.run_game()
     else:
+        # This means it's a game for longest streak
         return game.run_game_longest_streak()
     

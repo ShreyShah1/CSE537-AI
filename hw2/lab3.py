@@ -1,7 +1,9 @@
 # 6.034 Fall 2010 Lab 3: Games
 # Name: <Your Name>
 # Email: <Your Email>
-
+# Group Details:
+# Name: Shrey Shah		ID:
+# Name: Rutuja Sudam Marathe	ID:109967750
 from util import INFINITY
 
 # Variable for calculating nodes for alpha and beta.
@@ -44,7 +46,7 @@ import tree_searcher
 #run_game(human_player, basic_player)
 
 ## Uncomment this line to play a game as black:
-run_game(new_player, basic_player)
+#run_game(new_player, basic_player)
 ## Or watch the computer play against itself:
 #run_game(basic_player, basic_player)
 
@@ -250,4 +252,22 @@ WHAT_I_FOUND_INTERESTING = ""
 WHAT_I_FOUND_BORING = ""
 NAME = ""
 EMAIL = ""
+
+## Different possiblities of run game
+## Uncomment run_game to see each possibility
+
+## min-max
+#run_game(new_player, basic_player)
+
+## alpha-beta
+#run_game(alphabeta_player, basic_player)
+
+## min-max with varying depth k 
+#run_game(new_player, human_player, ConnectFourBoard(k = 5))
+
+## alpha-beta with varying depth k 
+#run_game(alphabeta_player, human_player, ConnectFourBoard(k = 6))
+
+## longest streak problem
+run_game(longest_streak_player,random_player, ConnectFourBoard(streak = True))
 

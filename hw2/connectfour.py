@@ -347,7 +347,7 @@ current_max_player = self.get_current_max_player_id(), k = self.k, streak = self
 
     def player_won_longest_streak(self):
         """
-        Returns the id# of the player who has won this game.
+        Returns the id# of the player who has won this game. Winner is the player who has longest streak.
         Return 0 if it's a tie.
         """ 
         player1 = 1
@@ -540,8 +540,7 @@ class ConnectFourRunner(object):
             return win_for_player
 
     def run_game_longest_streak(self, verbose=True):
-        """ Run the test defined by this test runner.  Print and return the id of the winning player
-        This is specially defined for the longest streak game. """
+        """ Run the test defined by this test runner.  Print and return the id of the winning player. This is specially defined for the longest streak game. """
         player1 = (self.player1_callback, 1, self._board.board_symbol_mapping[1])
         player2 = (self.player2_callback, 2, self._board.board_symbol_mapping[2])
         
@@ -619,6 +618,7 @@ def run_game(player1, player2, board = ConnectFourBoard()):
     """ Run a game of Connect Four, with the two specified players """
     game = ConnectFourRunner(player1, player2, board=board)
     if board.streak == False:
+	# This is for alphabeta and minimax
         return game.run_game()
     else:
         # This means it's a game for longest streak

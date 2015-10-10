@@ -43,15 +43,13 @@ def get_all_next_moves(board):
 
 def is_terminal(depth, board):
     """
-    Generic terminal state check, true when maximum depth is reached or
-    the game has ended.
+    Generic terminal state check, true when maximum depth is reached or the game has ended.
     """
     return depth <= 0 or board.is_game_over()
 
 def is_terminal_longest_streak_to_win(depth, board):
     """
-    Longest streak to win terminal check, true when maximum depth is reached or
-    the 20 moves of game has been done. 
+    This function is used as terminal function for the Longest streak problem. Longest streak to win terminal check, true when maximum depth is reached or the 20 moves of game has been done. 
     """
     return depth <= 0 or board.is_game_over_longest_streak()
 

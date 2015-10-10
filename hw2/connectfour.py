@@ -80,8 +80,8 @@ class ConnectFourBoard(object):
     board_symbol_mapping_ascii = { 0: ' ',
                                    1: 'X',
                                    2: 'O' }
-    
-    def __init__(self, board_array = None, board_already_won = None, modified_column = None, current_player = 1, previous_move = -1):
+    k = 4    
+    def __init__(self, board_array = None, board_already_won = None, modified_column = None, current_player = 1, previous_move = -1, nodes_expanded = 0, current_max_player = -1, k = 4):
         """ Create a new ConnectFourBoard
 
         If board_array is specified, it should be an MxN matrix of iterables
@@ -114,6 +114,25 @@ class ConnectFourBoard(object):
         self._is_win = self.is_win()
             
         self.current_player = current_player
+	self.nodes_expanded = nodes_expanded
+        # Defining this varibles of you understand who's value is to be maximized 
+        self.current_max_player = current_max_player
+        # Defining the number of smiley's that willl win.
+	self.k = k
+
+    def get_current_max_player_id(self):
+        """ Returns id who's nodes are to be maximized """
+        return self.current_max_player
+    def get_current_min_player_id(self):
+        """ Returns id who's needs are to be minimized """
+        if self.get_current_max_player_id() == 1:
+            return 2
+        else:
+            return 1
+
+    def set_current_max_player_id(self, cur_id):
+        """ Setting the current player id's as cur_id """
+        self.current_max_player = cur_id
 
     def get_current_player_id(self):
         """ Return the id of the player who should be moving now """
@@ -180,11 +199,12 @@ class ConnectFourBoard(object):
         # Re-immutablize the board
         new_board = tuple( map(tuple, new_board) )
 
-        return ConnectFourBoard(new_board, board_already_won=self.is_win(), modified_column=column, current_player = self.get_other_player_id())
+        return ConnectFourBoard(new_board, board_already_won=self.is_win(), modified_column=column, current_player = self.get_other_player_id(),
+current_max_player = self.get_current_max_player_id(), k = self.k)
 
     def _is_win_from_cell(self, row, col):
         """ Determines if there is a winning set of four connected nodes containing the specified cell """
-        return ( self._max_length_from_cell(row, col) >= 4 )
+        return ( self._max_length_from_cell(row, col) >= self.k )
         
     def _max_length_from_cell(self, row, col):
         """ Return the max-length chain containing this cell """
@@ -218,9 +238,25 @@ class ConnectFourBoard(object):
             for j in xrange(self.board_width):
                 if self.get_cell(i,j) == playerid:
                     longest = max( longest, self._max_length_from_cell(i,j) )
-
         return longest
 
+    def all_chains(self, playerid):
+        """
+        Returns the length of the longest chain of tokens controlled by this player,
+        0 if the player has no tokens on the board
+        """
+        all_chains_length = {}
+        for i in xrange(self.board_height):
+            for j in xrange(self.board_width):
+                if self.get_cell(i,j) == playerid:                    
+                    cur_length = self._max_length_from_cell(i,j) 
+                    if cur_length in all_chains_length:
+		       all_chains_length[cur_length] += 1
+                    else:
+		       all_chains_length[cur_length] = 1	
+
+        return all_chains_length
+	
     def _contig_vector_cells(self, row, col, direction):
         """
         Starting in the specified cell and going a step of direction = (row_step, col_step),
@@ -312,7 +348,8 @@ class ConnectFourBoard(object):
 
     def clone(self):
         """ Return a duplicate of this board object """
-        return ConnectFourBoard(self._board_array, board_already_won=self._is_win, current_player = self.get_current_player_id())
+        return ConnectFourBoard(self._board_array, board_already_won=self._is_win, current_player = self.get_current_player_id(), current_max_player = self.get_current_max_player_id(), k = self.k)
+
 
     def num_tokens_on_board(self):
         """
@@ -401,6 +438,7 @@ class ConnectFourRunner(object):
         player2 = (self.player2_callback, 2, self._board.board_symbol_mapping[2])
         
         win_for_player = []
+	total_nodes_expanded = 0
 
         while not win_for_player and not self._board.is_tie():            
             for callback, id, symbol in ( player1, player2 ):
@@ -414,8 +452,13 @@ class ConnectFourRunner(object):
 
                 while not has_moved:
                     try:
-                        new_column = callback(self._board.clone())
-                        print "Player %s (%s) puts a token in column %s" % (id, symbol, new_column)
+			clone_board = self._board.clone()
+                        new_column = callback(clone_board)
+			total_nodes_expanded += clone_board.nodes_expanded
+                        print "Player %s puts a token in column %s" % (id, new_column)
+			print "Player %s nodes expanded = %s" % (id, clone_board.nodes_expanded)
+#		   	print "Player %s (%s) puts a token in column %s" % (id, symbol, new_column)
+
                         self._board = self._board.do_move(new_column)
                         has_moved = True
                     except InvalidMoveException, e:
@@ -432,7 +475,8 @@ class ConnectFourRunner(object):
 
 
         win_for_player = self._board.is_win()
-                
+	global nodes_expanded
+	print "Total Nodes Expanded " + str(total_nodes_expanded)   		
         if win_for_player != 0 and self._board.is_tie():
             print "It's a tie!  No winner is declared."
             return 0

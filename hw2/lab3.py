@@ -3,7 +3,8 @@
 # Email: <Your Email>
 
 from util import INFINITY
-
+global nodes_expanded_alpha_beta
+    
 ### 1. Multiple choice
 
 # 1.1. Two computerized players are playing a game. Player MM does minimax
@@ -41,14 +42,16 @@ import tree_searcher
 #run_game(human_player, basic_player)
 
 ## Uncomment this line to play a game as black:
-run_game(basic_player, human_player)
-#run_game(random_player, human_player)
+#run_game(new_player, human_player)
 ## Or watch the computer play against itself:
 #run_game(basic_player, basic_player)
 
 ## Change this evaluation function so that it tries to win as soon as possible,
 ## or lose as late as possible, when it decides that one side is certain to win.
 ## You don't have to change how it evaluates non-winning positions.
+
+## This is for varying k.
+run_game(new_player, human_player, ConnectFourBoard(k = 5))
 
 def focused_evaluate(board):
     """
@@ -82,7 +85,74 @@ def alpha_beta_search(board, depth,
                       # for connect_four.
                       get_next_moves_fn=get_all_next_moves,
 		      is_terminal_fn=is_terminal):
-    raise NotImplementedError
+
+    	print "CurDepth is " + str(depth)		
+	# Min int value 
+	Min = -sys.maxint - 1
+	# Max int value
+        Max = sys.maxint
+        
+        global nodes_expanded_alpha_beta
+        nodes_expanded_alpha_beta = 0
+        ## Saving the current Max Player id ##
+        board.set_current_max_player_id(board.get_current_player_id())
+
+	tup =  recursiveAlphaBeta(board, depth, eval_fn, get_next_moves_fn, is_terminal_fn, MAX, Min, Max)
+        board.nodes_expanded = nodes_expanded_alpha_beta
+   	#print tup 
+   	return tup[0]
+	
+# Return Type (colNo, maxScore)
+def recursiveAlphaBeta(board, depth, eval_fn, get_next_moves_fn, is_terminal_fn, max_min,alpha, beta):
+    global nodes_expanded_alpha_beta
+    nodes_expanded_alpha_beta = nodes_expanded_alpha_beta + 1
+
+    if (is_terminal_fn(depth, board)):
+        # -1 to indicate the terminal board case
+	score = eval_fn(board)
+    	return (-1, score) 
+
+    # Do Pruning here. 
+    if (alpha > beta):
+	# This means this node is not required.
+	print " # Pruning here with alpha " + str(alpha) + " Beta " + str(beta)
+	return (-1, -1) 
+			
+    # Get all its next moves:
+    all_moves = get_next_moves_fn(board)
+    colNo = -1
+
+    if (max_min == MAX):
+    	# We have to maximize in this call
+        for game_board in all_moves:
+	   # Iterate over all moves and update alpha.
+
+	   retTuple = recursiveAlphaBeta(game_board[1], depth - 1, eval_fn, get_next_moves_fn, is_terminal_fn, MIN, alpha, beta)
+##	   print "Got tuples" + str(retTuple)
+	   if (retTuple[0] == -1 and retTuple[1] == -1):
+	      # This means we don't have a need to go further..
+	      break;	
+
+           if (alpha < retTuple[1]):
+	      alpha = retTuple[1]
+              colNo = game_board[0]
+       
+#        print "Returning " + str((colNo, curMax)) 
+	return (colNo, alpha)		    
+    else:
+	for game_board in all_moves:
+            #Iterate over all moves to find the min.
+    	   retTuple = recursiveAlphaBeta(game_board[1], depth - 1, eval_fn, get_next_moves_fn, is_terminal_fn, MAX, alpha, beta)
+	   
+	   if (retTuple[0] == -1 and retTuple[1] == -1):
+	      # This means we don't have a need to go furthur.
+	      break;
+
+           if (beta > retTuple[1]):
+	      beta = retTuple[1]
+              colNo = game_board[0]
+        
+	return (colNo, beta)
 
 ## Now you should be able to search twice as deep in the same amount of time.
 ## (Of course, this alpha-beta-player won't work until you've defined
@@ -90,7 +160,9 @@ def alpha_beta_search(board, depth,
 #alphabeta_player = lambda board: alpha_beta_search(board,
 #                                                   depth=8,
 #                                                   eval_fn=focused_evaluate)
-alphabeta_player = lambda board: alpha_beta_search(board, depth=8, eval_fn=new_evaluate)
+alphabeta_player = lambda board: alpha_beta_search(board, depth=4, eval_fn=new_evaluate)
+
+shrey_alphabeta_player = lambda board: alpha_beta_search(board, depth=4, eval_fn=shrey_evaluate)
 
 
 ## This player uses progressive deepening, so it can kick your ass while
@@ -99,7 +171,7 @@ ab_iterative_player = lambda board: \
     run_search_function(board,
                         search_fn=alpha_beta_search,
                         eval_fn=focused_evaluate, timeout=5)
-#run_game(human_player, alphabeta_player)
+#run_game(shrey_alphabeta_player, basic_player)
 
 ## Finally, come up with a better evaluation function than focused-evaluate.
 ## By providing a different function, you should be able to beat

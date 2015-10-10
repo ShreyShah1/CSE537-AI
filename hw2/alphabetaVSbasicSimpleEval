@@ -1,0 +1,565 @@
+
+  0 1 2 3 4 5 6
+0              
+1              
+2              
+3              
+4              
+5              
+
+CurDepth is 4
+Setting curr
+Player 1 puts a token in column 2
+Player 1 nodes expanded = 2801
+
+  0 1 2 3 4 5 6
+0              
+1              
+2              
+3              
+4              
+5     X        
+
+ curDepth 4
+Setting curr
+Player 2 puts a token in column 2
+Player 2 nodes expanded = 2801
+
+  0 1 2 3 4 5 6
+0              
+1              
+2              
+3              
+4     O        
+5     X        
+
+CurDepth is 4
+Setting curr
+Player 1 puts a token in column 3
+Player 1 nodes expanded = 2801
+
+  0 1 2 3 4 5 6
+0              
+1              
+2              
+3              
+4     O        
+5     X X      
+
+ curDepth 4
+Setting curr
+Player 2 puts a token in column 1
+Player 2 nodes expanded = 2801
+
+  0 1 2 3 4 5 6
+0              
+1              
+2              
+3              
+4     O        
+5   O X X      
+
+CurDepth is 4
+Setting curr
+Player 1 puts a token in column 3
+Player 1 nodes expanded = 2717
+
+  0 1 2 3 4 5 6
+0              
+1              
+2              
+3              
+4     O X      
+5   O X X      
+
+ curDepth 4
+Setting curr
+Player 2 puts a token in column 3
+Player 2 nodes expanded = 2801
+
+  0 1 2 3 4 5 6
+0              
+1              
+2              
+3       O      
+4     O X      
+5   O X X      
+
+CurDepth is 4
+Setting curr
+Player 1 puts a token in column 4
+Player 1 nodes expanded = 2716
+
+  0 1 2 3 4 5 6
+0              
+1              
+2              
+3       O      
+4     O X      
+5   O X X X    
+
+ curDepth 4
+Setting curr
+Player 2 puts a token in column 5
+Player 2 nodes expanded = 2457
+
+  0 1 2 3 4 5 6
+0              
+1              
+2              
+3       O      
+4     O X      
+5   O X X X O  
+
+CurDepth is 4
+Setting curr
+Player 1 puts a token in column 3
+Player 1 nodes expanded = 2800
+
+  0 1 2 3 4 5 6
+0              
+1              
+2       X      
+3       O      
+4     O X      
+5   O X X X O  
+
+ curDepth 4
+Setting curr
+Player 2 puts a token in column 2
+Player 2 nodes expanded = 2761
+
+  0 1 2 3 4 5 6
+0              
+1              
+2       X      
+3     O O      
+4     O X      
+5   O X X X O  
+
+CurDepth is 4
+Setting curr
+Player 1 puts a token in column 2
+Player 1 nodes expanded = 2774
+
+  0 1 2 3 4 5 6
+0              
+1              
+2     X X      
+3     O O      
+4     O X      
+5   O X X X O  
+
+ curDepth 4
+Setting curr
+Player 2 puts a token in column 2
+Player 2 nodes expanded = 2742
+
+  0 1 2 3 4 5 6
+0              
+1     O        
+2     X X      
+3     O O      
+4     O X      
+5   O X X X O  
+
+CurDepth is 4
+Setting curr
+Player 1 puts a token in column 2
+Player 1 nodes expanded = 2514
+
+  0 1 2 3 4 5 6
+0     X        
+1     O        
+2     X X      
+3     O O      
+4     O X      
+5   O X X X O  
+
+ curDepth 4
+Setting curr
+Player 2 puts a token in column 3
+Player 2 nodes expanded = 1527
+
+  0 1 2 3 4 5 6
+0     X        
+1     O O      
+2     X X      
+3     O O      
+4     O X      
+5   O X X X O  
+
+CurDepth is 4
+Setting curr
+Player 1 puts a token in column 3
+Player 1 nodes expanded = 1367
+
+  0 1 2 3 4 5 6
+0     X X      
+1     O O      
+2     X X      
+3     O O      
+4     O X      
+5   O X X X O  
+
+ curDepth 4
+Setting curr
+Player 2 puts a token in column 1
+Player 2 nodes expanded = 776
+
+  0 1 2 3 4 5 6
+0     X X      
+1     O O      
+2     X X      
+3     O O      
+4   O O X      
+5   O X X X O  
+
+CurDepth is 4
+Setting curr
+Player 1 puts a token in column 1
+Player 1 nodes expanded = 781
+
+  0 1 2 3 4 5 6
+0     X X      
+1     O O      
+2     X X      
+3   X O O      
+4   O O X      
+5   O X X X O  
+
+ curDepth 4
+Setting curr
+Player 2 puts a token in column 1
+Player 2 nodes expanded = 775
+
+  0 1 2 3 4 5 6
+0     X X      
+1     O O      
+2   O X X      
+3   X O O      
+4   O O X      
+5   O X X X O  
+
+CurDepth is 4
+Setting curr
+Player 1 puts a token in column 4
+Player 1 nodes expanded = 763
+
+  0 1 2 3 4 5 6
+0     X X      
+1     O O      
+2   O X X      
+3   X O O      
+4   O O X X    
+5   O X X X O  
+
+ curDepth 4
+Setting curr
+Player 2 puts a token in column 4
+Player 2 nodes expanded = 718
+
+  0 1 2 3 4 5 6
+0     X X      
+1     O O      
+2   O X X      
+3   X O O O    
+4   O O X X    
+5   O X X X O  
+
+CurDepth is 4
+Setting curr
+ # Pruning here with alpha 34 Beta -1000
+ # Pruning here with alpha 34 Beta -1000
+Player 1 puts a token in column 4
+Player 1 nodes expanded = 522
+
+  0 1 2 3 4 5 6
+0     X X      
+1     O O      
+2   O X X X    
+3   X O O O    
+4   O O X X    
+5   O X X X O  
+
+ curDepth 4
+Setting curr
+Player 2 puts a token in column 4
+Player 2 nodes expanded = 667
+
+  0 1 2 3 4 5 6
+0     X X      
+1     O O O    
+2   O X X X    
+3   X O O O    
+4   O O X X    
+5   O X X X O  
+
+CurDepth is 4
+Setting curr
+ # Pruning here with alpha 34 Beta -1000
+ # Pruning here with alpha 34 Beta -1000
+ # Pruning here with alpha 34 Beta -1000
+Player 1 puts a token in column 1
+Player 1 nodes expanded = 332
+
+  0 1 2 3 4 5 6
+0     X X      
+1   X O O O    
+2   O X X X    
+3   X O O O    
+4   O O X X    
+5   O X X X O  
+
+ curDepth 4
+Setting curr
+Player 2 puts a token in column 4
+Player 2 nodes expanded = 497
+
+  0 1 2 3 4 5 6
+0     X X O    
+1   X O O O    
+2   O X X X    
+3   X O O O    
+4   O O X X    
+5   O X X X O  
+
+CurDepth is 4
+Setting curr
+ # Pruning here with alpha 34 Beta -1000
+Player 1 puts a token in column 1
+Player 1 nodes expanded = 225
+
+  0 1 2 3 4 5 6
+0   X X X O    
+1   X O O O    
+2   O X X X    
+3   X O O O    
+4   O O X X    
+5   O X X X O  
+
+ curDepth 4
+Setting curr
+Player 2 puts a token in column 5
+Player 2 nodes expanded = 109
+
+  0 1 2 3 4 5 6
+0   X X X O    
+1   X O O O    
+2   O X X X    
+3   X O O O    
+4   O O X X O  
+5   O X X X O  
+
+CurDepth is 4
+Setting curr
+ # Pruning here with alpha 34 Beta -1000
+Player 1 puts a token in column 5
+Player 1 nodes expanded = 79
+
+  0 1 2 3 4 5 6
+0   X X X O    
+1   X O O O    
+2   O X X X    
+3   X O O O X  
+4   O O X X O  
+5   O X X X O  
+
+ curDepth 4
+Setting curr
+Player 2 puts a token in column 5
+Player 2 nodes expanded = 90
+
+  0 1 2 3 4 5 6
+0   X X X O    
+1   X O O O    
+2   O X X X O  
+3   X O O O X  
+4   O O X X O  
+5   O X X X O  
+
+CurDepth is 4
+Setting curr
+ # Pruning here with alpha 34 Beta -1000
+Player 1 puts a token in column 5
+Player 1 nodes expanded = 77
+
+  0 1 2 3 4 5 6
+0   X X X O    
+1   X O O O X  
+2   O X X X O  
+3   X O O O X  
+4   O O X X O  
+5   O X X X O  
+
+ curDepth 4
+Setting curr
+Player 2 puts a token in column 5
+Player 2 nodes expanded = 80
+
+  0 1 2 3 4 5 6
+0   X X X O O  
+1   X O O O X  
+2   O X X X O  
+3   X O O O X  
+4   O O X X O  
+5   O X X X O  
+
+CurDepth is 4
+Setting curr
+Player 1 puts a token in column 0
+Player 1 nodes expanded = 31
+
+  0 1 2 3 4 5 6
+0   X X X O O  
+1   X O O O X  
+2   O X X X O  
+3   X O O O X  
+4   O O X X O  
+5 X O X X X O  
+
+ curDepth 4
+Setting curr
+Player 2 puts a token in column 0
+Player 2 nodes expanded = 31
+
+  0 1 2 3 4 5 6
+0   X X X O O  
+1   X O O O X  
+2   O X X X O  
+3   X O O O X  
+4 O O O X X O  
+5 X O X X X O  
+
+CurDepth is 4
+Setting curr
+Player 1 puts a token in column 0
+Player 1 nodes expanded = 31
+
+  0 1 2 3 4 5 6
+0   X X X O O  
+1   X O O O X  
+2   O X X X O  
+3 X X O O O X  
+4 O O O X X O  
+5 X O X X X O  
+
+ curDepth 4
+Setting curr
+Player 2 puts a token in column 0
+Player 2 nodes expanded = 30
+
+  0 1 2 3 4 5 6
+0   X X X O O  
+1   X O O O X  
+2 O O X X X O  
+3 X X O O O X  
+4 O O O X X O  
+5 X O X X X O  
+
+CurDepth is 4
+Setting curr
+Player 1 puts a token in column 0
+Player 1 nodes expanded = 23
+
+  0 1 2 3 4 5 6
+0   X X X O O  
+1 X X O O O X  
+2 O O X X X O  
+3 X X O O O X  
+4 O O O X X O  
+5 X O X X X O  
+
+ curDepth 4
+Setting curr
+Player 2 puts a token in column 0
+Player 2 nodes expanded = 13
+
+  0 1 2 3 4 5 6
+0 O X X X O O  
+1 X X O O O X  
+2 O O X X X O  
+3 X X O O O X  
+4 O O O X X O  
+5 X O X X X O  
+
+CurDepth is 4
+Setting curr
+Player 1 puts a token in column 6
+Player 1 nodes expanded = 5
+
+  0 1 2 3 4 5 6
+0 O X X X O O  
+1 X X O O O X  
+2 O O X X X O  
+3 X X O O O X  
+4 O O O X X O  
+5 X O X X X O X
+
+ curDepth 4
+Setting curr
+Player 2 puts a token in column 6
+Player 2 nodes expanded = 5
+
+  0 1 2 3 4 5 6
+0 O X X X O O  
+1 X X O O O X  
+2 O O X X X O  
+3 X X O O O X  
+4 O O O X X O O
+5 X O X X X O X
+
+CurDepth is 4
+Setting curr
+Player 1 puts a token in column 6
+Player 1 nodes expanded = 5
+
+  0 1 2 3 4 5 6
+0 O X X X O O  
+1 X X O O O X  
+2 O O X X X O  
+3 X X O O O X X
+4 O O O X X O O
+5 X O X X X O X
+
+ curDepth 4
+Setting curr
+Player 2 puts a token in column 6
+Player 2 nodes expanded = 4
+
+  0 1 2 3 4 5 6
+0 O X X X O O  
+1 X X O O O X  
+2 O O X X X O O
+3 X X O O O X X
+4 O O O X X O O
+5 X O X X X O X
+
+CurDepth is 4
+Setting curr
+Player 1 puts a token in column 6
+Player 1 nodes expanded = 3
+
+  0 1 2 3 4 5 6
+0 O X X X O O  
+1 X X O O O X X
+2 O O X X X O O
+3 X X O O O X X
+4 O O O X X O O
+5 X O X X X O X
+
+ curDepth 4
+Setting curr
+Player 2 puts a token in column 6
+Player 2 nodes expanded = 2
+Total Nodes Expanded 45054
+Win for  !
+
+  0 1 2 3 4 5 6
+0 O X X X O O O
+1 X X O O O X X
+2 O O X X X O O
+3 X X O O O X X
+4 O O O X X O O
+5 X O X X X O X
+

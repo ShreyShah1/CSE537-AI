@@ -164,8 +164,7 @@ def tree_eval(node):
         return None
 
 def TEST_1(expected):
-#    from lab3 import alpha_beta_search
-    from lab3 import minimax
+    from lab3 import alpha_beta_search
     tup_tree = ("A", None,
 		("B", None,
 		 ("C", None,
@@ -186,7 +185,7 @@ def TEST_1(expected):
 		)
     tree = make_tree(tup_tree)
     print "%s:\n%s" %("TREE_1", tree_as_string(tree))
-    v = minimax(tree, 5,
+    v = alpha_beta_search(tree, 4,
 			  tree_eval,
 			  tree_get_next_move,
 			  is_leaf)
@@ -194,8 +193,7 @@ def TEST_1(expected):
     print "EXPECTED: %s" %(expected)
     
 def TEST_2(expected):
-#    from lab3 import alpha_beta_search
-    from lab3 import minimax
+    from lab3 import alpha_beta_search
     tup_tree = ("A", None,
 		("B", None,
 		 ("C", None,
@@ -216,7 +214,7 @@ def TEST_2(expected):
 		)
     tree = make_tree(tup_tree)
     print "%s:\n%s" %("TREE_2", tree_as_string(tree))
-    v = minimax(tree, 10,
+    v = alpha_beta_search(tree, 4,
 			  tree_eval,
 			  tree_get_next_move,
 			  is_leaf)
@@ -224,7 +222,7 @@ def TEST_2(expected):
     print "EXPECTED: %s" %(expected)
 
 def TEST_3(expected):
-    from lab3 import minimax
+    from lab3 import alpha_beta_search
     tup_tree = ("A", None,
 		("B", None,
 		 ("E", None,
@@ -261,7 +259,7 @@ def TEST_3(expected):
     tree = make_tree(tup_tree)
     print "%s:\n%s" %("TREE_3",
 		      tree_as_string(tree))
-    v = minimax(tree, 10,
+    v = alpha_beta_search(tree, 10,
 			  tree_eval,
 			  tree_get_next_move,
 			  is_leaf)
@@ -271,6 +269,6 @@ def TEST_3(expected):
 if __name__ == "__main__":
     # Run basic tests using trees.
     print "Runing basic tests "
-    TEST_1("I")
+#    TEST_1("I")
 #    TEST_2("B")
     TEST_3("B")

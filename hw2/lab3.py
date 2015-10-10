@@ -42,7 +42,7 @@ import tree_searcher
 #run_game(human_player, basic_player)
 
 ## Uncomment this line to play a game as black:
-#run_game(new_player, human_player)
+#run_game(new_player, basic_player)
 ## Or watch the computer play against itself:
 #run_game(basic_player, basic_player)
 
@@ -51,7 +51,7 @@ import tree_searcher
 ## You don't have to change how it evaluates non-winning positions.
 
 ## This is for varying k.
-run_game(new_player, human_player, ConnectFourBoard(k = 5))
+#run_game(new_player, human_player, ConnectFourBoard(k = 5))
 
 def focused_evaluate(board):
     """
@@ -86,7 +86,7 @@ def alpha_beta_search(board, depth,
                       get_next_moves_fn=get_all_next_moves,
 		      is_terminal_fn=is_terminal):
 
-    	print "CurDepth is " + str(depth)		
+    	#print "CurDepth is " + str(depth)		
 	# Min int value 
 	Min = -sys.maxint - 1
 	# Max int value
@@ -99,25 +99,20 @@ def alpha_beta_search(board, depth,
 
 	tup =  recursiveAlphaBeta(board, depth, eval_fn, get_next_moves_fn, is_terminal_fn, MAX, Min, Max)
         board.nodes_expanded = nodes_expanded_alpha_beta
-   	#print tup 
+   	print " Number of expanded nodes " +  str(nodes_expanded_alpha_beta)
    	return tup[0]
 	
 # Return Type (colNo, maxScore)
 def recursiveAlphaBeta(board, depth, eval_fn, get_next_moves_fn, is_terminal_fn, max_min,alpha, beta):
+    
     global nodes_expanded_alpha_beta
     nodes_expanded_alpha_beta = nodes_expanded_alpha_beta + 1
-
+#    print " Alpha = " + str(alpha) + " Beta = " + str(beta) + " Label = " + str(board.label)
     if (is_terminal_fn(depth, board)):
         # -1 to indicate the terminal board case
 	score = eval_fn(board)
     	return (-1, score) 
 
-    # Do Pruning here. 
-    if (alpha > beta):
-	# This means this node is not required.
-	print " # Pruning here with alpha " + str(alpha) + " Beta " + str(beta)
-	return (-1, -1) 
-			
     # Get all its next moves:
     all_moves = get_next_moves_fn(board)
     colNo = -1
@@ -129,29 +124,29 @@ def recursiveAlphaBeta(board, depth, eval_fn, get_next_moves_fn, is_terminal_fn,
 
 	   retTuple = recursiveAlphaBeta(game_board[1], depth - 1, eval_fn, get_next_moves_fn, is_terminal_fn, MIN, alpha, beta)
 ##	   print "Got tuples" + str(retTuple)
-	   if (retTuple[0] == -1 and retTuple[1] == -1):
-	      # This means we don't have a need to go further..
-	      break;	
-
+	      
            if (alpha < retTuple[1]):
 	      alpha = retTuple[1]
               colNo = game_board[0]
-       
+           if (alpha > beta):
+               # print " # Pruning here with alpha " + str(alpha) + " Beta " + str(beta)
+                break
+ 
 #        print "Returning " + str((colNo, curMax)) 
 	return (colNo, alpha)		    
     else:
 	for game_board in all_moves:
             #Iterate over all moves to find the min.
     	   retTuple = recursiveAlphaBeta(game_board[1], depth - 1, eval_fn, get_next_moves_fn, is_terminal_fn, MAX, alpha, beta)
-	   
-	   if (retTuple[0] == -1 and retTuple[1] == -1):
-	      # This means we don't have a need to go furthur.
-	      break;
-
+	  
            if (beta > retTuple[1]):
 	      beta = retTuple[1]
               colNo = game_board[0]
-        
+            
+           if (alpha > beta):
+              #print " # Pruning here with alpha " + str(alpha) + " Beta " + str(beta)
+              break
+ 
 	return (colNo, beta)
 
 ## Now you should be able to search twice as deep in the same amount of time.
@@ -162,8 +157,11 @@ def recursiveAlphaBeta(board, depth, eval_fn, get_next_moves_fn, is_terminal_fn,
 #                                                   eval_fn=focused_evaluate)
 alphabeta_player = lambda board: alpha_beta_search(board, depth=4, eval_fn=new_evaluate)
 
-shrey_alphabeta_player = lambda board: alpha_beta_search(board, depth=4, eval_fn=shrey_evaluate)
+longest_streak_player = lambda board: alpha_beta_search(board, depth=4, eval_fn=new_evaluate, is_terminal_fn=is_terminal_longest_streak_to_win)
 
+## This is the longest streak run function
+##run_game(longest_streak_player, longest_streak_player, ConnectFourBoard(streak = True))
+#run_game(longest_streak_player,random_player, ConnectFourBoard(streak = True))
 
 ## This player uses progressive deepening, so it can kick your ass while
 ## making efficient use of time:
@@ -171,7 +169,7 @@ ab_iterative_player = lambda board: \
     run_search_function(board,
                         search_fn=alpha_beta_search,
                         eval_fn=focused_evaluate, timeout=5)
-#run_game(shrey_alphabeta_player, basic_player)
+run_game(alphabeta_player, basic_player)
 
 ## Finally, come up with a better evaluation function than focused-evaluate.
 ## By providing a different function, you should be able to beat

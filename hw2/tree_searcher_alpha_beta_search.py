@@ -269,6 +269,6 @@ def TEST_3(expected):
 if __name__ == "__main__":
     # Run basic tests using trees.
     print "Runing basic tests "
-#    TEST_1("I")
-#    TEST_2("B")
-    TEST_3("B")
+    TEST_1("I")
+    TEST_2("B")
+    #TEST_3("B")

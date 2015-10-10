@@ -1,5 +1,8 @@
 import unicodedata
 import sys
+import time
+
+MAX_NO_OF_COINS = 20
 
 # Python 2.3 compatibiliy with sets
 if not 'set' in globals():
@@ -80,8 +83,9 @@ class ConnectFourBoard(object):
     board_symbol_mapping_ascii = { 0: ' ',
                                    1: 'X',
                                    2: 'O' }
-    k = 4    
-    def __init__(self, board_array = None, board_already_won = None, modified_column = None, current_player = 1, previous_move = -1, nodes_expanded = 0, current_max_player = -1, k = 4):
+    k = 4
+    streak = False    
+    def __init__(self, board_array = None, board_already_won = None, modified_column = None, current_player = 1, previous_move = -1, nodes_expanded = 0, current_max_player = -1, k = 4, streak = False):
         """ Create a new ConnectFourBoard
 
         If board_array is specified, it should be an MxN matrix of iterables
@@ -117,8 +121,9 @@ class ConnectFourBoard(object):
 	self.nodes_expanded = nodes_expanded
         # Defining this varibles of you understand who's value is to be maximized 
         self.current_max_player = current_max_player
-        # Defining the number of smiley's that willl win.
+        # Defining the number of smiley's that will win.
 	self.k = k
+        self.streak = streak
 
     def get_current_max_player_id(self):
         """ Returns id who's nodes are to be maximized """
@@ -200,7 +205,7 @@ class ConnectFourBoard(object):
         new_board = tuple( map(tuple, new_board) )
 
         return ConnectFourBoard(new_board, board_already_won=self.is_win(), modified_column=column, current_player = self.get_other_player_id(),
-current_max_player = self.get_current_max_player_id(), k = self.k)
+current_max_player = self.get_current_max_player_id(), k = self.k, streak = self.streak)
 
     def _is_win_from_cell(self, row, col):
         """ Determines if there is a winning set of four connected nodes containing the specified cell """
@@ -338,9 +343,54 @@ current_max_player = self.get_current_max_player_id(), k = self.k)
 
         return 0
 
+    def player_won_longest_streak(self):
+        """
+        Returns the id# of the player who has won this game.
+        Return 0 if it has not yet been won.
+        """ 
+        player1 = 1
+        player2 = 2
+        max_till_now_player1 = 0
+        max_till_now_player2 = 0
+
+	for i in xrange(self.board_height):
+            for j in xrange(self.board_width):
+                cell_player = self.get_cell(i,j)
+                if cell_player == player1:
+                   max_till_now_player1 = max(max_till_now_player1, self._max_length_from_cell(i, j))
+                   
+                elif cell_player == player2:
+                   max_till_now_player2 = max(max_till_now_player2, self._max_length_from_cell(i, j))
+         
+                          
+
+        if (max_till_now_player1 > max_till_now_player2):
+           # Returning player 1 as the winner.
+           return 1
+        elif (max_till_now_player1 < max_till_now_player2): 
+           # Returning player 2 as the winner.
+           return 2
+        else:
+           # This means its a tie.
+           return 0
+
     def is_game_over(self):
         """ Return True if the game has been won, False otherwise """
         return ( self.is_win() != 0 or self.is_tie() )
+    
+    def is_game_over_longest_streak(self):
+        """ Return True if the game has equal to 20 coins """
+        total_number_coins = 0
+        for i in xrange(self.board_height):
+            for j in xrange(self.board_width):
+                cell_player = self.get_cell(i,j)
+                if cell_player != 0:
+                    total_number_coins = total_number_coins + 1     
+        
+        if (total_number_coins >= MAX_NO_OF_COINS):
+           return True
+       
+        return False
 
     def is_tie(self):
         """ Return true iff the game has reached a stalemate """
@@ -348,7 +398,7 @@ current_max_player = self.get_current_max_player_id(), k = self.k)
 
     def clone(self):
         """ Return a duplicate of this board object """
-        return ConnectFourBoard(self._board_array, board_already_won=self._is_win, current_player = self.get_current_player_id(), current_max_player = self.get_current_max_player_id(), k = self.k)
+        return ConnectFourBoard(self._board_array, board_already_won=self._is_win, current_player = self.get_current_player_id(), current_max_player = self.get_current_max_player_id(), k = self.k, streak = self.streak)
 
 
     def num_tokens_on_board(self):
@@ -439,8 +489,65 @@ class ConnectFourRunner(object):
         
         win_for_player = []
 	total_nodes_expanded = 0
+	total_time = time.clock()
 
         while not win_for_player and not self._board.is_tie():            
+            for callback, id, symbol in ( player1, player2 ):
+                if verbose:
+                    if sys.stdout.encoding and 'UTF' in sys.stdout.encoding:
+                        print unicode(self._board)
+                    else:
+                        print str(self._board)
+
+                has_moved = False
+
+                while not has_moved:
+                    try:
+			clone_board = self._board.clone()
+                        new_column = callback(clone_board)
+			if(id == 1):
+				total_nodes_expanded += clone_board.nodes_expanded
+                        print "Player %s puts a token in column %s" % (id, new_column)
+			print "Player %s nodes expanded = %s" % (id, clone_board.nodes_expanded)
+#		   	print "Player %s (%s) puts a token in column %s" % (id, symbol, new_column)
+
+                        self._board = self._board.do_move(new_column)
+                        has_moved = True
+                    except InvalidMoveException, e:
+                        if sys.stdout.encoding and 'UTF' in sys.stdout.encoding:
+                            print unicode(e)
+                        else:
+                            print str(e)
+                            print "Illegal move attempted.  Please try again."
+                            continue
+
+                if self._board.is_game_over():
+                    win_for_player = self._board.is_win()
+                    break
+
+	total_time = time.clock() - total_time
+
+        win_for_player = self._board.is_win()
+	global nodes_expanded
+	print "Total Nodes Expanded " + str(total_nodes_expanded)   		
+       	print "Total Time " + str(total_time)   		
+	
+	if win_for_player != 0 and self._board.is_tie():
+            print "It's a tie!  No winner is declared."
+            return 0
+        else:
+            self._do_gameend(win_for_player)
+            return win_for_player
+
+    def run_game_longest_streak(self, verbose=True):
+        """ Run the test defined by this test runner.  Print and return the id of the winning player. """
+        player1 = (self.player1_callback, 1, self._board.board_symbol_mapping[1])
+        player2 = (self.player2_callback, 2, self._board.board_symbol_mapping[2])
+        
+        win_for_player = []
+	total_nodes_expanded = 0
+
+        while not self._board.is_game_over_longest_streak():            
             for callback, id, symbol in ( player1, player2 ):
                 if verbose:
                     if sys.stdout.encoding and 'UTF' in sys.stdout.encoding:
@@ -469,21 +576,20 @@ class ConnectFourRunner(object):
                             print "Illegal move attempted.  Please try again."
                             continue
 
-                if self._board.is_game_over():
-                    win_for_player = self._board.is_win()
+                if self._board.is_game_over_longest_streak():
                     break
 
 
-        win_for_player = self._board.is_win()
+        win_for_player = self._board.player_won_longest_streak()
 	global nodes_expanded
 	print "Total Nodes Expanded " + str(total_nodes_expanded)   		
-        if win_for_player != 0 and self._board.is_tie():
+        if win_for_player == 0:
             print "It's a tie!  No winner is declared."
             return 0
         else:
             self._do_gameend(win_for_player)
             return win_for_player
-
+ 	
     def _do_gameend(self, winner):
         """ Someone won!  Handle this eventuality. """
         print "Win for %s!" % self._board.board_symbol_mapping[winner]
@@ -512,5 +618,8 @@ def human_player(board):
 def run_game(player1, player2, board = ConnectFourBoard()):
     """ Run a game of Connect Four, with the two specified players """
     game = ConnectFourRunner(player1, player2, board=board)
-    return game.run_game()
+    if board.streak == False:
+        return game.run_game()
+    else:
+        return game.run_game_longest_streak()
     

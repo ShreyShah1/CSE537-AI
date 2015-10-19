@@ -2,7 +2,7 @@
 # Name: <Your Name>
 # Email: <Your Email>
 # Group Details:
-# Name: Shrey Shah		ID:
+# Name: Shrey Shah		ID:109247887
 # Name: Rutuja Sudam Marathe	ID:109967750
 from util import INFINITY
 
@@ -263,11 +263,11 @@ EMAIL = ""
 #run_game(alphabeta_player, basic_player)
 
 ## min-max with varying depth k 
-#run_game(new_player, human_player, ConnectFourBoard(k = 5))
+#run_game(new_player, basic_player, ConnectFourBoard(k = 5))
 
 ## alpha-beta with varying depth k 
-#run_game(alphabeta_player, human_player, ConnectFourBoard(k = 6))
+#run_game(alphabeta_player, basic_player, ConnectFourBoard(k = 3))
 
 ## longest streak problem
-run_game(longest_streak_player,random_player, ConnectFourBoard(streak = True))
+#run_game(longest_streak_player,longest_streak_player, ConnectFourBoard(streak = True))
 

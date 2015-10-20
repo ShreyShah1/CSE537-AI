@@ -20,7 +20,7 @@ def backtracking(filename):
     # checks done
     ###
     board, emptyCells = readGame.readGameState(filename)
-    solveSudoku(board, 0, 0, 0, int(emptyCells))
+    solveSudokuBacktracking(board, 0, 0, 0, int(emptyCells))
     return (board.gameState, 0)
 
 def isValidMove(board, row, col, number):
@@ -63,12 +63,12 @@ def solveSudokuBacktracking(board, startRow, startCol, filledCells, emptyCells):
        nextCol = 0       	
 	
     if board.gameState[startRow][startCol] != 0:
-       return solveSudoku(board, nextRow, nextCol, filledCells, emptyCells)
+       return solveSudokuBacktracking(board, nextRow, nextCol, filledCells, emptyCells)
 
     for number in range(1, board.dimension + 1):
 	if isValidMove(board, startRow, startCol, number):
 	   board.gameState[startRow][startCol] = number	
-	   if solveSudoku(board, nextRow, nextCol, filledCells + 1, emptyCells):
+	   if solveSudokuBacktracking(board, nextRow, nextCol, filledCells + 1, emptyCells):
 	       return True	
 	   # Backtracking.
 	   board.gameState[startRow][startCol] = 0
@@ -87,26 +87,26 @@ def backtrackingMRV(filename):
     # Each element in the remainingConstraints is a [list of of remaininig constraints, flag to indicate whether its been touched for 
     # that particular iteration]
 
-    remainingConstraints = [[[[1,2,3,4,5,6,7,8,9,10,11,12], 0] for x in range(12)] for x in range(12)] 
+    remainingConstraints = [[[range(1, board.dimension+1), 0] for x in range(12)] for x in range(12)] 
     # Update the neighbour constraints values.
-    for i in range(12):
-       for j in range(12):	    
+    for i in range(board.dimension):
+       for j in range(board.dimension):	    
 	   updateNeighbourConstraints(board, remainingConstraints, (i, j), REMOVE)
  		
     ## Just making the updated flag 0 here thing here.
-    for i in range(12):
-       for j in range(12):
+    for i in range(board.dimension):
+       for j in range(board.dimension):
 	  remainingConstraints[i][j][1] = 0
 
     solveSudokuBacktrackingMRV(board, remainingConstraints, 0, emptyCells)	
-    return (board, 0)
+    return (board.gameState, 0)
 
 def updateNeighbourConstraints1(board, remainingConstraints, (row,col), operation, noConflictsList = None):
     ##############################################
     # Update all conflicts of (row, col)
     #############################################	
 
-    cellVal = board[row][col]
+    cellVal = board.gameState[row][col]
     if cellVal != 0 and operation == REMOVE:
        # Initialize it to an empty list
        remainingConstraints[row][col] = [[],0] 
@@ -116,7 +116,7 @@ def updateNeighbourConstraints1(board, remainingConstraints, (row,col), operatio
 
     print " Updating Constraints for " + str((row, col)) + " Operation " + str(operation) + " No conflicts List " + str(noConflictsList) + " Cell Value " + str(cellVal)
     # Check all current Row
-    for i in range(0, COL):
+    for i in range(0, board.dimension):
         if (cellVal in remainingConstraints[row][i][0] and operation == REMOVE):
            remainingConstraints[row][i][0].remove(cellVal)
            remainingConstraints[row][i][1] = 1
@@ -126,7 +126,7 @@ def updateNeighbourConstraints1(board, remainingConstraints, (row,col), operatio
            remainingConstraints[row][i][1] = 0
              
     # Check all current Col
-    for i in range(0, ROW):
+    for i in range(0, board.dimension):
         if (operation == REMOVE and cellVal in remainingConstraints[i][col][0]):
            remainingConstraints[i][col][0].remove(cellVal)
            remainingConstraints[i][col][1] = 1
@@ -135,14 +135,11 @@ def updateNeighbourConstraints1(board, remainingConstraints, (row,col), operatio
            remainingConstraints[i][col][1] = 0
 
     # Check the boxes 
-    startIndicesRow = [0, 3, 6, 9]
-    startIndicesCol = [0, 4, 8]
+    startRow = (row / board.boxRow) * board.boxRow
+    startCol = (col / board.boxCol) * board.boxCol
 
-    startRow = startIndicesRow[row / BOX_ROW]
-    startCol = startIndicesCol[col / BOX_COL]
-
-    for i in range(0, BOX_ROW):
-       for j in range(0, BOX_COL):
+    for i in range(0, board.boxRow):
+       for j in range(0, board.boxCol):
           curRow = startRow + i
           curCol = startCol + j
           if (operation == REMOVE and cellVal in remainingConstraints[curRow][curCol][0]):
@@ -158,7 +155,7 @@ def updateNeighbourConstraints(board, remainingConstraints, (row,col), operation
     # Update all conflicts of (row, col)
     #############################################	
     
-    cellVal = board[row][col]
+    cellVal = board.gameState[row][col]
     if cellVal != 0 and operation == REMOVE:
        # Initialize it to an empty list
        remainingConstraints[row][col] = [[],0] 
@@ -168,7 +165,7 @@ def updateNeighbourConstraints(board, remainingConstraints, (row,col), operation
 
  #   print " Updating Constraints for " + str((row, col)) + " Operation " + str(operation) + " No conflicts List " + str(noConflictsList) + " Cell Value " + str(cellVal)
     # Check all current Row
-    for i in range(0, COL):
+    for i in range(0, board.dimension):
         if (cellVal in remainingConstraints[row][i][0] and operation == REMOVE):
            remainingConstraints[row][i][0].remove(cellVal)
 	   cellsChanged.append((row, i))
@@ -178,7 +175,7 @@ def updateNeighbourConstraints(board, remainingConstraints, (row,col), operation
 	   remainingConstraints[row][i][0].append(cellVal)
              
     # Check all current Col
-    for i in range(0, ROW):
+    for i in range(0, board.dimension):
         if (operation == REMOVE and cellVal in remainingConstraints[i][col][0]):
            remainingConstraints[i][col][0].remove(cellVal)
            cellsChanged.append((i, col))
@@ -186,14 +183,11 @@ def updateNeighbourConstraints(board, remainingConstraints, (row,col), operation
 	   remainingConstraints[i][col][0].append(cellVal)
 
     # Check the boxes 
-    startIndicesRow = [0, 3, 6, 9]
-    startIndicesCol = [0, 4, 8]
+    startRow = (row / board.boxRow) * board.boxRow
+    startCol = (col / board.boxCol) * board.boxCol
 
-    startRow = startIndicesRow[row / BOX_ROW]
-    startCol = startIndicesCol[col / BOX_COL]
-
-    for i in range(0, BOX_ROW):
-       for j in range(0, BOX_COL):
+    for i in range(0, board.boxRow):
+       for j in range(0, board.boxCol):
           curRow = startRow + i
           curCol = startCol + j
           if (operation == REMOVE and cellVal in remainingConstraints[curRow][curCol][0]):
@@ -204,12 +198,12 @@ def updateNeighbourConstraints(board, remainingConstraints, (row,col), operation
 
 #    print " Cells Changed ## " + str(cellsChanged)
   
-def findMinValue(remainingConstraints):
+def findMinValue(board, remainingConstraints):
     minTillNow = sys.maxint
     row = -1
     col = -1
-    for i in range(0, ROW):
-       for j in range(0, COL):
+    for i in range(0, board.dimension):
+       for j in range(0, board.dimension):
           constraintsList = remainingConstraints[i][j][0]
           if constraintsList and minTillNow > len(constraintsList):
              minTillNow = len(constraintsList)
@@ -228,7 +222,7 @@ def solveSudokuBacktrackingMRV(board, remainingConstraints, filledCells, emptyCe
        return True    
     
     # Find the next minimum cell and its List.
-    minCell, noConflictsList = findMinValue(remainingConstraints)
+    minCell, noConflictsList = findMinValue(board, remainingConstraints)
     print " NoConflictsList " + str(noConflictsList) + " Co-ordinates "  + str(minCell)
    
     if not noConflictsList:
@@ -236,14 +230,14 @@ def solveSudokuBacktrackingMRV(board, remainingConstraints, filledCells, emptyCe
         return False
     
     for number in noConflictsList:
-       board[minCell[0]][minCell[1]] = number
+       board.gameState[minCell[0]][minCell[1]] = number
        cellsChanged = []
        updateNeighbourConstraints(board, remainingConstraints, minCell, REMOVE, cellsChanged)
        if (solveSudokuBacktrackingMRV(board, copy.deepcopy(remainingConstraints), filledCells + 1, emptyCells)):            
           return True
        # Backtracking
        updateNeighbourConstraints(board, remainingConstraints, minCell, ADD, cellsChanged, noConflictsList)	
-       board[minCell[0]][minCell[1]] = 0 
+       board.gameState[minCell[0]][minCell[1]] = 0 
 
     return False
 

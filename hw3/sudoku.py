@@ -13,6 +13,7 @@ def main(args):
     ##########################################################
     # backtracking
     ##########################################################
+	"""
 	tic = time.clock()
 	solution, consistencyChecks = csp.backtracking(args.input)
 	toc = time.clock()
@@ -22,7 +23,7 @@ def main(args):
 	print "Execution Time: " + str(timeItr)
 	print "Consistency Checks: " + str(consistencyChecks)
 	print "Solution: " + str(solution) + '\n'
-        
+        """
     ##########################################################
     # backtracking + MRV
     ##########################################################

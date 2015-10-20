@@ -22,7 +22,7 @@ def main(args):
 	print "Execution Time: " + str(timeItr)
 	print "Consistency Checks: " + str(consistencyChecks)
 	print "Solution: " + str(solution) + '\n'
-    
+        
     ##########################################################
     # backtracking + MRV
     ##########################################################

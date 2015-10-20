@@ -5,12 +5,6 @@ from pprint import pprint
 import copy
 ################################
 # CONSTANTS
-ROW = 12
-COL = 12
-
-BOX_ROW = 3
-BOX_COL = 4
-
 REMOVE = 1
 ADD = 2
 
@@ -26,8 +20,8 @@ def backtracking(filename):
     # checks done
     ###
     board, emptyCells = readGame.readGameState(filename)
-    solveSudokuBacktracking(board, 0, 0, 0, int(emptyCells))
-    return (board, 0)
+    solveSudoku(board, 0, 0, 0, int(emptyCells))
+    return (board.gameState, 0)
 
 def isValidMove(board, row, col, number):
     ###############################################	
@@ -36,25 +30,22 @@ def isValidMove(board, row, col, number):
     #############################################	
 
     # Check all current Row
-    for i in range(0, COL):
-	if board[row][i] == number:
+    for i in range(0, board.dimension):
+	if board.gameState[row][i] == number:
 	   return False
 
     # Check all current Col
-    for i in range(0, ROW):
-	if board[i][col] == number:
+    for i in range(0, board.dimension):
+	if board.gameState[i][col] == number:
 	   return False	
    
     # Check the boxes 
-    startIndicesRow = [0, 3, 6, 9]
-    startIndicesCol = [0, 4, 8]
-
-    startRow = startIndicesRow[row / BOX_ROW]	
-    startCol = startIndicesCol[col / BOX_COL]
+    startRow = (row / board.boxRow ) * board.boxRow	
+    startCol = (col / board.boxCol ) * board.boxCol
     
-    for i in range(0, BOX_ROW):
-       for j in range(0, BOX_COL):
-          if board[startRow + i][startCol + j] == number:
+    for i in range(0, board.boxRow):
+       for j in range(0, board.boxCol):
+          if board.gameState[startRow + i][startCol + j] == number:
 	     return False      	 	
 
     return True
@@ -67,20 +58,20 @@ def solveSudokuBacktracking(board, startRow, startCol, filledCells, emptyCells):
     nextRow = startRow
     nextCol = startCol + 1
 	
-    if nextCol == COL:
+    if nextCol == board.dimension:
        nextRow += 1
        nextCol = 0       	
 	
-    if board[startRow][startCol] != 0:
-       return solveSudokuBacktracking(board, nextRow, nextCol, filledCells, emptyCells)
+    if board.gameState[startRow][startCol] != 0:
+       return solveSudoku(board, nextRow, nextCol, filledCells, emptyCells)
 
-    for number in range(1, 13):
+    for number in range(1, board.dimension + 1):
 	if isValidMove(board, startRow, startCol, number):
-	   board[startRow][startCol] = number	
-	   if solveSudokuBacktracking(board, nextRow, nextCol, filledCells + 1, emptyCells):
+	   board.gameState[startRow][startCol] = number	
+	   if solveSudoku(board, nextRow, nextCol, filledCells + 1, emptyCells):
 	       return True	
 	   # Backtracking.
-	   board[startRow][startCol] = 0
+	   board.gameState[startRow][startCol] = 0
    
     return False
 

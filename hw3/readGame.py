@@ -5,6 +5,17 @@
 #
 ##############################################
 
+class Board(object):
+	def __init__(self, gameState, dimension, boxRow, boxCol):
+		'''
+		The object contains all the properties of box object.
+		'''
+        	self.gameState = gameState
+                self.dimension = dimension
+		self.boxRow = boxRow
+                self.boxCol = boxCol
+	 
+
 def readGameState(filePath):
 	#Reading file
 	fileHandle = open(filePath, 'r')
@@ -14,7 +25,7 @@ def readGameState(filePath):
         col = int(boardDimensions[2])
          
 	#updating game state with all 0
-	sudoku = [[0 for x in range(12)] for x in range(12)]
+	sudoku = [[0 for x in range(dimension)] for x in range(dimension)]
 	
 	#check for dimension of given board
 	if (row * col) != dimension:
@@ -24,18 +35,19 @@ def readGameState(filePath):
         # counting number of empty spaces.
  	emptySpaces = 0 		
 	#update sudoku
-	for i in range(12):		
+	for i in range(dimension):		
 		rawState = fileHandle.readline().strip(';\n').split(',')
-		for j in range(12):
+		for j in range(dimension):
 			if rawState[j] == '-':
 				sudoku[i][j] = 0
 				emptySpaces += 1
-			elif int(rawState[j]) >= 1 and int(rawState[j]) <= 12:
+			elif int(rawState[j]) >= 1 and int(rawState[j]) <= dimension:
 				sudoku[i][j] = int(rawState[j])
 			else:
                                 print rawState[j]
 			 	print "Invalid Charachter in game state, check txt file"
 				exit(0)
 	
-	return sudoku, emptySpaces
+	return Board(sudoku, dimension, row, col) , emptySpaces
+
 	

@@ -1,0 +1,931 @@
+ First Time 
+[[[[2, 3, 4, 5], 0], [[2, 3, 8], 0], [[2, 3, 4, 5, 8], 0], [[2, 5, 8, 9], 0], [[2, 3, 6, 8, 9], 0], [[5, 6, 9], 0], [[], 0], [[2, 6, 8], 0], [[], 0]], [[[], 0], [[2, 3, 7, 8], 0], [[2, 3, 4, 5, 7, 8], 0], [[1, 2, 5, 7, 8], 0], [[2, 3, 7, 8], 0], [[1, 5, 7], 0], [[2, 3, 4, 8], 0], [[], 0], [[2, 3], 0]], [[[], 0], [[], 0], [[2, 3, 7, 8], 0], [[2, 7, 8], 0], [[2, 3, 6, 7, 8], 0], [[], 0], [[], 0], [[2, 6, 8], 0], [[2, 3], 0]], [[[], 0], [[1, 2, 3, 6, 7], 0], [[1, 2, 3, 6, 7], 0], [[1, 5, 7, 9], 0], [[7, 9], 0], [[1, 5, 7, 9], 0], [[1, 2, 3, 6], 0], [[], 0], [[2, 3, 5, 7], 0]], [[[3, 4], 0], [[1, 3, 7], 0], [[1, 3, 4, 7], 0], [[], 0], [[4, 7, 8], 0], [[], 0], [[], 0], [[1, 5, 7], 0], [[3, 5, 7], 0]], [[[2, 4, 9], 0], [[], 0], [[1, 2, 4, 6, 7], 0], [[1, 4, 7, 9], 0], [[4, 7, 9], 0], [[], 0], [[1, 2, 6], 0], [[1, 2, 6, 7], 0], [[], 0]], [[[2, 5], 0], [[1, 2, 6, 8], 0], [[], 0], [[], 0], [[2, 6, 7], 0], [[6, 7], 0], [[1, 2, 8], 0], [[1, 2, 5, 7, 8], 0], [[], 0]], [[[2], 0], [[], 0], [[1, 2, 8], 0], [[2, 7, 9], 0], [[], 0], [[7, 9], 0], [[1, 2, 8], 0], [[], 0], [[], 0]], [[[], 0], [[2, 3, 6], 0], [[2, 3, 5, 6], 0], [[2, 4, 9], 0], [[], 0], [[], 0], [[2], 0], [[2, 5], 0], [[2, 5, 9], 0]]]
+ FilledCells : 0  EmptyCells: 55
+ NoConflictsList [2] Co-ordinates (7, 0)
+ Number 2 No conflict List [2]
+ FilledCells : 1  EmptyCells: 55
+ NoConflictsList [5] Co-ordinates (6, 0)
+ Number 5 No conflict List [5]
+ FilledCells : 2  EmptyCells: 55
+ NoConflictsList [2] Co-ordinates (8, 6)
+ Number 2 No conflict List [2]
+ FilledCells : 3  EmptyCells: 55
+ NoConflictsList [5] Co-ordinates (8, 7)
+ Number 5 No conflict List [5]
+ FilledCells : 4  EmptyCells: 55
+ NoConflictsList [9] Co-ordinates (8, 8)
+ Number 9 No conflict List [9]
+ FilledCells : 5  EmptyCells: 55
+ NoConflictsList [4] Co-ordinates (8, 3)
+ Number 4 No conflict List [4]
+ FilledCells : 6  EmptyCells: 55
+ NoConflictsList [3, 4] Co-ordinates (0, 0)
+ Number 3 No conflict List [3, 4]
+ FilledCells : 7  EmptyCells: 55
+ NoConflictsList [4] Co-ordinates (4, 0)
+ Number 4 No conflict List [4]
+ FilledCells : 8  EmptyCells: 55
+ NoConflictsList [9] Co-ordinates (5, 0)
+ Number 9 No conflict List [9]
+ FilledCells : 9  EmptyCells: 55
+ NoConflictsList [2, 8] Co-ordinates (0, 1)
+ Number 2 No conflict List [2, 8]
+ FilledCells : 10  EmptyCells: 55
+ NoConflictsList [6, 8] Co-ordinates (0, 7)
+ Number 6 No conflict List [6, 8]
+ FilledCells : 11  EmptyCells: 55
+ NoConflictsList [8, 9] Co-ordinates (0, 4)
+ Number 8 No conflict List [8, 9]
+ FilledCells : 12  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (4, 4)
+ Number 7 No conflict List [7]
+ FilledCells : 13  EmptyCells: 55
+ NoConflictsList [9] Co-ordinates (3, 4)
+ Number 9 No conflict List [9]
+ FilledCells : 14  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (4, 7)
+ Number 1 No conflict List [1]
+ FilledCells : 15  EmptyCells: 55
+ NoConflictsList [3] Co-ordinates (4, 1)
+ Number 3 No conflict List [3]
+ FilledCells : 16  EmptyCells: 55
+ NoConflictsList [5] Co-ordinates (4, 8)
+ Number 5 No conflict List [5]
+ FilledCells : 17  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (5, 3)
+ Number 1 No conflict List [1]
+ FilledCells : 18  EmptyCells: 55
+ NoConflictsList [5] Co-ordinates (3, 3)
+ Number 5 No conflict List [5]
+ FilledCells : 19  EmptyCells: 55
+ NoConflictsList [9] Co-ordinates (0, 3)
+ Number 9 No conflict List [9]
+ FilledCells : 20  EmptyCells: 55
+ NoConflictsList [5] Co-ordinates (0, 5)
+ Number 5 No conflict List [5]
+ FilledCells : 21  EmptyCells: 55
+ NoConflictsList [4] Co-ordinates (0, 2)
+ Number 4 No conflict List [4]
+ FilledCells : 22  EmptyCells: 55
+ NoConflictsList [4] Co-ordinates (5, 4)
+ Number 4 No conflict List [4]
+ FilledCells : 23  EmptyCells: 55
+ NoConflictsList [6] Co-ordinates (5, 6)
+ Number 6 No conflict List [6]
+ FilledCells : 24  EmptyCells: 55
+ NoConflictsList [3] Co-ordinates (3, 6)
+ Number 3 No conflict List [3]
+ FilledCells : 25  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (7, 3)
+ Number 7 No conflict List [7]
+ FilledCells : 26  EmptyCells: 55
+ NoConflictsList [2] Co-ordinates (1, 3)
+ Number 2 No conflict List [2]
+ FilledCells : 27  EmptyCells: 55
+ NoConflictsList [3] Co-ordinates (1, 4)
+ Number 3 No conflict List [3]
+ FilledCells : 28  EmptyCells: 55
+ NoConflictsList [6] Co-ordinates (2, 4)
+ Number 6 No conflict List [6]
+ FilledCells : 29  EmptyCells: 55
+ NoConflictsList [2] Co-ordinates (6, 4)
+ Number 2 No conflict List [2]
+ FilledCells : 30  EmptyCells: 55
+ NoConflictsList [6] Co-ordinates (6, 5)
+ Number 6 No conflict List [6]
+ FilledCells : 31  EmptyCells: 55
+ NoConflictsList [9] Co-ordinates (7, 5)
+ Number 9 No conflict List [9]
+ FilledCells : 32  EmptyCells: 55
+ NoConflictsList [6] Co-ordinates (8, 1)
+ Number 6 No conflict List [6]
+ FilledCells : 33  EmptyCells: 55
+ NoConflictsList [3] Co-ordinates (8, 2)
+ Number 3 No conflict List [3]
+ FilledCells : 34  EmptyCells: 55
+ NoConflictsList [7, 8] Co-ordinates (1, 1)
+ Number 7 No conflict List [7, 8]
+ FilledCells : 35  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (1, 5)
+ Number 1 No conflict List [1]
+ FilledCells : 36  EmptyCells: 55
+ NoConflictsList [8] Co-ordinates (2, 2)
+ Number 8 No conflict List [8]
+ FilledCells : 37  EmptyCells: 55
+ NoConflictsList [5] Co-ordinates (1, 2)
+ Number 5 No conflict List [5]
+ FilledCells : 38  EmptyCells: 55
+ NoConflictsList [2] Co-ordinates (2, 7)
+ Number 2 No conflict List [2]
+ FilledCells : 39  EmptyCells: 55
+ NoConflictsList [3] Co-ordinates (2, 8)
+ Number 3 No conflict List [3]
+ FilledCells : 40  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (3, 1)
+ Number 1 No conflict List [1]
+ FilledCells : 41  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (5, 7)
+ Number 7 No conflict List [7]
+ FilledCells : 42  EmptyCells: 55
+ NoConflictsList [2] Co-ordinates (3, 8)
+ Number 2 No conflict List [2]
+ FilledCells : 43  EmptyCells: 55
+ NoConflictsList [2] Co-ordinates (5, 2)
+ Number 2 No conflict List [2]
+ FilledCells : 44  EmptyCells: 55
+ NoConflictsList [8] Co-ordinates (6, 1)
+ Number 8 No conflict List [8]
+ FilledCells : 45  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (6, 6)
+ Number 1 No conflict List [1]
+ FilledCells : 46  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (7, 2)
+ Number 1 No conflict List [1]
+ FilledCells : 47  EmptyCells: 55
+ NoConflictsList [8] Co-ordinates (7, 6)
+ Number 8 No conflict List [8]
+ FilledCells : 48  EmptyCells: 55
+ NoConflictsList [4] Co-ordinates (1, 6)
+ Number 4 No conflict List [4]
+ FilledCells : 49  EmptyCells: 55
+ NoConflictsList [6, 7] Co-ordinates (3, 2)
+ Number 6 No conflict List [6, 7]
+ FilledCells : 50  EmptyCells: 55
+ NoConflictsList [] Co-ordinates (-1, -1)
+Found List is Empty
+CellsChanged = []
+ Number 7 No conflict List [6, 7]
+ FilledCells : 50  EmptyCells: 55
+ NoConflictsList [] Co-ordinates (-1, -1)
+Found List is Empty
+CellsChanged = []
+CellsChanged = []
+CellsChanged = [(1, 6)]
+CellsChanged = []
+CellsChanged = [(7, 6)]
+CellsChanged = [(6, 6), (6, 7)]
+CellsChanged = []
+CellsChanged = [(3, 2)]
+CellsChanged = [(5, 2), (6, 7), (3, 8)]
+CellsChanged = [(3, 2), (6, 1)]
+CellsChanged = []
+CellsChanged = [(2, 8), (5, 7)]
+CellsChanged = []
+CellsChanged = [(2, 7), (1, 2), (7, 2)]
+CellsChanged = []
+CellsChanged = [(1, 2), (1, 5), (3, 1), (2, 2)]
+ Number 8 No conflict List [7, 8]
+ FilledCells : 35  EmptyCells: 55
+ NoConflictsList [4] Co-ordinates (1, 6)
+ Number 4 No conflict List [4]
+ FilledCells : 36  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (2, 2)
+ Number 7 No conflict List [7]
+ FilledCells : 37  EmptyCells: 55
+ NoConflictsList [5] Co-ordinates (1, 2)
+ Number 5 No conflict List [5]
+ FilledCells : 38  EmptyCells: 55
+ NoConflictsList [2] Co-ordinates (5, 2)
+ Number 2 No conflict List [2]
+ FilledCells : 39  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (5, 7)
+ Number 7 No conflict List [7]
+ FilledCells : 40  EmptyCells: 55
+ NoConflictsList [2] Co-ordinates (3, 8)
+ Number 2 No conflict List [2]
+ FilledCells : 41  EmptyCells: 55
+ NoConflictsList [3] Co-ordinates (2, 8)
+ Number 3 No conflict List [3]
+ FilledCells : 42  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (6, 1)
+ Number 1 No conflict List [1]
+ FilledCells : 43  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (3, 1)
+ Number 7 No conflict List [7]
+ FilledCells : 44  EmptyCells: 55
+ NoConflictsList [8] Co-ordinates (6, 6)
+ Number 8 No conflict List [8]
+ FilledCells : 45  EmptyCells: 55
+ NoConflictsList [8] Co-ordinates (7, 2)
+ Number 8 No conflict List [8]
+ FilledCells : 46  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (7, 6)
+ Number 1 No conflict List [1]
+ FilledCells : 47  EmptyCells: 55
+ NoConflictsList [1, 7] Co-ordinates (1, 5)
+ Number 1 No conflict List [1, 7]
+ FilledCells : 48  EmptyCells: 55
+ NoConflictsList [2, 8] Co-ordinates (2, 7)
+ Number 2 No conflict List [2, 8]
+ FilledCells : 49  EmptyCells: 55
+ NoConflictsList [6, 1] Co-ordinates (3, 2)
+ Number 6 No conflict List [6, 1]
+ FilledCells : 50  EmptyCells: 55
+ NoConflictsList [] Co-ordinates (-1, -1)
+Found List is Empty
+CellsChanged = []
+ Number 1 No conflict List [6, 1]
+ FilledCells : 50  EmptyCells: 55
+ NoConflictsList [] Co-ordinates (-1, -1)
+Found List is Empty
+CellsChanged = []
+CellsChanged = []
+ Number 8 No conflict List [2, 8]
+ FilledCells : 49  EmptyCells: 55
+ NoConflictsList [6, 1] Co-ordinates (3, 2)
+ Number 6 No conflict List [6, 1]
+ FilledCells : 50  EmptyCells: 55
+ NoConflictsList [] Co-ordinates (-1, -1)
+Found List is Empty
+CellsChanged = []
+ Number 1 No conflict List [6, 1]
+ FilledCells : 50  EmptyCells: 55
+ NoConflictsList [] Co-ordinates (-1, -1)
+Found List is Empty
+CellsChanged = []
+CellsChanged = []
+CellsChanged = []
+ Number 7 No conflict List [1, 7]
+ FilledCells : 48  EmptyCells: 55
+ NoConflictsList [2, 8] Co-ordinates (2, 7)
+ Number 2 No conflict List [2, 8]
+ FilledCells : 49  EmptyCells: 55
+ NoConflictsList [6, 1] Co-ordinates (3, 2)
+ Number 6 No conflict List [6, 1]
+ FilledCells : 50  EmptyCells: 55
+ NoConflictsList [] Co-ordinates (-1, -1)
+Found List is Empty
+CellsChanged = []
+ Number 1 No conflict List [6, 1]
+ FilledCells : 50  EmptyCells: 55
+ NoConflictsList [] Co-ordinates (-1, -1)
+Found List is Empty
+CellsChanged = []
+CellsChanged = []
+ Number 8 No conflict List [2, 8]
+ FilledCells : 49  EmptyCells: 55
+ NoConflictsList [6, 1] Co-ordinates (3, 2)
+ Number 6 No conflict List [6, 1]
+ FilledCells : 50  EmptyCells: 55
+ NoConflictsList [] Co-ordinates (-1, -1)
+Found List is Empty
+CellsChanged = []
+ Number 1 No conflict List [6, 1]
+ FilledCells : 50  EmptyCells: 55
+ NoConflictsList [] Co-ordinates (-1, -1)
+Found List is Empty
+CellsChanged = []
+CellsChanged = []
+CellsChanged = []
+CellsChanged = []
+CellsChanged = []
+CellsChanged = [(6, 7), (7, 6)]
+CellsChanged = []
+CellsChanged = [(6, 6), (3, 1), (7, 2)]
+CellsChanged = []
+CellsChanged = [(2, 8)]
+CellsChanged = [(6, 7), (3, 8)]
+CellsChanged = [(5, 7), (3, 2)]
+CellsChanged = []
+CellsChanged = [(1, 2), (3, 2), (5, 2)]
+CellsChanged = []
+CellsChanged = [(1, 2), (1, 6), (6, 1), (2, 2)]
+CellsChanged = []
+CellsChanged = [(8, 2), (3, 1)]
+CellsChanged = []
+CellsChanged = [(6, 1)]
+CellsChanged = []
+CellsChanged = [(6, 4)]
+CellsChanged = [(1, 8), (2, 4)]
+CellsChanged = [(1, 4), (1, 8), (2, 3), (2, 4)]
+CellsChanged = [(7, 5), (1, 3), (2, 3), (6, 5)]
+CellsChanged = [(3, 8), (1, 6)]
+CellsChanged = [(5, 2), (3, 6)]
+CellsChanged = []
+CellsChanged = [(1, 2)]
+CellsChanged = [(0, 2), (1, 5)]
+CellsChanged = [(0, 5), (7, 3)]
+CellsChanged = [(3, 5), (0, 3), (1, 3)]
+CellsChanged = [(5, 2), (1, 3), (3, 3), (3, 5)]
+CellsChanged = [(3, 8)]
+CellsChanged = [(4, 2), (4, 8), (3, 1), (8, 1), (3, 2)]
+CellsChanged = [(4, 1), (4, 2), (5, 7), (6, 7), (3, 6), (5, 6)]
+CellsChanged = [(3, 3), (3, 5)]
+CellsChanged = [(4, 1), (4, 2), (4, 7), (4, 8), (1, 4), (2, 4), (3, 4), (5, 4), (6, 4), (3, 3), (3, 5), (5, 3)]
+CellsChanged = [(0, 2), (0, 3), (1, 4), (2, 4), (4, 4), (1, 3), (2, 3)]
+ Number 9 No conflict List [8, 9]
+ FilledCells : 12  EmptyCells: 55
+ NoConflictsList [5] Co-ordinates (0, 5)
+ Number 5 No conflict List [5]
+ FilledCells : 13  EmptyCells: 55
+ NoConflictsList [8] Co-ordinates (0, 3)
+ Number 8 No conflict List [8]
+ FilledCells : 14  EmptyCells: 55
+ NoConflictsList [4] Co-ordinates (0, 2)
+ Number 4 No conflict List [4]
+ FilledCells : 15  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (3, 4)
+ Number 7 No conflict List [7]
+ FilledCells : 16  EmptyCells: 55
+ NoConflictsList [8] Co-ordinates (4, 4)
+ Number 8 No conflict List [8]
+ FilledCells : 17  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (5, 3)
+ Number 1 No conflict List [1]
+ FilledCells : 18  EmptyCells: 55
+ NoConflictsList [9] Co-ordinates (3, 5)
+ Number 9 No conflict List [9]
+ FilledCells : 19  EmptyCells: 55
+ NoConflictsList [5] Co-ordinates (3, 3)
+ Number 5 No conflict List [5]
+ FilledCells : 20  EmptyCells: 55
+ NoConflictsList [4] Co-ordinates (5, 4)
+ Number 4 No conflict List [4]
+ FilledCells : 21  EmptyCells: 55
+ NoConflictsList [6] Co-ordinates (5, 6)
+ Number 6 No conflict List [6]
+ FilledCells : 22  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (7, 5)
+ Number 7 No conflict List [7]
+ FilledCells : 23  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (1, 5)
+ Number 1 No conflict List [1]
+ FilledCells : 24  EmptyCells: 55
+ NoConflictsList [6] Co-ordinates (6, 5)
+ Number 6 No conflict List [6]
+ FilledCells : 25  EmptyCells: 55
+ NoConflictsList [2] Co-ordinates (6, 4)
+ Number 2 No conflict List [2]
+ FilledCells : 26  EmptyCells: 55
+ NoConflictsList [3] Co-ordinates (1, 4)
+ Number 3 No conflict List [3]
+ FilledCells : 27  EmptyCells: 55
+ NoConflictsList [2] Co-ordinates (1, 8)
+ Number 2 No conflict List [2]
+ FilledCells : 28  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (1, 3)
+ Number 7 No conflict List [7]
+ FilledCells : 29  EmptyCells: 55
+ NoConflictsList [8] Co-ordinates (1, 1)
+ Number 8 No conflict List [8]
+ FilledCells : 30  EmptyCells: 55
+ NoConflictsList [5] Co-ordinates (1, 2)
+ Number 5 No conflict List [5]
+ FilledCells : 31  EmptyCells: 55
+ NoConflictsList [4] Co-ordinates (1, 6)
+ Number 4 No conflict List [4]
+ FilledCells : 32  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (2, 2)
+ Number 7 No conflict List [7]
+ FilledCells : 33  EmptyCells: 55
+ NoConflictsList [2] Co-ordinates (2, 3)
+ Number 2 No conflict List [2]
+ FilledCells : 34  EmptyCells: 55
+ NoConflictsList [6] Co-ordinates (2, 4)
+ Number 6 No conflict List [6]
+ FilledCells : 35  EmptyCells: 55
+ NoConflictsList [8] Co-ordinates (2, 7)
+ Number 8 No conflict List [8]
+ FilledCells : 36  EmptyCells: 55
+ NoConflictsList [3] Co-ordinates (2, 8)
+ Number 3 No conflict List [3]
+ FilledCells : 37  EmptyCells: 55
+ NoConflictsList [2] Co-ordinates (5, 2)
+ Number 2 No conflict List [2]
+ FilledCells : 38  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (5, 7)
+ Number 7 No conflict List [7]
+ FilledCells : 39  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (4, 7)
+ Number 1 No conflict List [1]
+ FilledCells : 40  EmptyCells: 55
+ NoConflictsList [3] Co-ordinates (3, 6)
+ Number 3 No conflict List [3]
+ FilledCells : 41  EmptyCells: 55
+ NoConflictsList [3] Co-ordinates (4, 2)
+ Number 3 No conflict List [3]
+ FilledCells : 42  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (4, 1)
+ Number 7 No conflict List [7]
+ FilledCells : 43  EmptyCells: 55
+ NoConflictsList [5] Co-ordinates (4, 8)
+ Number 5 No conflict List [5]
+ FilledCells : 44  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (6, 1)
+ Number 1 No conflict List [1]
+ FilledCells : 45  EmptyCells: 55
+ NoConflictsList [6] Co-ordinates (3, 1)
+ Number 6 No conflict List [6]
+ FilledCells : 46  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (3, 2)
+ Number 1 No conflict List [1]
+ FilledCells : 47  EmptyCells: 55
+ NoConflictsList [8] Co-ordinates (6, 6)
+ Number 8 No conflict List [8]
+ FilledCells : 48  EmptyCells: 55
+ NoConflictsList [8] Co-ordinates (7, 2)
+ Number 8 No conflict List [8]
+ FilledCells : 49  EmptyCells: 55
+ NoConflictsList [9] Co-ordinates (7, 3)
+ Number 9 No conflict List [9]
+ FilledCells : 50  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (7, 6)
+ Number 1 No conflict List [1]
+ FilledCells : 51  EmptyCells: 55
+ NoConflictsList [3] Co-ordinates (8, 1)
+ Number 3 No conflict List [3]
+ FilledCells : 52  EmptyCells: 55
+ NoConflictsList [6] Co-ordinates (8, 2)
+ Number 6 No conflict List [6]
+ FilledCells : 53  EmptyCells: 55
+ NoConflictsList [] Co-ordinates (-1, -1)
+Found List is Empty
+CellsChanged = []
+CellsChanged = []
+CellsChanged = []
+CellsChanged = []
+CellsChanged = []
+CellsChanged = [(7, 6)]
+CellsChanged = []
+CellsChanged = [(3, 2), (8, 1)]
+CellsChanged = [(6, 6), (3, 1), (7, 2)]
+CellsChanged = []
+CellsChanged = []
+CellsChanged = [(4, 1), (8, 2)]
+CellsChanged = [(3, 1), (3, 2)]
+CellsChanged = [(4, 1), (4, 2), (6, 7), (3, 6)]
+CellsChanged = [(4, 7), (6, 7), (4, 8)]
+CellsChanged = [(5, 7), (3, 2)]
+CellsChanged = [(3, 8), (4, 8)]
+CellsChanged = [(6, 7)]
+CellsChanged = []
+CellsChanged = []
+CellsChanged = [(4, 2), (5, 2)]
+CellsChanged = []
+CellsChanged = []
+CellsChanged = [(1, 2), (1, 6), (6, 1), (2, 2)]
+CellsChanged = [(1, 1), (1, 2), (2, 3)]
+CellsChanged = [(1, 3), (2, 8), (3, 8), (2, 7)]
+CellsChanged = [(1, 6), (1, 8), (2, 4)]
+CellsChanged = [(1, 4), (2, 4)]
+CellsChanged = [(6, 1), (6, 4)]
+CellsChanged = []
+CellsChanged = [(7, 3), (1, 5), (6, 5)]
+CellsChanged = [(5, 2), (3, 6)]
+CellsChanged = []
+CellsChanged = [(3, 8)]
+CellsChanged = [(3, 3), (7, 5)]
+CellsChanged = [(5, 2), (5, 6), (5, 7), (1, 3), (3, 3), (3, 5)]
+CellsChanged = []
+CellsChanged = [(3, 1), (3, 2), (3, 3), (3, 5), (3, 8), (1, 4), (2, 4), (4, 4), (5, 4), (6, 4), (5, 3)]
+CellsChanged = [(1, 2)]
+CellsChanged = [(0, 2), (1, 3), (2, 3), (1, 4), (2, 4)]
+CellsChanged = [(0, 2), (0, 3), (1, 5), (3, 5), (1, 3)]
+CellsChanged = [(0, 3), (0, 5), (3, 4)]
+CellsChanged = [(0, 4), (0, 5), (2, 7), (5, 7)]
+ Number 8 No conflict List [6, 8]
+ FilledCells : 11  EmptyCells: 55
+ NoConflictsList [4, 5] Co-ordinates (0, 2)
+ Number 4 No conflict List [4, 5]
+ FilledCells : 12  EmptyCells: 55
+ NoConflictsList [5, 9] Co-ordinates (0, 3)
+ Number 5 No conflict List [5, 9]
+ FilledCells : 13  EmptyCells: 55
+ NoConflictsList [9, 6] Co-ordinates (0, 4)
+ Number 9 No conflict List [9, 6]
+ FilledCells : 14  EmptyCells: 55
+ NoConflictsList [6] Co-ordinates (0, 5)
+ Number 6 No conflict List [6]
+ FilledCells : 15  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (3, 4)
+ Number 7 No conflict List [7]
+ FilledCells : 16  EmptyCells: 55
+ NoConflictsList [8] Co-ordinates (4, 4)
+ Number 8 No conflict List [8]
+ FilledCells : 17  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (5, 3)
+ Number 1 No conflict List [1]
+ FilledCells : 18  EmptyCells: 55
+ NoConflictsList [9] Co-ordinates (3, 3)
+ Number 9 No conflict List [9]
+ FilledCells : 19  EmptyCells: 55
+ NoConflictsList [5] Co-ordinates (3, 5)
+ Number 5 No conflict List [5]
+ FilledCells : 20  EmptyCells: 55
+ NoConflictsList [4] Co-ordinates (5, 4)
+ Number 4 No conflict List [4]
+ FilledCells : 21  EmptyCells: 55
+ NoConflictsList [6] Co-ordinates (5, 6)
+ Number 6 No conflict List [6]
+ FilledCells : 22  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (6, 5)
+ Number 7 No conflict List [7]
+ FilledCells : 23  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (1, 5)
+ Number 1 No conflict List [1]
+ FilledCells : 24  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (6, 7)
+ Number 1 No conflict List [1]
+ FilledCells : 25  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (4, 7)
+ Number 7 No conflict List [7]
+ FilledCells : 26  EmptyCells: 55
+ NoConflictsList [2] Co-ordinates (5, 7)
+ Number 2 No conflict List [2]
+ FilledCells : 27  EmptyCells: 55
+ NoConflictsList [6] Co-ordinates (2, 7)
+ Number 6 No conflict List [6]
+ FilledCells : 28  EmptyCells: 55
+ NoConflictsList [3] Co-ordinates (3, 8)
+ Number 3 No conflict List [3]
+ FilledCells : 29  EmptyCells: 55
+ NoConflictsList [2] Co-ordinates (1, 8)
+ Number 2 No conflict List [2]
+ FilledCells : 30  EmptyCells: 55
+ NoConflictsList [3] Co-ordinates (1, 4)
+ Number 3 No conflict List [3]
+ FilledCells : 31  EmptyCells: 55
+ NoConflictsList [4] Co-ordinates (1, 6)
+ Number 4 No conflict List [4]
+ FilledCells : 32  EmptyCells: 55
+ NoConflictsList [2] Co-ordinates (2, 4)
+ Number 2 No conflict List [2]
+ FilledCells : 33  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (3, 6)
+ Number 1 No conflict List [1]
+ FilledCells : 34  EmptyCells: 55
+ NoConflictsList [6] Co-ordinates (3, 1)
+ Number 6 No conflict List [6]
+ FilledCells : 35  EmptyCells: 55
+ NoConflictsList [2] Co-ordinates (3, 2)
+ Number 2 No conflict List [2]
+ FilledCells : 36  EmptyCells: 55
+ NoConflictsList [5] Co-ordinates (4, 8)
+ Number 5 No conflict List [5]
+ FilledCells : 37  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (5, 2)
+ Number 7 No conflict List [7]
+ FilledCells : 38  EmptyCells: 55
+ NoConflictsList [8] Co-ordinates (2, 2)
+ Number 8 No conflict List [8]
+ FilledCells : 39  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (1, 1)
+ Number 7 No conflict List [7]
+ FilledCells : 40  EmptyCells: 55
+ NoConflictsList [5] Co-ordinates (1, 2)
+ Number 5 No conflict List [5]
+ FilledCells : 41  EmptyCells: 55
+ NoConflictsList [8] Co-ordinates (1, 3)
+ Number 8 No conflict List [8]
+ FilledCells : 42  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (2, 3)
+ Number 7 No conflict List [7]
+ FilledCells : 43  EmptyCells: 55
+ NoConflictsList [8] Co-ordinates (6, 1)
+ Number 8 No conflict List [8]
+ FilledCells : 44  EmptyCells: 55
+ NoConflictsList [6] Co-ordinates (6, 4)
+ Number 6 No conflict List [6]
+ FilledCells : 45  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (7, 2)
+ Number 1 No conflict List [1]
+ FilledCells : 46  EmptyCells: 55
+ NoConflictsList [3] Co-ordinates (4, 2)
+ Number 3 No conflict List [3]
+ FilledCells : 47  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (4, 1)
+ Number 1 No conflict List [1]
+ FilledCells : 48  EmptyCells: 55
+ NoConflictsList [9] Co-ordinates (7, 5)
+ Number 9 No conflict List [9]
+ FilledCells : 49  EmptyCells: 55
+ NoConflictsList [8] Co-ordinates (7, 6)
+ Number 8 No conflict List [8]
+ FilledCells : 50  EmptyCells: 55
+ NoConflictsList [3] Co-ordinates (8, 1)
+ Number 3 No conflict List [3]
+ FilledCells : 51  EmptyCells: 55
+ NoConflictsList [6] Co-ordinates (8, 2)
+ Number 6 No conflict List [6]
+ FilledCells : 52  EmptyCells: 55
+ NoConflictsList [] Co-ordinates (-1, -1)
+Found List is Empty
+CellsChanged = []
+CellsChanged = []
+CellsChanged = []
+CellsChanged = []
+CellsChanged = []
+CellsChanged = [(4, 1), (8, 2)]
+CellsChanged = [(4, 2)]
+CellsChanged = []
+CellsChanged = [(6, 6)]
+CellsChanged = []
+CellsChanged = []
+CellsChanged = []
+CellsChanged = [(1, 3)]
+CellsChanged = [(2, 3), (1, 2), (7, 2), (1, 1)]
+CellsChanged = [(1, 2), (2, 2)]
+CellsChanged = []
+CellsChanged = []
+CellsChanged = [(3, 2), (6, 1), (8, 1)]
+CellsChanged = [(3, 1), (3, 2)]
+CellsChanged = [(2, 3), (6, 4)]
+CellsChanged = []
+CellsChanged = [(1, 6), (2, 4)]
+CellsChanged = [(1, 3), (1, 4), (2, 8)]
+CellsChanged = [(3, 1), (3, 2), (3, 6), (1, 8), (2, 8), (4, 8)]
+CellsChanged = []
+CellsChanged = [(5, 2), (2, 7), (3, 8)]
+CellsChanged = [(4, 1), (4, 2), (4, 8), (5, 7)]
+CellsChanged = [(6, 1), (6, 6), (4, 7), (7, 6)]
+CellsChanged = []
+CellsChanged = [(6, 7), (1, 5), (7, 5), (7, 3)]
+CellsChanged = [(5, 2), (5, 7), (3, 6)]
+CellsChanged = []
+CellsChanged = [(3, 8)]
+CellsChanged = [(3, 5), (7, 3)]
+CellsChanged = [(5, 2), (5, 6), (5, 7), (1, 3), (3, 3), (3, 5)]
+CellsChanged = [(1, 4), (2, 4)]
+CellsChanged = [(3, 1), (3, 2), (3, 3), (3, 5), (3, 8), (1, 4), (2, 4), (4, 4), (5, 4), (6, 4), (5, 3)]
+CellsChanged = [(6, 5), (2, 4)]
+CellsChanged = [(0, 5), (3, 4)]
+ Number 6 No conflict List [9, 6]
+ FilledCells : 14  EmptyCells: 55
+ NoConflictsList [9] Co-ordinates (0, 5)
+ Number 9 No conflict List [9]
+ FilledCells : 15  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (7, 5)
+ Number 7 No conflict List [7]
+ FilledCells : 16  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (1, 5)
+ Number 1 No conflict List [1]
+ FilledCells : 17  EmptyCells: 55
+ NoConflictsList [5] Co-ordinates (3, 5)
+ Number 5 No conflict List [5]
+ FilledCells : 18  EmptyCells: 55
+ NoConflictsList [2] Co-ordinates (6, 4)
+ Number 2 No conflict List [2]
+ FilledCells : 19  EmptyCells: 55
+ NoConflictsList [6] Co-ordinates (6, 5)
+ Number 6 No conflict List [6]
+ FilledCells : 20  EmptyCells: 55
+ NoConflictsList [9] Co-ordinates (7, 3)
+ Number 9 No conflict List [9]
+ FilledCells : 21  EmptyCells: 55
+ NoConflictsList [7, 8] Co-ordinates (1, 1)
+ Number 7 No conflict List [7, 8]
+ FilledCells : 22  EmptyCells: 55
+ NoConflictsList [8] Co-ordinates (2, 2)
+ Number 8 No conflict List [8]
+ FilledCells : 23  EmptyCells: 55
+ NoConflictsList [5] Co-ordinates (1, 2)
+ Number 5 No conflict List [5]
+ FilledCells : 24  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (7, 2)
+ Number 1 No conflict List [1]
+ FilledCells : 25  EmptyCells: 55
+ NoConflictsList [8] Co-ordinates (6, 1)
+ Number 8 No conflict List [8]
+ FilledCells : 26  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (6, 6)
+ Number 1 No conflict List [1]
+ FilledCells : 27  EmptyCells: 55
+ NoConflictsList [6] Co-ordinates (5, 6)
+ Number 6 No conflict List [6]
+ FilledCells : 28  EmptyCells: 55
+ NoConflictsList [3] Co-ordinates (3, 6)
+ Number 3 No conflict List [3]
+ FilledCells : 29  EmptyCells: 55
+ NoConflictsList [4] Co-ordinates (1, 6)
+ Number 4 No conflict List [4]
+ FilledCells : 30  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (6, 7)
+ Number 7 No conflict List [7]
+ FilledCells : 31  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (4, 7)
+ Number 1 No conflict List [1]
+ FilledCells : 32  EmptyCells: 55
+ NoConflictsList [3] Co-ordinates (4, 1)
+ Number 3 No conflict List [3]
+ FilledCells : 33  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (4, 2)
+ Number 7 No conflict List [7]
+ FilledCells : 34  EmptyCells: 55
+ NoConflictsList [8] Co-ordinates (4, 4)
+ Number 8 No conflict List [8]
+ FilledCells : 35  EmptyCells: 55
+ NoConflictsList [3] Co-ordinates (1, 4)
+ Number 3 No conflict List [3]
+ FilledCells : 36  EmptyCells: 55
+ NoConflictsList [2] Co-ordinates (1, 8)
+ Number 2 No conflict List [2]
+ FilledCells : 37  EmptyCells: 55
+ NoConflictsList [8] Co-ordinates (1, 3)
+ Number 8 No conflict List [8]
+ FilledCells : 38  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (2, 4)
+ Number 7 No conflict List [7]
+ FilledCells : 39  EmptyCells: 55
+ NoConflictsList [2] Co-ordinates (2, 3)
+ Number 2 No conflict List [2]
+ FilledCells : 40  EmptyCells: 55
+ NoConflictsList [6] Co-ordinates (2, 7)
+ Number 6 No conflict List [6]
+ FilledCells : 41  EmptyCells: 55
+ NoConflictsList [3] Co-ordinates (2, 8)
+ Number 3 No conflict List [3]
+ FilledCells : 42  EmptyCells: 55
+ NoConflictsList [9] Co-ordinates (3, 4)
+ Number 9 No conflict List [9]
+ FilledCells : 43  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (3, 8)
+ Number 7 No conflict List [7]
+ FilledCells : 44  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (3, 3)
+ Number 1 No conflict List [1]
+ FilledCells : 45  EmptyCells: 55
+ NoConflictsList [6] Co-ordinates (3, 1)
+ Number 6 No conflict List [6]
+ FilledCells : 46  EmptyCells: 55
+ NoConflictsList [2] Co-ordinates (3, 2)
+ Number 2 No conflict List [2]
+ FilledCells : 47  EmptyCells: 55
+ NoConflictsList [5] Co-ordinates (4, 8)
+ Number 5 No conflict List [5]
+ FilledCells : 48  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (5, 3)
+ Number 7 No conflict List [7]
+ FilledCells : 49  EmptyCells: 55
+ NoConflictsList [4] Co-ordinates (5, 4)
+ Number 4 No conflict List [4]
+ FilledCells : 50  EmptyCells: 55
+ NoConflictsList [2] Co-ordinates (5, 7)
+ Number 2 No conflict List [2]
+ FilledCells : 51  EmptyCells: 55
+ NoConflictsList [8] Co-ordinates (7, 6)
+ Number 8 No conflict List [8]
+ FilledCells : 52  EmptyCells: 55
+ NoConflictsList [6, 3] Co-ordinates (8, 2)
+ Number 6 No conflict List [6, 3]
+ FilledCells : 53  EmptyCells: 55
+ NoConflictsList [] Co-ordinates (-1, -1)
+Found List is Empty
+CellsChanged = []
+ Number 3 No conflict List [6, 3]
+ FilledCells : 53  EmptyCells: 55
+ NoConflictsList [] Co-ordinates (-1, -1)
+Found List is Empty
+CellsChanged = []
+CellsChanged = []
+CellsChanged = []
+CellsChanged = []
+CellsChanged = []
+CellsChanged = []
+CellsChanged = [(5, 2)]
+CellsChanged = [(3, 2), (8, 1)]
+CellsChanged = [(3, 1), (5, 3)]
+CellsChanged = [(3, 3)]
+CellsChanged = []
+CellsChanged = []
+CellsChanged = []
+CellsChanged = []
+CellsChanged = [(2, 3), (3, 4), (5, 4)]
+CellsChanged = []
+CellsChanged = [(1, 3), (2, 8), (3, 8), (2, 7)]
+CellsChanged = [(1, 8), (2, 4)]
+CellsChanged = [(1, 4)]
+CellsChanged = [(4, 4), (4, 8), (3, 2), (5, 2)]
+CellsChanged = [(4, 2), (8, 1)]
+CellsChanged = [(4, 1), (5, 7)]
+CellsChanged = [(4, 7), (5, 7)]
+CellsChanged = []
+CellsChanged = [(3, 1), (3, 2), (3, 8), (1, 6), (4, 8)]
+CellsChanged = [(5, 2), (5, 7), (3, 6)]
+CellsChanged = [(6, 7), (3, 6), (5, 6)]
+CellsChanged = [(6, 6)]
+CellsChanged = [(7, 6), (3, 2), (4, 2), (5, 2), (6, 1)]
+CellsChanged = []
+CellsChanged = [(2, 3), (2, 4), (1, 2), (7, 2)]
+CellsChanged = [(1, 2), (1, 3), (1, 4), (3, 1), (4, 1), (2, 2)]
+ Number 8 No conflict List [7, 8]
+ FilledCells : 22  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (2, 2)
+ Number 7 No conflict List [7]
+ FilledCells : 23  EmptyCells: 55
+ NoConflictsList [5] Co-ordinates (1, 2)
+ Number 5 No conflict List [5]
+ FilledCells : 24  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (6, 1)
+ Number 1 No conflict List [1]
+ FilledCells : 25  EmptyCells: 55
+ NoConflictsList [8] Co-ordinates (6, 6)
+ Number 8 No conflict List [8]
+ FilledCells : 26  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (6, 7)
+ Number 7 No conflict List [7]
+ FilledCells : 27  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (4, 7)
+ Number 1 No conflict List [1]
+ FilledCells : 28  EmptyCells: 55
+ NoConflictsList [3] Co-ordinates (4, 2)
+ Number 3 No conflict List [3]
+ FilledCells : 29  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (4, 1)
+ Number 7 No conflict List [7]
+ FilledCells : 30  EmptyCells: 55
+ NoConflictsList [6] Co-ordinates (3, 1)
+ Number 6 No conflict List [6]
+ FilledCells : 31  EmptyCells: 55
+ NoConflictsList [3] Co-ordinates (3, 6)
+ Number 3 No conflict List [3]
+ FilledCells : 32  EmptyCells: 55
+ NoConflictsList [4] Co-ordinates (1, 6)
+ Number 4 No conflict List [4]
+ FilledCells : 33  EmptyCells: 55
+ NoConflictsList [8] Co-ordinates (4, 4)
+ Number 8 No conflict List [8]
+ FilledCells : 34  EmptyCells: 55
+ NoConflictsList [3] Co-ordinates (2, 4)
+ Number 3 No conflict List [3]
+ FilledCells : 35  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (1, 4)
+ Number 7 No conflict List [7]
+ FilledCells : 36  EmptyCells: 55
+ NoConflictsList [2] Co-ordinates (1, 3)
+ Number 2 No conflict List [2]
+ FilledCells : 37  EmptyCells: 55
+ NoConflictsList [3] Co-ordinates (1, 8)
+ Number 3 No conflict List [3]
+ FilledCells : 38  EmptyCells: 55
+ NoConflictsList [8] Co-ordinates (2, 3)
+ Number 8 No conflict List [8]
+ FilledCells : 39  EmptyCells: 55
+ NoConflictsList [2] Co-ordinates (2, 8)
+ Number 2 No conflict List [2]
+ FilledCells : 40  EmptyCells: 55
+ NoConflictsList [6] Co-ordinates (2, 7)
+ Number 6 No conflict List [6]
+ FilledCells : 41  EmptyCells: 55
+ NoConflictsList [9] Co-ordinates (3, 4)
+ Number 9 No conflict List [9]
+ FilledCells : 42  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (3, 8)
+ Number 7 No conflict List [7]
+ FilledCells : 43  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (3, 3)
+ Number 1 No conflict List [1]
+ FilledCells : 44  EmptyCells: 55
+ NoConflictsList [2] Co-ordinates (3, 2)
+ Number 2 No conflict List [2]
+ FilledCells : 45  EmptyCells: 55
+ NoConflictsList [5] Co-ordinates (4, 8)
+ Number 5 No conflict List [5]
+ FilledCells : 46  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (5, 2)
+ Number 1 No conflict List [1]
+ FilledCells : 47  EmptyCells: 55
+ NoConflictsList [7] Co-ordinates (5, 3)
+ Number 7 No conflict List [7]
+ FilledCells : 48  EmptyCells: 55
+ NoConflictsList [4] Co-ordinates (5, 4)
+ Number 4 No conflict List [4]
+ FilledCells : 49  EmptyCells: 55
+ NoConflictsList [6] Co-ordinates (5, 6)
+ Number 6 No conflict List [6]
+ FilledCells : 50  EmptyCells: 55
+ NoConflictsList [2] Co-ordinates (5, 7)
+ Number 2 No conflict List [2]
+ FilledCells : 51  EmptyCells: 55
+ NoConflictsList [8] Co-ordinates (7, 2)
+ Number 8 No conflict List [8]
+ FilledCells : 52  EmptyCells: 55
+ NoConflictsList [1] Co-ordinates (7, 6)
+ Number 1 No conflict List [1]
+ FilledCells : 53  EmptyCells: 55
+ NoConflictsList [3] Co-ordinates (8, 1)
+ Number 3 No conflict List [3]
+ FilledCells : 54  EmptyCells: 55
+ NoConflictsList [6] Co-ordinates (8, 2)
+ Number 6 No conflict List [6]
+ FilledCells : 55  EmptyCells: 55
+########### Returning True ##############
+backtrackingMRV:
+Execution Time: 0.0
+Consistency Checks: 0
+Solution: [[3, 2, 4, 5, 6, 9, 7, 8, 1], [6, 8, 5, 2, 7, 1, 4, 9, 3], [1, 9, 7, 8, 3, 4, 5, 6, 2], [8, 6, 2, 1, 9, 5, 3, 4, 7], [4, 7, 3, 6, 8, 2, 9, 1, 5], [9, 5, 1, 7, 4, 3, 6, 2, 8], [5, 1, 9, 3, 2, 6, 8, 7, 4], [2, 4, 8, 9, 5, 7, 1, 3, 6], [7, 3, 6, 4, 1, 8, 2, 5, 9]]
+
+backtrackingMRVfwd:
+Execution Time: 0.0
+Consistency Checks: 0
+Solution: [[], []]
+
+backtrackingMRVcp:
+Execution Time: 0.0
+Consistency Checks: 0
+Solution: [[], []]
+
+minConflict:
+Execution Time: 0.0
+Consistency Checks: 0
+Solution: [[]]
+

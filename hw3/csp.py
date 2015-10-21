@@ -93,59 +93,9 @@ def backtrackingMRV(filename):
     for i in range(board.dimension):
        for j in range(board.dimension):	    
 	   updateNeighbourConstraints(board, remainingConstraints, (i, j), REMOVE)
-    print " First Time "
-    print remainingConstraints
     solveSudokuBacktrackingMRV(board, remainingConstraints, 0, emptyCells)	
     return (board.gameState, 0)
 
-def updateNeighbourConstraints1(board, remainingConstraints, (row,col), operation, noConflictsList = None):
-    ##############################################
-    # Update all conflicts of (row, col)
-    #############################################	
-
-    cellVal = board.gameState[row][col]
-    if cellVal != 0 and operation == REMOVE:
-       # Initialize it to an empty list
-       remainingConstraints[row][col] = [[],0] 
-    elif operation == ADD:
-       # Add back the conflict list
-       remainingConstraints[row][col] = [noConflictsList, 0] 
-
-    # Check all current Row
-    for i in range(0, board.dimension):
-        if (cellVal in remainingConstraints[row][i][0] and operation == REMOVE):
-           remainingConstraints[row][i][0].remove(cellVal)
-           remainingConstraints[row][i][1] = 1
-        elif (operation == ADD and remainingConstraints[row][i][1]):
-           print " Appedning CellVal" + str(cellVal)
-	   remainingConstraints[row][i][0].append(cellVal)
-           remainingConstraints[row][i][1] = 0
-             
-    # Check all current Col
-    for i in range(0, board.dimension):
-        if (operation == REMOVE and cellVal in remainingConstraints[i][col][0]):
-           remainingConstraints[i][col][0].remove(cellVal)
-           remainingConstraints[i][col][1] = 1
-        elif (operation == ADD and remainingConstraints[i][col][1]):           
-	   remainingConstraints[i][col][0].append(cellVal)
-           remainingConstraints[i][col][1] = 0
-
-    # Check the boxes 
-    startRow = (row / board.boxRow) * board.boxRow
-    startCol = (col / board.boxCol) * board.boxCol
-
-    for i in range(0, board.boxRow):
-       for j in range(0, board.boxCol):
-          curRow = startRow + i
-          curCol = startCol + j
-          if (operation == REMOVE and cellVal in remainingConstraints[curRow][curCol][0]):
-             remainingConstraints[curRow][curCol][0].remove(cellVal)
-             remainingConstraints[curRow][curCol][1] = 1
-          elif (operation == ADD and remainingConstraints[curRow][curCol][1]):
-             if cellVal:
-	             remainingConstraints[curRow][curCol][0].append(cellVal)
-             remainingConstraints[curRow][curCol][1] = 0
-        
 def updateNeighbourConstraints(board, remainingConstraints, (row,col), operation, cellsChanged = [] ,noConflictsList = None):
     ##############################################
     # Update all conflicts of (row, col)
@@ -192,8 +142,6 @@ def updateNeighbourConstraints(board, remainingConstraints, (row,col), operation
              if cellVal not in remainingConstraints[curRow][curCol][0]:
        	         remainingConstraints[curRow][curCol][0].append(cellVal)
 
-#    print " Cells Changed ## " + str(cellsChanged)
-  
 def findMinValue(board, remainingConstraints):
     minTillNow = sys.maxint
     row = -1
@@ -210,40 +158,24 @@ def findMinValue(board, remainingConstraints):
 
 def solveSudokuBacktrackingMRV(board, remainingConstraints, filledCells, emptyCells):
     
-    #print "Remaining Constraints "
-    #pprint (remainingConstraints) 
-    print " FilledCells : " + str(filledCells) + "  EmptyCells: " + str(emptyCells)
     if filledCells == emptyCells:
-       print "########### Returning True ##############"
        return True    
     
     # Find the next minimum cell and its List.
     minCell, noConflictsList = findMinValue(board, remainingConstraints)
-    print " NoConflictsList " + str(noConflictsList) + " Co-ordinates "  + str(minCell)
    
     if not noConflictsList:
-        print "Found List is Empty"
         return False
     
     for number in noConflictsList:
-       print " Number " + str(number) + " No conflict List " + str(noConflictsList)
        board.gameState[minCell[0]][minCell[1]] = number
        cellsChanged = []
-     #  print " Before removing "
-     #  pprint (remainingConstraints)
        updateNeighbourConstraints(board, remainingConstraints, minCell, REMOVE, cellsChanged)
        if (solveSudokuBacktrackingMRV(board, remainingConstraints, filledCells + 1, emptyCells)):            
           return True
        # Backtracking
        	
-      # print "After Removing Remaining Constraints "
-      # pprint (remainingConstraints)
-       print "CellsChanged = " + str(cellsChanged)
-       
        updateNeighbourConstraints(board, remainingConstraints, minCell, ADD, cellsChanged, noConflictsList)	
-      # print " After Adding "
-      # pprint (remainingConstraints)
-
        board.gameState[minCell[0]][minCell[1]] = 0 
 
     return False

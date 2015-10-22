@@ -7,7 +7,6 @@ import copy
 # CONSTANTS
 REMOVE = 1
 ADD = 2
-
 ###########################################
 # you need to implement five funcitons here
 ###########################################
@@ -21,7 +20,7 @@ def backtracking(filename):
     ###
     board, emptyCells = readGame.readGameState(filename)
     solveSudokuBacktracking(board, 0, 0, 0, int(emptyCells))
-    return (board.gameState, 0)
+    return (board.gameState, board.NoOfChecks)
 
 def isValidMove(board, row, col, number):
     ###############################################	
@@ -54,7 +53,10 @@ def solveSudokuBacktracking(board, startRow, startCol, filledCells, emptyCells):
      
     if filledCells == emptyCells:
        return True
-	
+    
+    #increasing no of visited nodes
+    board.NoOfChecks += 1		
+    
     nextRow = startRow
     nextCol = startCol + 1
 	
@@ -94,7 +96,7 @@ def backtrackingMRV(filename):
        for j in range(board.dimension):	    
 	   updateNeighbourConstraints(board, remainingConstraints, (i, j), REMOVE)
     solveSudokuBacktrackingMRV(board, remainingConstraints, 0, emptyCells)	
-    return (board.gameState, 0)
+    return (board.gameState, board.NoOfChecks)
 
 def updateNeighbourConstraints(board, remainingConstraints, (row,col), operation, cellsChanged = [] ,noConflictsList = None):
     ##############################################
@@ -160,7 +162,10 @@ def solveSudokuBacktrackingMRV(board, remainingConstraints, filledCells, emptyCe
     
     if filledCells == emptyCells:
        return True    
-    
+
+    #increasing number of visited nodes	 
+    board.NoOfChecks += 1		 
+
     # Find the next minimum cell and its List.
     minCell, noConflictsList = findMinValue(board, remainingConstraints)
    
@@ -211,7 +216,7 @@ def backtrackingMRVcp(filename):
        for j in range(board.dimension):	    
 	   updateNeighbourConstraints(board, remainingConstraints, (i, j), REMOVE)
     solveSudokuBacktrackingMRVcp(board, remainingConstraints, 0, emptyCells)	
-    return (board.gameState, 0)   
+    return (board.gameState, board.NoOfChecks)   
 
 def checkConstraintPropagation(board, remainingConstraints, (row,col)):
     ##############################################
@@ -258,6 +263,9 @@ def solveSudokuBacktrackingMRVcp(board, remainingConstraints, filledCells, empty
     
     if filledCells == emptyCells:
        return True    
+   
+    #increasing no of visited nodes
+    board.NoOfChecks += 1
     
     # Find the next minimum cell and its List.
     minCell, noConflictsList = findMinValue(board, remainingConstraints)

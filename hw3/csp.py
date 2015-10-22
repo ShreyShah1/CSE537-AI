@@ -199,8 +199,90 @@ def backtrackingMRVcp(filename):
     # list as describe in the PDF with # of consistency
     # checks done
     ###
+    board, emptyCells = readGame.readGameState(filename)	    
+
+    # Each element in the remainingConstraints is a [list of of remaininig constraints, flag to indicate whether its been touched for 
+    # that particular iteration]
+
+    remainingConstraints = [[[range(1, board.dimension+1), 0] for x in range(board.dimension)] for x in range(board.dimension)]
+  
+    # Update the neighbour constraints values.
+    for i in range(board.dimension):
+       for j in range(board.dimension):	    
+	   updateNeighbourConstraints(board, remainingConstraints, (i, j), REMOVE)
+    solveSudokuBacktrackingMRVcp(board, remainingConstraints, 0, emptyCells)	
+    return (board.gameState, 0)   
+
+def checkConstraintPropagation(board, remainingConstraints, (row,col)):
+    ##############################################
+    # Checks all the neighbours whether any constraint
+    # propagation make the code return early
+    #############################################	
+
+    # Check all current Row
+    oneLength = {}
+    for i in range(0, board.dimension):
+	constraints = remainingConstraints[row][i][0]
+        if (1 == len(constraints)):
+           if constraints[0] in oneLength:
+              return False
+           oneLength[constraints[0]] = 0
+             
     
-    return ([[],[]], 0)
+    # Check all current Col
+    oneLength = {}
+    for i in range(0, board.dimension):
+       	constraints = remainingConstraints[i][col][0]
+        if (1 == len(constraints)):
+           if constraints[0] in oneLength:
+              return False
+           oneLength[constraints[0]] = 0
+ 
+    # Check the boxes 
+    oneLength = {}
+    startRow = (row / board.boxRow) * board.boxRow
+    startCol = (col / board.boxCol) * board.boxCol
+
+    for i in range(0, board.boxRow):
+       for j in range(0, board.boxCol):
+          curRow = startRow + i
+          curCol = startCol + j   
+          constraints = remainingConstraints[curRow][curCol][0]
+          if (1 == len(constraints)):
+             if constraints[0] in oneLength:
+                return False
+             oneLength[constraints[0]] = 0
+    return True
+            
+def solveSudokuBacktrackingMRVcp(board, remainingConstraints, filledCells, emptyCells):
+    
+    if filledCells == emptyCells:
+       return True    
+    
+    # Find the next minimum cell and its List.
+    minCell, noConflictsList = findMinValue(board, remainingConstraints)
+   
+    if not noConflictsList:
+        return False
+    
+    for number in noConflictsList:
+       board.gameState[minCell[0]][minCell[1]] = number
+       cellsChanged = []
+       updateNeighbourConstraints(board, remainingConstraints, minCell, REMOVE, cellsChanged)
+       # Checking the constraint Propagation here.
+       if (not checkConstraintPropagation(board, remainingConstraints, minCell)):
+          updateNeighbourConstraints(board, remainingConstraints, minCell, ADD, cellsChanged, noConflictsList)
+          board.gameState[minCell[0]][minCell[1]] = 0
+	  return False
+
+       if (solveSudokuBacktrackingMRVcp(board, remainingConstraints, filledCells + 1, emptyCells)):            
+          return True
+       # Backtracking
+       	
+       updateNeighbourConstraints(board, remainingConstraints, minCell, ADD, cellsChanged, noConflictsList)	
+       board.gameState[minCell[0]][minCell[1]] = 0 
+
+    return False
 
 def minConflict(filename):
     ###

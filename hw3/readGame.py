@@ -14,7 +14,7 @@ class Board(object):
                 self.dimension = dimension
 		self.boxRow = boxRow
                 self.boxCol = boxCol
-	 
+		self.NoOfChecks = 0
 
 def readGameState(filePath):
 	#Reading file

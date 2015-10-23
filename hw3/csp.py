@@ -1,6 +1,6 @@
 import readGame
-import Queue as Q
 import sys
+from collections import deque
 from pprint import pprint
 import copy
 ################################
@@ -19,7 +19,8 @@ def backtracking(filename):
     # checks done
     ###
     board, emptyCells = readGame.readGameState(filename)
-    solveSudokuBacktracking(board, 0, 0, 0, int(emptyCells))
+    if (False == solveSudokuBacktracking(board, 0, 0, 0, int(emptyCells))):
+        return (" ERROR --> Board Not Solvable", 0 )
     return (board.gameState, board.NoOfChecks)
 
 def isValidMove(board, row, col, number):
@@ -89,13 +90,14 @@ def backtrackingMRV(filename):
     # Each element in the remainingConstraints is a [list of of remaininig constraints, flag to indicate whether its been touched for 
     # that particular iteration]
 
-    remainingConstraints = [[[range(1, board.dimension+1), 0] for x in range(board.dimension)] for x in range(board.dimension)]
+    remainingConstraints = [[[range(1, board.dimension + 1), 0] for x in range(board.dimension)] for x in range(board.dimension)]
   
     # Update the neighbour constraints values.
     for i in range(board.dimension):
        for j in range(board.dimension):	    
 	   updateNeighbourConstraints(board, remainingConstraints, (i, j), REMOVE)
-    solveSudokuBacktrackingMRV(board, remainingConstraints, 0, emptyCells)	
+    if (False == solveSudokuBacktrackingMRV(board, remainingConstraints, 0, emptyCells)):
+       	   return (" ERROR --> Board Not Solvable", 0 )
     return (board.gameState, board.NoOfChecks)
 
 def updateNeighbourConstraints(board, remainingConstraints, (row,col), operation, cellsChanged = [] ,noConflictsList = None):
@@ -151,7 +153,7 @@ def findMinValue(board, remainingConstraints):
     for i in range(0, board.dimension):
        for j in range(0, board.dimension):
           constraintsList = remainingConstraints[i][j][0]
-          if constraintsList and minTillNow > len(constraintsList):
+          if ((board.gameState[i][j] == 0 or constraintsList) and minTillNow > len(constraintsList)):
              minTillNow = len(constraintsList)
              row = i
              col = j
@@ -178,8 +180,8 @@ def solveSudokuBacktrackingMRV(board, remainingConstraints, filledCells, emptyCe
        updateNeighbourConstraints(board, remainingConstraints, minCell, REMOVE, cellsChanged)
        if (solveSudokuBacktrackingMRV(board, remainingConstraints, filledCells + 1, emptyCells)):            
           return True
+
        # Backtracking
-       	
        updateNeighbourConstraints(board, remainingConstraints, minCell, ADD, cellsChanged, noConflictsList)	
        board.gameState[minCell[0]][minCell[1]] = 0 
 
@@ -194,8 +196,60 @@ def backtrackingMRVfwd(filename):
     # list as describe in the PDF with # of consistency
     # checks done
     ###
+    board, emptyCells = readGame.readGameState(filename)	    
+
+    # Each element in the remainingConstraints is a [list of of remaininig constraints, flag to indicate whether its been touched for 
+    # that particular iteration]
+
+    remainingConstraints = [[[range(1, board.dimension + 1), 0] for x in range(board.dimension)] for x in range(board.dimension)]
+  
+    # Update the neighbour constraints values.
+    for i in range(board.dimension):
+       for j in range(board.dimension):	    
+	   updateNeighbourConstraints(board, remainingConstraints, (i, j), REMOVE)
+    if (False == solveSudokuBacktrackingMRVfwd(board, remainingConstraints, 0, emptyCells)):
+       	   return (" ERROR --> Board Not Solvable", 0 )
+    return (board.gameState, board.NoOfChecks)
+
+def forwardChecking(board, remainingConstraints ,cellsChanged):
+    for cell in cellsChanged:
+       if (board.gameState[cell[0]][cell[1]] == 0 and len(remainingConstraints[cell[0]][cell[1]][0]) == 0):
+           return False
+    return True
+
+def solveSudokuBacktrackingMRVfwd(board, remainingConstraints, filledCells, emptyCells):
     
-    return ([[],[]], 0)
+    if filledCells == emptyCells:
+       return True    
+
+    #increasing number of visited nodes	 
+    board.NoOfChecks += 1		 
+
+    # Find the next minimum cell and its List.
+    minCell, noConflictsList = findMinValue(board, remainingConstraints)
+   
+    if not noConflictsList:
+        return False
+    
+    for number in noConflictsList:
+       board.gameState[minCell[0]][minCell[1]] = number
+       cellsChanged = []
+       updateNeighbourConstraints(board, remainingConstraints, minCell, REMOVE, cellsChanged)
+
+       if (False == forwardChecking(board, remainingConstraints, cellsChanged)):
+          #Backtrack and return.
+          updateNeighbourConstraints(board, remainingConstraints, minCell, ADD, cellsChanged, noConflictsList)	
+          board.gameState[minCell[0]][minCell[1]] = 0
+          return False 
+
+       if (solveSudokuBacktrackingMRVfwd(board, remainingConstraints, filledCells + 1, emptyCells)):            
+          return True
+
+       # Backtracking
+       updateNeighbourConstraints(board, remainingConstraints, minCell, ADD, cellsChanged, noConflictsList)	
+       board.gameState[minCell[0]][minCell[1]] = 0 
+
+    return False
 
 def backtrackingMRVcp(filename):
     ###
@@ -215,52 +269,62 @@ def backtrackingMRVcp(filename):
     for i in range(board.dimension):
        for j in range(board.dimension):	    
 	   updateNeighbourConstraints(board, remainingConstraints, (i, j), REMOVE)
-    solveSudokuBacktrackingMRVcp(board, remainingConstraints, 0, emptyCells)	
+    if (False == solveSudokuBacktrackingMRVcp(board, remainingConstraints, 0, emptyCells)):  
+         return (" ERROR --> Board Not solvable ", 0)	
     return (board.gameState, board.NoOfChecks)   
 
-def checkConstraintPropagation(board, remainingConstraints, (row,col)):
-    ##############################################
-    # Checks all the neighbours whether any constraint
-    # propagation make the code return early
-    #############################################	
+def putAllArcs(board, (row, col), queue):
+    # Put all rows.
+    for i in range(0, board.dimension):
+       arc = [(row, i), (row, col)]
+       if (arc not in queue and i != col):
+          queue.append(arc) 
 
-    # Check all current Row
-    oneLength = {}
+    # Put all Cols.
     for i in range(0, board.dimension):
-	constraints = remainingConstraints[row][i][0]
-        if (1 == len(constraints)):
-           if constraints[0] in oneLength:
-              return False
-           oneLength[constraints[0]] = 0
-             
-    
-    # Check all current Col
-    oneLength = {}
-    for i in range(0, board.dimension):
-       	constraints = remainingConstraints[i][col][0]
-        if (1 == len(constraints)):
-           if constraints[0] in oneLength:
-              return False
-           oneLength[constraints[0]] = 0
- 
-    # Check the boxes 
-    oneLength = {}
+       arc = [(i, col), (row, col)]
+       if (arc not in queue and i != row):
+          queue.append(arc)
+   
+    # Put all boxes.
     startRow = (row / board.boxRow) * board.boxRow
     startCol = (col / board.boxCol) * board.boxCol
 
     for i in range(0, board.boxRow):
        for j in range(0, board.boxCol):
           curRow = startRow + i
-          curCol = startCol + j   
-          constraints = remainingConstraints[curRow][curCol][0]
-          if (1 == len(constraints)):
-             if constraints[0] in oneLength:
-                return False
-             oneLength[constraints[0]] = 0
-    return True
-            
-def solveSudokuBacktrackingMRVcp(board, remainingConstraints, filledCells, emptyCells):
-    
+          curCol = startCol + j
+	  arc = [(curRow, curCol), (row, col)]
+          if (arc not in queue and curRow != row and curCol != col):
+               queue.append(arc)
+
+def removeConstraintPropagation(board, remainingConstraints, cell, contraintCellsChanged):
+    queue = deque() 
+    # Put all the neighbours in queue
+    putAllArcs(board, cell, queue)
+
+    # Remove all the constraints and add new neighbours if required.	
+    while len(queue) != 0:
+       # arc is made up of (x --> y)
+       arc = queue.popleft()
+       # This means x --> y if the element in y is present in x the definitely we have to remove it.
+       x = remainingConstraints[arc[0][0]][arc[0][1]][0]
+       y = remainingConstraints[arc[1][0]][arc[1][1]][0]
+       if (len(y) != 0 and y[0] in x):
+          x.remove(y[0])
+          			#(valueChanged, cell)
+          contraintCellsChanged.append([y[0], arc[0]])
+       	  # Just push all the arc's only if the we can make decision i.e len == 1   
+          if (len(x) == 1):
+          	putAllArcs(board, arc[0], queue)
+	   
+def addConstraintPropagation(board, remainingConstraints, constraintsCellsChanged):
+    for val_cell in constraintsCellsChanged:
+       row = val_cell[1][0]
+       col = val_cell[1][1]
+       remainingConstraints[row][col][0].append(val_cell[0])
+
+def solveSudokuBacktrackingMRVcp(board, remainingConstraints, filledCells, emptyCells): 
     if filledCells == emptyCells:
        return True    
    
@@ -276,17 +340,18 @@ def solveSudokuBacktrackingMRVcp(board, remainingConstraints, filledCells, empty
     for number in noConflictsList:
        board.gameState[minCell[0]][minCell[1]] = number
        cellsChanged = []
+       constraintCellsChanged = []
        updateNeighbourConstraints(board, remainingConstraints, minCell, REMOVE, cellsChanged)
        # Checking the constraint Propagation here.
-       if (not checkConstraintPropagation(board, remainingConstraints, minCell)):
-          updateNeighbourConstraints(board, remainingConstraints, minCell, ADD, cellsChanged, noConflictsList)
-          board.gameState[minCell[0]][minCell[1]] = 0
-	  return False
+       for cell in cellsChanged:
+           if (len(remainingConstraints[cell[0]][cell[1]][0]) == 1):
+       		removeConstraintPropagation(board, remainingConstraints, cell, constraintCellsChanged) 
 
        if (solveSudokuBacktrackingMRVcp(board, remainingConstraints, filledCells + 1, emptyCells)):            
           return True
        # Backtracking
        	
+       addConstraintPropagation(board, remainingConstraints, constraintCellsChanged)
        updateNeighbourConstraints(board, remainingConstraints, minCell, ADD, cellsChanged, noConflictsList)	
        board.gameState[minCell[0]][minCell[1]] = 0 
 

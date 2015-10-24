@@ -3,6 +3,7 @@ import Queue as Q
 import sys
 from pprint import pprint
 import copy
+import random
 ################################
 # CONSTANTS
 REMOVE = 1
@@ -299,5 +300,147 @@ def minConflict(filename):
     # list as describe in the PDF with # of consistency
     # checks done
     ###
+
+    board, emptyCells = readGame.readGameState(filename)	    
+
+    pprint(board.gameState)
+    board, originalGameState = randomAssignmentOfValues(board) 
+  
+    print "random"
+    pprint(board.gameState)
+	 
+    conflict_list = []
+    conflictBoard = [[0 for x in range(board.dimension)] for x in range(board.dimension)] 
+    noOfConflicts, conflict_list = calculateNoOfConflicts(board, originalGameState, conflictBoard)
     
-    return ([[]], 0)
+
+    while(noOfConflicts != 0):
+	print "-------------------#################################################"
+	num = random.randint(0, len(conflict_list)-1)
+	row = conflict_list[num][0]
+	col = conflict_list[num][1]
+	print "row " + str(row) + "  col "+ str(col) 
+	
+	minConflict = conflictBoard[row][col]
+        val = board.gameState[row][col]
+	val_list = []
+        val_list.append(val)
+        print "org"
+	print val_list	
+        if(originalGameState[row][col] == 0 and conflictBoard[row][col]!= 0 ):
+		for i in range(1, board.dimension + 1):
+                     if i != board.gameState[row][col]:			
+	                 curConflict = checkNeighborConflicts(board, row, col, i)
+                         if (minConflict > curConflict):
+                              minConflict = curConflict
+                              val = i
+			      print "old"+ str(val_list)
+			      del val_list[:]
+			      val_list.append(i)
+                              print "new" +str(val_list)
+			 elif (minConflict == curConflict):
+			      val_list.append(i)
+		if(board.gameState[row][col] in val_list):
+			print "nwnejwknejk"+str(val_list)
+			val_list.remove(board.gameState[row][col])
+			
+			if(len(val_list) != 0):
+			    board.gameState[row][col] = random.choice(val_list)
+			"""else:
+			    minC = -1
+			    for i in range(1, board.dimension + 1):
+                   		if i != board.gameState[row][col]:			
+	                	        curConflict = checkNeighborConflicts(board, row, col, i)
+					if(minC == -1):
+						minC = curConflict
+			                elif(minC > curConflict):
+						minC = curConflict
+						del val_list[:]
+						val_list.append(i)
+	        			elif(minC == curConflict):
+						val_list.append(i)
+                            board.gameState[row][col] = random.choice(val_list)"""
+                else:
+        		board.gameState[row][col] = val
+		
+                noOfConflicts, conflict_list = calculateNoOfConflicts(board, originalGameState, conflictBoard)
+        print "No ofconflict "+ str(noOfConflicts)
+	print conflict_list
+        print "--------------------Conflict "
+	pprint(conflictBoard)
+	print "-------------------Actual"
+	pprint(board.gameState)
+     	print "####################################################################"
+	
+    return (board.gameState, 0)
+
+def randomAssignmentOfValues(board):
+    ###
+    # Randomly assign values in empty cells
+    ###
+
+    originalGameState = copy.deepcopy(board.gameState) 
+
+    for x in range(0, board.dimension):
+	for y in range(0, board.dimension):
+	    if(board.gameState[x][y] == 0):
+		#board.gameState[x][y] = random.randint(1, board.dimension)
+		val_list = [ v for v in range(1, board.dimension + 1)]
+   
+		for i in range(0, board.dimension):
+		    if(originalGameState[x][i] in val_list): 
+			val_list.remove(originalGameState[x][i]) 
+
+		for i in range(0, board.dimension):
+		    if(originalGameState[i][y] in val_list): 
+			val_list.remove(originalGameState[i][y]) 
+
+		startRow = (x / board.boxRow) * board.boxRow
+    		startCol = (y / board.boxCol) * board.boxCol
+		for i in range(startRow, startRow+board.boxRow):
+                    for j in range(startCol, startCol+board.boxCol):
+         	        if(originalGameState[i][j] in val_list):
+                              val_list.remove(originalGameState[i][j])
+                if(len(val_list) != 0):	
+		     board.gameState[x][y] = random.choice(val_list)
+	
+    return board, originalGameState
+
+def calculateNoOfConflicts(board, originalGameState, conflictBoard):
+    ###
+    # Calculate number of conflicts for given assignment of values
+    ###
+    
+    noOfConflicts = 0
+    conflict_list = []
+    for x in range(0, board.dimension):
+	for y in range(0, board.dimension):
+	   if(originalGameState[x][y] == 0):
+                 conflictBoard[x][y] = checkNeighborConflicts(board, x, y, board.gameState[x][y]) 
+	         noOfConflicts += conflictBoard[x][y]
+                 if(conflictBoard[x][y] != 0):
+			conflict_list.append((x,y))
+    return noOfConflicts, conflict_list
+     		
+
+def checkNeighborConflicts(board, x, y, value):
+    ###
+    # Check no of conflicts for particular cell
+    ###
+    noOfConflicts = 0
+   
+    for i in range(0, board.dimension):
+	if(value == board.gameState[i][y] and x != i):
+    	    noOfConflicts += 1
+ 
+    for i in range(0, board.dimension):
+	if(value == board.gameState[x][i] and y != i):
+    	    noOfConflicts += 1 
+      
+    startRow = (x / board.boxRow) * board.boxRow
+    startCol = (y / board.boxCol) * board.boxCol
+    for i in range(startRow, startRow+board.boxRow):
+        for j in range(startCol, startCol+board.boxCol):
+         	if(value == board.gameState[i][j] and x != i and y != j):
+			noOfConflicts += 1
+    return noOfConflicts

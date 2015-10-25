@@ -13,7 +13,8 @@ def main(args):
     ##########################################################
     # backtracking
     ##########################################################
-	tic = time.clock()
+        	
+        tic = time.clock()
 	solution, consistencyChecks = csp.backtracking(args.input)
 	toc = time.clock()
 	timeItr = toc - tic
@@ -22,11 +23,11 @@ def main(args):
 	print "Execution Time: " + str(timeItr)
 	print "Consistency Checks: " + str(consistencyChecks)
 	print "Solution: " + str(solution) + '\n'
-           
+          
     ##########################################################
     # backtracking + MRV
     ##########################################################
-     
+        
 	tic = time.clock()
 	solution, consistencyChecks = csp.backtrackingMRV(args.input)
 	toc = time.clock()
@@ -40,7 +41,8 @@ def main(args):
     ##########################################################
     # backtracking + MRV + fwd
     ##########################################################
-	tic = time.clock()
+	
+ 	tic = time.clock()
 	solution, consistencyChecks = csp.backtrackingMRVfwd(args.input)
 	toc = time.clock()
 	timeItr = toc - tic
@@ -49,6 +51,7 @@ def main(args):
 	print "Execution Time: " + str(timeItr)
 	print "Consistency Checks: " + str(consistencyChecks)
 	print "Solution: " + str(solution) + '\n'
+
     ##########################################################
     # backtracking + MRV + CP
     ##########################################################
@@ -62,9 +65,11 @@ def main(args):
 	print "Execution Time: " + str(timeItr)
 	print "Consistency Checks: " + str(consistencyChecks)
 	print "Solution: " + str(solution) + '\n'
+        
     ##########################################################
     # minConflict
     ##########################################################
+ 	
 	tic = time.clock()
 	solution, consistencyChecks = csp.minConflict(args.input)
 	toc = time.clock()
@@ -74,7 +79,7 @@ def main(args):
 	print "Execution Time: " + str(timeItr)
 	print "Consistency Checks: " + str(consistencyChecks)
 	print "Solution: " + str(solution) + '\n'
-    
+        
 
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser(description="HomeWork Three")

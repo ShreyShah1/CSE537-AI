@@ -4,6 +4,7 @@ from collections import deque
 from pprint import pprint
 import copy
 import random
+import math
 ################################
 # CONSTANTS
 REMOVE = 1
@@ -20,15 +21,26 @@ def backtracking(filename):
     # checks done
     ###
     board, emptyCells = readGame.readGameState(filename)
-    if (False == solveSudokuBacktracking(board, 0, 0, 0, int(emptyCells))):
+    
+    if (False == checkGivenBoardState(board) or False == solveSudokuBacktracking(board, 0, 0, 0, int(emptyCells))):
         return (" ERROR --> Board Not Solvable", 0 )
     return (board.gameState, board.NoOfChecks)
+
+def checkGivenBoardState(board):
+    #################################################
+    # Checks whether given board contains any conflicts
+    #################################################
+    for i in range(0, board.dimension): 
+       for j in range(0, board.dimension):
+           if (board.gameState[i][j] != 0):
+               if (0 != checkNeighborConflicts(board, i, j , board.gameState[i][j])):
+                    return False
 
 def isValidMove(board, row, col, number):
     ###############################################	
     # This util checks whether the number to be placed
     # is conflicting or not	
-    #############################################	
+    ###############################################	
 
     # Check all current Row
     for i in range(0, board.dimension):
@@ -52,7 +64,8 @@ def isValidMove(board, row, col, number):
     return True
     
 def solveSudokuBacktracking(board, startRow, startCol, filledCells, emptyCells):	
-     
+
+    # checks if all cells are filled
     if filledCells == emptyCells:
        return True
     
@@ -87,6 +100,8 @@ def backtrackingMRV(filename):
     # checks done
     ###
     board, emptyCells = readGame.readGameState(filename)	    
+    if (False == checkGivenBoardState(board)):
+        return (" ERROR --> Board Not Solvable", 0 )
 
     # Each element in the remainingConstraints is a [list of of remaininig constraints, flag to indicate whether its been touched for 
     # that particular iteration]
@@ -148,6 +163,11 @@ def updateNeighbourConstraints(board, remainingConstraints, (row,col), operation
        	         remainingConstraints[curRow][curCol][0].append(cellVal)
 
 def findMinValue(board, remainingConstraints):
+
+    ############################################
+    # Find cells which has minimum number of remaining constraints
+    ############################################
+
     minTillNow = sys.maxint
     row = -1
     col = -1
@@ -198,6 +218,9 @@ def backtrackingMRVfwd(filename):
     # checks done
     ###
     board, emptyCells = readGame.readGameState(filename)	    
+    if (False == checkGivenBoardState(board)):
+        return (" ERROR --> Board Not Solvable", 0 )
+
 
     # Each element in the remainingConstraints is a [list of of remaininig constraints, flag to indicate whether its been touched for 
     # that particular iteration]
@@ -260,6 +283,9 @@ def backtrackingMRVcp(filename):
     # checks done
     ###
     board, emptyCells = readGame.readGameState(filename)	    
+    if (False == checkGivenBoardState(board)):
+        return (" ERROR --> Board Not Solvable", 0 )
+
 
     # Each element in the remainingConstraints is a [list of of remaininig constraints, flag to indicate whether its been touched for 
     # that particular iteration]
@@ -365,21 +391,36 @@ def minConflict(filename):
     # list as describe in the PDF with # of consistency
     # checks done
     ###
-
     board, emptyCells = readGame.readGameState(filename)	    
-
-    pprint(board.gameState)
+    
+    # check if given board doesnot contain any conflicts
+    if (False == checkGivenBoardState(board)):
+        return (" ERROR --> Board Not Solvable", 0 )
+    
+    # randomnly assign values to empty cells in given board
     board, originalGameState = randomAssignmentOfValues(board) 
-  
-    print "random"
-    pprint(board.gameState)
-	 
+
+    # max number of allowed consistency checks
+    maxSteps = 100000 #math.pow(board.dimension, emptyCells)
+
+    # conflict board store number of conflicts caused by each cell
     conflict_list = []
     conflictBoard = [[0 for x in range(board.dimension)] for x in range(board.dimension)] 
+    
+    # Count number of conflicts and updates conflict board
     noOfConflicts, conflict_list = calculateNoOfConflicts(board, originalGameState, conflictBoard)
     
+    steps = 0
+
+    # Randomnly selects cell causing conflicts and changes value of cell to 
+    # the value that causes mininmum number of conflicts
 
     while(noOfConflicts != 0):
+	steps += 1
+	if(steps > maxSteps):
+		break;
+        # randomnly select cell
+
 	num = random.randint(0, len(conflict_list)-1)
 	row = conflict_list[num][0]
 	col = conflict_list[num][1]
@@ -388,6 +429,8 @@ def minConflict(filename):
         val = board.gameState[row][col]
 	val_list = []
         val_list.append(val)
+
+        # find value with minimum conflicts
         if(originalGameState[row][col] == 0 and conflictBoard[row][col]!= 0 ):
 		for i in range(1, board.dimension + 1):
                      if i != board.gameState[row][col]:			
@@ -404,26 +447,15 @@ def minConflict(filename):
 			
 			if(len(val_list) != 0):
 			    board.gameState[row][col] = random.choice(val_list)
-			"""else:
-			    minC = -1
-			    for i in range(1, board.dimension + 1):
-                   		if i != board.gameState[row][col]:			
-	                	        curConflict = checkNeighborConflicts(board, row, col, i)
-					if(minC == -1):
-						minC = curConflict
-			                elif(minC > curConflict):
-						minC = curConflict
-						del val_list[:]
-						val_list.append(i)
-	        			elif(minC == curConflict):
-						val_list.append(i)
-                            board.gameState[row][col] = random.choice(val_list)"""
                 else:
         		board.gameState[row][col] = val
 		
                 noOfConflicts, conflict_list = calculateNoOfConflicts(board, originalGameState, conflictBoard)
-	
-    return (board.gameState, 0)
+
+    # if number of conflicts are more than allowed limit then return that min conflict failed
+    if(steps > maxSteps):
+	return  ("Failed to solve the game within given limit", steps) 
+    return (board.gameState, steps)
 
 def randomAssignmentOfValues(board):
     ###
@@ -480,14 +512,17 @@ def checkNeighborConflicts(board, x, y, value):
     ###
     noOfConflicts = 0
    
+    # Check row  
     for i in range(0, board.dimension):
 	if(value == board.gameState[i][y] and x != i):
     	    noOfConflicts += 1
  
+    # Check column
     for i in range(0, board.dimension):
 	if(value == board.gameState[x][i] and y != i):
     	    noOfConflicts += 1 
       
+    # Check box
     startRow = (x / board.boxRow) * board.boxRow
     startCol = (y / board.boxCol) * board.boxCol
     for i in range(startRow, startRow+board.boxRow):

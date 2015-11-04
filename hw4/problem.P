@@ -1,0 +1,30 @@
+
+member(X, [X|_]).
+member(X,[_|T]):- member(X,T).
+
+append([], Y, Y).
+append([H|X], Y, [H|Z]) :- append(X, Y, Z).
+
+answer(Moves):- Side is 0, state([3,3],Side,[], Moves, []).
+
+state([0,0],1,Moves,Moves,_).
+state(MCcount, Side, Moves, NMoves, Visited):-
+       not(member([MCcount|Side], Visited)),
+       path(MCcount,Side,Moves, NewMcount, NewCcount, Step),
+       (Side=0->state([NewMcount, NewCcount], 1, [Step|Moves], NMoves, [[MCcount|Side]|Visited]);
+                state([NewMcount, NewCcount], 0, [Step|Moves], NMoves, [[MCcount|Side]|Visited])).
+
+path([Mcount,Ccount], Side, Moves, NewMcount, NewCcount,[X,Y,Side]):- 
+			Side=0-> edge(X,Y),
+                        X=<Mcount, Y=<Ccount, (Mcount-X=:=0; Mcount-X>=Ccount-Y),(3-Mcount+X=:=0; 3-Mcount+X>=3-Ccount+Y), 
+                        NewMcount is Mcount-X ,NewCcount is Ccount-Y;
+
+			edge(X,Y),
+			X=<3-Mcount, Y=<3-Ccount, (Mcount+X=:=0;Mcount+X>=Ccount+Y),(3-Mcount-X=:=0; 3-Mcount-X>=3-Ccount-Y),
+                        NewMcount is Mcount+X , NewCcount is Ccount+Y.
+edge(1,0).
+edge(0,1).
+edge(1,1).
+edge(2,0).
+edge(0,2).
+

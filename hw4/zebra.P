@@ -1,0 +1,35 @@
+exists(X, [X|_]).
+exists(X, [_|T]) :- exists(X,T).
+
+right([X,Y],[X,Y|_]).
+right(X,[_|T]) :- right(X,T).
+
+next(X,Y,H) :- right([X,Y],H).
+next(X,Y,H):- right([Y,X],H).
+
+first_house(X,[X,_,_,_,_]).
+middle_house(X,[_,_,X,_,_]).
+
+make_list(0,[]).
+make_list(N,[[_,_,_,_,_]|H]):- M is N-1, M >= 0, make_list(M, H).
+
+house(H):- make_list(5,H), 
+	   exists([englishmen,red,_,_,_],H), 
+           exists([spaniard,_,dog, _,_],H),
+           H=[[norwegian,_,_,_,_]|_],  
+           exists([_,yellow,_,kools,_],H), 
+	   next([_,_,fox,_,_],[_,_,_,chesterfields,_],H), 
+           next([norwegian, _, _, _, _],[_,blue,_,_,_],H),
+           exists([_,_,snails, oldgold,_],H),  
+           exists([_,_,_,luckystrike,orangejuice],H),
+           exists([ukranian,_,_,_,tea],H),
+           exists([japanese,_,_,parliaments,_],H),
+       	   next([_,_,_,kools,_],[_,_,horse,_,_],H),  
+           exists([_,green,_,_,coffee],H),
+	   right([[_,ivory,_,_,_],[_,green,_,_,_]],H),  
+           middle_house([_,_,_,_, milk],H).
+
+
+water_drinker(Owner):- house(H), exists([Owner,_,_,_,water],H).
+
+zebra_owner(Owner):- house(H),exists([Owner,_,zebra,_,_],H).

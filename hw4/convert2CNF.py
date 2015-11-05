@@ -15,15 +15,12 @@ class Board(object):
 
 def parse_file(filepath):
     # read the layout file to the board array
-    fin = open(filepath)
+    fileHandle = open(filepath)
     boardDimensions = fileHandle.readline().strip('\n').split(' ') 
     row = int(boardDimensions[0])
     col = int(boardDimensions[1])
-    board = [[0 for x in range(row)] for x in range(col)]
+    board = [[0 for x in range(col)] for x in range(row)]
     	
-    print " BOARD "
-    print board
-  
     unknownDict = {}
     clauseNo = 1
     for i in range(row):   
@@ -34,11 +31,14 @@ def parse_file(filepath):
                 clauseNo += 1
 	    board[i][j] = rawState[j]
 	   	
-    print "Unknown Dict"
+
+    print " Variables "
     print unknownDict
+    print " BOARD "
+    print board
     
-    boardObj = Board(board, row, col, unknownDict, clausesNo)                    
-    fin.close()
+    boardObj = Board(board, row, col, unknownDict, clauseNo)                    
+    fileHandle.close()
     return boardObj
 
 def get_all_neighbours(board , row, col):
@@ -63,48 +63,62 @@ def convert2CNF(board, output):
     for unknownCell in board.unknowns:
 	neighbours = get_all_neighbours(board, unknownCell[0], unknownCell[1]) 
 	for neighbour in neighbours:
-	    clauses = getAClause(board, neighbour)	       	
-            if clauses not in allClauses:
-	       cnfClause, totalUsedTillNow = clause_to_CNF(clauses, totalUsedTillNow - 1)  
-   	       allCauses.append(claases)
-               CNFClauses.append(cnfClause)	                         	
+            if board.board[neighbour[0]][neighbour[1]] != 'X':
+            	clauses = getAClause(board, neighbour)	       
+            	if not (clauses in allClauses):
+	            cnfClause, totalUsedTillNow = clause_to_CNF(list(clauses), totalUsedTillNow - 1)  
+                    print " Cell = " +  str(neighbour) + "  " + str(clauses) + " to " + str(cnfClause)
+   	            allClauses.add(clauses)
+                    CNFClauses.extend(cnfClause)	                         
+    print "All Clauses " + str(CNFClauses)	
     fout = open(output, 'w')
+    firstLine = 'p cnf ' + str(totalUsedTillNow) + ' ' + str(len(CNFClauses))
+    print >> fout, firstLine
+    for i in range(0, len(CNFClauses)):
+       clause = CNFClauses[i]
+       curString = ''  
+       for j in range(0, len(clause)):
+          curString += str(clause[j])
+          if (clause[j] != 0):
+             curString += ' '
+       print >> fout, curString	  
     fout.close()
 
 def getAClause(board, cell):
     neighbours = get_all_neighbours(board, cell[0], cell[1])
-    curNo = int(board[cell[0]][cell[1]])
-    totalUnknowns = 0
+    curNo = int(board.board[cell[0]][cell[1]])
+    totalUnknownsList = []
     for neighbour in neighbours:
        row = neighbour[0]
        col = neighbour[1]
-       if board[row][col] == 'X':
-           totalUnknowns += 1
-    
-    if curNo > totalUnknowns:
+       if board.board[row][col] == 'X':
+           totalUnknownsList.append(board.unknowns[(row, col)])
+            
+    if curNo > len(totalUnknownsList):
         raise ValueError('cellNo > totalUnkowns around the board is wrong state then.')
-   
-    finalClauseList = []
-    allCombinations(totalUnknowns, curNo, [], 0, finalClauseList)
-    return finalClauseList
+
+    finalClauseSet = Set([]) 
+    allCombinations(len(totalUnknownsList), curNo, totalUnknownsList, [], 0, finalClauseSet)
+    return finalClauseSet
               
-def allCombinations(n, k, clauseList, clauseListTillNow, index, finalClauseList):
+def allCombinations(n, k, clauseList, clauseListTillNow, index, finalClauseSet):
 	####################################################################
-        # Gives all possible clauses.
+        # Returns a list all possible clauses.
         # For eg. [1,2,3] n = 3 and k = 2 
-        # ---> [1,2,-3], [1,-2,3], [-1,2,3]
+        # ---> ((1,2,-3), (1,-2,3), (-1,2,3))
         ##########################################################
         if (k == 0):
           listToPush = copy.deepcopy(clauseListTillNow)
           ## Add all the remaining elements from index.
           for i in range(index, n):
               listToPush.append(-(clauseList[i]))
-          finalClauseList.append(listToPush)
+         
+          finalClauseSet.add(tuple(listToPush))
           return
 
         for i in range(index, n):
             clauseListTillNow.append(clauseList[i])
-            allCombinations(n, k - 1, clauseList, clauseListTillNow, i + 1, finalClauseList)
+            allCombinations(n, k - 1, clauseList, clauseListTillNow, i + 1, finalClauseSet)
             clauseListTillNow.pop()
             clauseListTillNow.append(-(clauseList[i]))
 

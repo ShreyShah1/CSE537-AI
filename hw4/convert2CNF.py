@@ -37,7 +37,15 @@ def clause_to_CNF(clause, max_var):
     cnf_form = []
     max_len = len(clause)
     max_num_of_clauses = max_len * max_len
-     
+   
+    if(max_len == 1):
+      for i in range(0, len(clause[0])):
+           subclause=[]
+           subclause.append(clause[0][i])
+           subclause.append(0)
+           cnf_form.append(subclause)
+      return cnf_form, max_var
+            
     subclause =[]
 
     for i in range(1, max_len + 1):
@@ -63,10 +71,9 @@ def clause_to_CNF(clause, max_var):
     return cnf_form, max_var + add -1
 
 if __name__ == '__main__':
-    
+        
     if len(sys.argv) < 3:
         print 'Layout or output file not specified.'
         exit(-1)
     board = parse_file(sys.argv[1])
     convert2CNF(board, sys.argv[2])
-    

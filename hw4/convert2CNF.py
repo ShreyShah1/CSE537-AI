@@ -30,14 +30,8 @@ def parse_file(filepath):
 		unknownDict[(i, j)] = clauseNo
                 clauseNo += 1
 	    board[i][j] = rawState[j]
-	   	
 
-    print " Variables "
-    print unknownDict
-    print " BOARD "
-    print board
-    
-    boardObj = Board(board, row, col, unknownDict, clauseNo)                    
+    boardObj = Board(board, row, col, unknownDict, clauseNo - 1)        
     fileHandle.close()
     return boardObj
 
@@ -66,11 +60,9 @@ def convert2CNF(board, output):
             if board.board[neighbour[0]][neighbour[1]] != 'X':
             	clauses = getAClause(board, neighbour)	       
             	if not (clauses in allClauses):
-	            cnfClause, totalUsedTillNow = clause_to_CNF(list(clauses), totalUsedTillNow - 1)  
-                    print " Cell = " +  str(neighbour) + "  " + str(clauses) + " to " + str(cnfClause)
+	            cnfClause, totalUsedTillNow = clause_to_CNF(list(clauses), totalUsedTillNow)  
    	            allClauses.add(clauses)
                     CNFClauses.extend(cnfClause)	                         
-    print "All Clauses " + str(CNFClauses)	
     fout = open(output, 'w')
     firstLine = 'p cnf ' + str(totalUsedTillNow) + ' ' + str(len(CNFClauses))
     print >> fout, firstLine
@@ -133,7 +125,7 @@ def clause_to_CNF(clause, max_var):
     max_len = len(clause)
     max_num_of_clauses = max_len * max_len
     
-    if(max_len == 1)
+    if(max_len == 1):
       for i in range(0, len(clause[0])):
            subclause=[]
            subclause.append(clause[0][i])

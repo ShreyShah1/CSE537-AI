@@ -10,7 +10,10 @@ next(X,Y,H):- right([Y,X],H).
 first_house(X,[X,_,_,_,_]).
 middle_house(X,[_,_,X,_,_]).
 
+%This is the base case.
 make_list(0,[]).
+
+%This function makes a list of lists each of which has five elements.
 make_list(N,[[_,_,_,_,_]|H]):- M is N-1, M >= 0, make_list(M, H).
 
 house(H):- make_list(5,H), 

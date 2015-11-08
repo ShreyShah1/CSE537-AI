@@ -145,7 +145,6 @@ def clause_to_CNF(clause, max_var):
     add =1
       
     for i in range(0, max_len):
-
         for j in range(0, len_of_clause):
             subclause =[]
             subclause.append(0- max_var - add)

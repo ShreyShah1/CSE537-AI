@@ -1,0 +1,89 @@
+/*
+|-------|
+|   A   |
+|D     B|
+|   C   |
+|-------|
+[A,B,C,D]
+
+| Part1 | | Part2 | | Part3 | 
+| Part4 | | Part5 | | Part6 | 
+| Part7 | | Part8 | | Part9 | 
+*/
+
+neg(-a,a).
+neg(-b,b).
+neg(-c,c).
+neg(-d,d).
+neg(a,-a).
+neg(b,-b).
+neg(c,-c).
+neg(d,-d).
+
+left_right([1,1,1,1],_).
+left_right(_,[1,1,1,1]).
+left_right([_,B,_,_],[_,_,_,D]):-neg(B,D).
+
+top_bottom([1,1,1,1],_).
+top_bottom(_,[1,1,1,1]).
+top_bottom([_,_,C,_],[A,_,_,_]):-neg(A,C).
+
+rotate([A,B,C,D],[[A,B,C,D],[B,C,D,A],[C,D,A,B],[D,A,B,C]]).
+
+member(X,[X|_]).
+member(X,[_|T]):-member(X,T).
+
+check_piece(X,Part):-rotate(Part,Rpart),member(X,Rpart).
+
+check_part(Part,[[[1,1,1,1],Part2,Part3],[Part4,Part5,Part6],[Part7,Part8,Part9]],NewBoard)
+      :-left_right(Part,Part2), top_bottom(Part,Part4),
+	NewBoard= [[Part,Part2,Part3],[Part4,Part5,Part6],[Part7,Part8,Part9]].
+
+check_part(Part,[[Part1,[1,1,1,1],Part3],[Part4,Part5,Part6],[Part7,Part8,Part9]],NewBoard)
+	 	:-left_right(Part1,Part), left_right(Part,Part3), top_bottom(Part,Part5),
+ 			NewBoard= [[Part1,Part,Part3],[Part4,Part5,Part6],[Part7,Part8,Part9]].
+
+check_part(Part,[[Part1,Part2,[1,1,1,1]],[Part4,Part5,Part6],[Part7,Part8,Part9]],NewBoard)
+		:-left_right(Part2,Part), top_bottom(Part,Part6),
+		NewBoard= [[Part1,Part2,Part],[Part4,Part5,Part6],[Part7,Part8,Part9]].
+
+check_part(Part,[[Part1,Part2,Part3],[[1,1,1,1],Part5,Part6],[Part7,Part8,Part9]],NewBoard)
+		:-left_right(Part,Part5),top_bottom(Part1,Part),top_bottom(Part,Part7),
+		NewBoard= [[Part1,Part2,Part3],[Part,Part5,Part6],[Part7,Part8,Part9]].
+
+check_part(Part,[[Part1,Part2,Part3],[Part4,[1,1,1,1],Part6],[Part7,Part8,Part9]],NewBoard)
+		:-left_right(Part4,Part),left_right(Part,Part6),
+  		top_bottom(Part2,Part),top_bottom(Part,Part8),
+		NewBoard= [[Part1,Part2,Part3],[Part4,Part,Part6],[Part7,Part8,Part9]].
+
+
+check_part(Part,[[Part1,Part2,Part3],[Part4,Part5,[1,1,1,1]],[Part7,Part8,Part9]],NewBoard)
+		:-left_right(Part5,Part),top_bottom(Part3,Part),top_bottom(Part,Part9),
+		NewBoard= [[Part1,Part2,Part3],[Part4,Part5,Part],[Part7,Part8,Part9]].
+
+
+check_part(Part,[[Part1,Part2,Part3],[Part4,Part5,Part6],[[1,1,1,1],Part8,Part9]],NewBoard)
+		:- left_right(Part,Part8), top_bottom(Part4,Part),
+		NewBoard= [[Part1,Part2,Part3],[Part4,Part5,Part6],[Part,Part8,Part9]].
+
+
+check_part(Part,[[Part1,Part2,Part3],[Part4,Part5,Part6],[Part7,[1,1,1,1],Part9]],NewBoard)
+		:-left_right(Part7,Part),left_right(Part,Part9),top_bottom(Part5,Part),
+		NewBoard= [[Part1,Part2,Part3],[Part4,Part5,Part6],[Part7,Part,Part9]].
+
+check_part(Part,[[Part1,Part2,Part3],[Part4,Part5,Part6],[Part7,Part8,[1,1,1,1]]],NewBoard)
+			:-left_right(Part8,Part),top_bottom(Part6,Part),
+		NewBoard= [[Part1,Part2,Part3],[Part4,Part5,Part6],[Part7,Part8,Part]].
+
+
+fit_parts(SolBoard,Board,[Part|Parts]):- check_part(X,Board,NewBoard),check_piece(X,Part), fit_parts(SolBoard,NewBoard,Parts).
+fit_parts(Board,Board,[]).
+
+assemble(SolBoard):- Board=[[[1,1,1,1],[1,1,1,1],[1,1,1,1]]
+                          ,[[1,1,1,1],[1,1,1,1],[1,1,1,1]] 
+                          ,[[1,1,1,1],[1,1,1,1],[1,1,1,1]]],
+                 Parts=[[-b,c,d,-a],[a,d,-c,-d],[-c,b,d,-d],
+                          [-d,-c,d,b],[b,-c,-a,d],[-a,-d,c,b],
+                          [-b,c,b,-a],[-a,-c,a,b],[-b,a,d,-c]],
+                  fit_parts(SolBoard,Board,Parts).
+                  

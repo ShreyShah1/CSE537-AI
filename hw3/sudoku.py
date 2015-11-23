@@ -14,7 +14,7 @@ def main(args):
     # backtracking
     ##########################################################
         	
-        tic = time.clock()
+    tic = time.clock()
 	solution, consistencyChecks = csp.backtracking(args.input)
 	toc = time.clock()
 	timeItr = toc - tic

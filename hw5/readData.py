@@ -1,4 +1,7 @@
-from DecisionTree import Attributes
+from DecisionTree import Attribute
+from DecisionTree import Continous
+from DecisionTree import Discrete
+
 ###############################################
 # In this file we have imported data and also
 # defining the static mapping in this file.
@@ -17,11 +20,11 @@ def readData(filePath):
 	
 	# Attributes List.
 	# Uncomment when done.
-	attributesList = range(0, lenAttribute - 1)
+	attributesList = []
 	# attributesList = [0, 3, 4, 5, 6, 8, 9, 11, 12]
 	# Hardcodding the values.
 	mapping = [['b', 'a'], 
-    			[], 
+    			None, 
     			None, 
     			['u', 'y', 'l', 't'], 
     			['g', 'p', 'gg'], 
@@ -36,5 +39,10 @@ def readData(filePath):
     			None,
     			None,
     			['+', '-']]
+	for i in range(0, lenAttribute - 1):
+		if mapping[i] == None:
+			attributesList.append(Continous(i))
+		else:
+			attributesList.append(Discrete(i))
 
-	return Attributes(lenAttribute, len(attributes), attributesList, mapping, attributes)  
+	return lenAttribute - 1, attributesList, attributes

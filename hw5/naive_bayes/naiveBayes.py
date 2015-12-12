@@ -22,9 +22,9 @@ class NaiveBayes(object):
 	
 		
         def calProbability(self, A, B):
-		############################################
-		# Laplcian Smoothing
-		############################################
+		#########################################
+		# Laplacian smoothing
+		########################################
 		return float(A + 1)/float(B + 3)
 
 	def getCount(self, num, featureNum, instances):
@@ -58,10 +58,24 @@ class NaiveBayes(object):
 		return predictValuesLabels
 	
 	def accuracy(self, predictedVals):
+		digitAccuracy = [[0 for x in range(3)] for y in range(10)]  
+		
+		for i in range(0,10):
+			digitAccuracy[i][0]=i
 		correct = 0
 		for tup in predictedVals:
 			if (tup[0] == tup[1]):
 				correct += 1
+				digitAccuracy[tup[1]][1] += 1
+				digitAccuracy[tup[1]][2] += 1
+			else: 	
+				digitAccuracy[tup[1]][2] += 1
+	    	
+		print "digit		Accuracy:"	
+		for tup in digitAccuracy:
+			print str(tup[0])+"	"+str(tup[1]*100.0/ tup[2])
+					
+
 		return correct * 100.0/len(predictedVals)
 	
 	def predictLabel(self, instance):
@@ -95,7 +109,8 @@ def main(args):
 	nb.naiveBayes()
 	testingData = readData.readData(TEST_LABELS_PATH, TEST_IMAGES_PATH)
 	predictedVals = nb.predictLabels(testingData)
-	print nb.accuracy(predictedVals)
+	print "Total Accuracy: 	"+str(nb.accuracy(predictedVals))
+
 if __name__ == "__main__":
         parser = argparse.ArgumentParser(description="HomeWork Five")
         parser.add_argument("--input", type=str)

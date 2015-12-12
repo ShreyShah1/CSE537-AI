@@ -1,17 +1,1622 @@
  ROOT = 8
 t  9 f  5  ************************************************** 
-t  5 f  5 aa  - c  6 e  12 d  4 i  11 k  11 j  - m  6 q  6 cc  0 r  - ff  12 x  12 w  9  ************************************************** 
-aa  + c  11 e  11 d  + cc  + k  0 j  + m  + q  0 i  4 r  + ff  4 w  11 x  + aa  12 c  11 e  12 d  6 cc  11 k  12 j  11 m  12 q  4 i  6 r  + ff  11 w  6 x  11 - h  11 bb  - v  9 s  + g  - p  + g  - t  - f  6 t  - f  4 - bb  + v  - h  - v  9 n  + a  + b  - - p  + s  - g  - s  + g  6 t  - f  4  ************************************************** 
-+ t  6 f  + t  + f  6 + + a  - b  6 + + a  6 b  11 p  6 g  + + p  - g  11 t  4 f  + + s  + g  0 t  4 f  6 s  - g  + h  + bb  - v  4 t  6 f  + s  - g  0 t  - f  + s  11 g  + p  - g  0 h  + bb  11 + t  4 f  - h  + bb  - v  11 t  0 f  + t  + f  - - t  - f  0 + - + - - h  - o  - bb  12 v  - - p  - g  6 + - - t  14 f  - + + - + - - + h  - v  14 - p  - g  0  ************************************************** 
-h  4 bb  + v  4 + + h  + z  0 bb  + v  + - h  + v  11 h  + v  4 t  6 f  6 h  - bb  14 + - t  + f  0 p  14 g  6 + + a  6 b  - p  - g  12 h  4 bb  + v  12 - + + - p  11 g  - h  + v  - + - a  + b  4 - + t  - f  0 + - a  11 b  + + t  0 f  - p  - g  + - + - t  4 f  + a  + b  - + + - - a  - b  12 - - s  - g  4 - - h  - ff  - v  12 0  13   - - 0  -  + - a  - b  11  ************************************************** 
-p  14 g  + + p  + g  0 + a  + b  14 + + + t  4 f  4 + p  + g  11 h  14 v  + h  14 v  14 - 0  -  + + a  + b  14 0  13   h  + v  0 h  - v  4 - - s  - g  6 p  0 g  + + s  + g  0 t  + f  - - + - + p  11 g  11 - a  - b  14 t  14 f  + + a  14 b  + - - + p  + g  14 + + - - p  - s  - g  11 - p  - g  14 - - s  - g  14 0  12    - + - t  14 f  14  ************************************************** 
-0  13   + + a  14 b  14 + 0  13   p  + g  - p  14 g  + + t  14 f  14 0  13  + + 0  13  + 0  13  - - + + 0  +  - 0  12    + a  + b  14 - p  11 g  + - h  14 bb  + v  14 a  + b  14 + + a  + b  - + - t  - f  + t  + f  14 - 0    13 0  +  13 + 0  13  - + + 0  +  13 - - t  4 f  4 - 0  -  13 - 0  13  - g  11  0  13   0  13  -  ************************************************** 
-0  12    0  13  + 0  +  13 0  -  +  + - 0  13   + 0  13  + 0  13  13 0  12   + 0  12   + 0  +  - - + - g  10  + 0  +  13 t  14 f  - + 0  -  + + 0    13 + 0    13 + - - + + 0    13  0  10   + 0  12   0  -  + - + 0  12   p  14 g  - p  - g  14 - 0  10   0  -  + - f  10 0  12    0  12   -  ************************************************** 
-g  10  0  12  + + + 0  12   - + 0  12    0  -  + + 0  12  + 0  12  + g  10  g  10  + - 0  7   + 0  12   0    13 - - +  0  -  +  0  -  +  0  10   0    7  g  10  - + g  10  0  13  - - - 0  -  13 0    9  - + 0  7   g  10  g  10   ************************************************** 
-0  7   g  10 + g  10  g  10  - + g  10 + g  10 + 0  7   0  7   0  6    g  10   0  10   - + - + 0    7   0  6   0    7 0    7 0  10   - - 0  10  -  f  7 0  4    0    7 0    7  ************************************************** 
-0  3    0  7   0  7   0  7   0  7   0  7   0  4    0  4    v  3  0  7   0    7   0  6   v  4   0  6    0  3   0    7  0    7 - 0  3  - g  3   0  6    0  6    ************************************************** 
-y  2  0  3    0  3    0  3    0  3    0  3    g  3  g  3  y  2 0  3     0  3   v  3  g  3 v  3  u  2   0  3    0  3   u  2 - u  2 v  3  v  3   ************************************************** 
-0  1   u  2  u  2  y  2  u  2  u  2  u  2 u  2 0  1   u  2  y  2  u  2 u  2 u  2 0  1   y  2  u  2  0  1   0  1   u  2 u  2  ************************************************** 
-0  0    0  1   0  1   0  1   0  1   0  1   0  1   0  1   0  0    0  1   0  1   0  1   0  1   0  1   0  0    0  1   0  1   0  0    0  0    0  1   0  1    ************************************************** 
-b  +  0  +    0  -    0  -    0  +    0  -    0  -    0  -    b  +  0  +    0  -    0  -    0  -    0  -    b  -  0  -    0  -    b  -  a  - b  -  0  -    0  -     ************************************************** 
-+ +  -  -  +  -  -  -  + +  -  -  -  -  - -  -  - - - -  - 
+t  5 f  5 aa  - c  12 e  12 d  4 i  - k  - j  - m  6 q  6 cc  0 r  - ff  12 x  6 w  9  ************************************************** 
+aa  + c  11 e  11 ff  4 i  11 k  11 j  + m  + q  0 cc  + r  + w  11 x  + d  + aa  6 c  11 e  + d  11 cc  11 k  12 j  + m  12 q  0 i  6 ff  11 w  6 x  11 - p  0 s  - g  11 s  + g  - p  + g  - - - - bb  + v  - h  - v  9 n  + a  + b  - - p  + s  - g  - h  - v  14 t  - f  4  ************************************************** 
++ t  6 f  + t  + f  6 p  - g  + t  6 f  + t  6 f  + + + a  6 b  11 + + t  6 f  + + + h  - v  12 t  6 f  6 + t  + f  - t  - f  + s  - g  4 + s  11 g  + a  11 b  + h  + bb  11 t  4 f  - h  + bb  - v  11 t  0 f  + a  + b  14 - t  4 f  - + - + - + - - t  0 f  - + + - + - - - 0  -  + - p  - g  0  ************************************************** 
+h  4 bb  + v  4 + + z  0 bb  + v  + - + h  - bb  14 + h  0 bb  - v  - + h  + v  11 t  6 f  14 h  + v  0 + - s  + g  0 h  - bb  4 v  14 h  + bb  + v  12 + - - + - p  - g  11 t  - f  14 + t  14 f  + + + t  0 f  - p  - g  + - + - t  4 f  + a  + b  - + + 0    13 p  0 g  - - a  - b  14 - - + - a  - b  11  ************************************************** 
+p  14 g  + + p  + g  0 a  + b  14 + + - 0  -  + a  - b  + - - + t  + f  14 h  14 v  + 0  13   + a  + b  14 + a  4 b  - - p  - g  + 0    13 + + s  + g  0 - t  + f  14 - 0    13 0  +  13 + a  14 b  + - - + p  + g  14 + + -  0  -  11 a  - b  14 - - 0  13   - t  14 f  14  ************************************************** 
+0  13   + + a  14 b  14 + 0  13   - + - + + 0  13  13 0  13  + + 0  6  -  + 0  4  13 p  11 g  + - - +  0  -  + + a  + b  - + 0    13  0  10   + 0  12   0  13   + + 0  +  13 - f  10 - 0  13  - 0  12    0  13  - 0  13  -  ************************************************** 
+0  12    0  13  + 0  +  13 0  -  +  0  12  + 0  12   0  12   + h  12 v  + - p  13 g  + 0  12   t  + f  - + - + + -  0  10   0    7  g  10  0  -  +  + 0  12   0    9 0  10   - g  11  0  12   - 0  12   -  ************************************************** 
+g  10  0  12   + + 0  12   - + g  10 + g  10  g  10  g  10 + 0  12   + g  10  + - 0    7   0  6   0    7 - + g  10   f  7 0    9  f  10 g  10  g  10   ************************************************** 
+0  7   g  10  g  10  0  7   0  7   0  7   0  7   g  10  0  7    0  6   v  4   0  6   0    7 0    6  f  7 0  7   0    7 0    7  ************************************************** 
+0  3    0  7   0  7   0  4    0  4    0  4    0  4    0  7   0  4    v  3  g  3 v  4   0  3    v  4 0  6   0  4     0  6    0  6    ************************************************** 
+y  2  0  3    0  3    g  3  g  3  g  3  g  3  0  3    g  3  u  2 u  2 g  3 u  2  g  3 v  3  g  3  v  3  v  3   ************************************************** 
+0  1   u  2  u  2  u  2 u  2 u  2 u  2 y  2  u  2 0  1   0  1   u  2 0  1   u  2 y  2 u  2 u  2 u  2  ************************************************** 
+0  0    0  1   0  1   0  1   0  1   0  1   0  1   0  1   0  1   0  0    0  0    0  1   0  0    0    1 0  1   0  1   0  1   0  1    ************************************************** 
+b  +  0  +    0  -    0  +    0  -    0  -    0  -    0  +    0  -    b  -  b  -  0  -    b  -   0  -   0  -    0  -    0  -    0  -     ************************************************** 
++ +  -  +  -  -  -  +  -  - - -  - -  -  -  -  -   Predicted till now 0
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category w
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Predicted till now 1
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category q
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 0
+ category a
+ categories Name ['a', 'b']
+ Attribute Name 6
+ category h
+ categories Name ['h', 'v']
+ Predicted till now 2
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category q
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 0
+ category a
+ categories Name ['a', 'b']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Predicted till now 3
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category w
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'v']
+ Attribute Name 0
+ category b
+ categories Name ['a', 'b']
+ Attribute Name 14
+curRoot.splitVal0
+ Split Val 3.0
+ Attribute Name 13
+curRoot.splitVal0
+ Split Val 100.0
+ Predicted till now 4
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category w
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'bb', 'v']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Predicted till now 5
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category m
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 12
+ category g
+ categories Name ['s', 'g']
+ Predicted till now 6
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ Predicted till now 7
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category cc
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Predicted till now 8
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category k
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 12
+ category g
+ categories Name ['s', 'g']
+ Attribute Name 4
+ category p
+ categories Name ['p', 'g']
+ Predicted till now 9
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category w
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'bb', 'v']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 4
+ category p
+ categories Name ['p', 'g']
+ Predicted till now 10
+ Attribute Name 8
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category c
+ categories Name ['aa', 'c', 'e', 'd', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'ff', 'x', 'w']
+ Attribute Name 12
+ category g
+ categories Name ['p', 's', 'g']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 4
+ category g
+ categories Name ['p', 'g']
+ Predicted till now 11
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category c
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 6
+ category h
+ categories Name ['h', 'bb', 'v']
+ Predicted till now 12
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category k
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 12
+ category g
+ categories Name ['s', 'g']
+ Attribute Name 4
+ category g
+ categories Name ['p', 'g']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Predicted till now 13
+ Attribute Name 8
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category k
+ categories Name ['aa', 'c', 'e', 'd', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'ff', 'x', 'w']
+ Predicted till now 14
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category q
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 0
+ category a
+ categories Name ['a', 'b']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'v']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Predicted till now 15
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category k
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'bb', 'v']
+ Predicted till now 16
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category m
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Predicted till now 17
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category q
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 0
+ category a
+ categories Name ['a', 'b']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'v']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 14
+curRoot.splitVal0
+ Split Val 245.0
+ Attribute Name 13
+curRoot.splitVal0
+ Split Val 120.0
+ Predicted till now 18
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category d
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Predicted till now 19
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category cc
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Predicted till now 20
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category c
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Predicted till now 21
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category c
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'bb', 'v']
+ Attribute Name 12
+ category s
+ categories Name ['s', 'g']
+ Predicted till now 22
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category c
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'bb', 'v']
+ Attribute Name 4
+ category g
+ categories Name ['p', 'g']
+ Attribute Name 0
+ category a
+ categories Name ['a', 'b']
+ Attribute Name 14
+curRoot.splitVal0
+ Split Val 1260.0
+ Predicted till now 23
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category x
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Predicted till now 24
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category q
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 0
+ category a
+ categories Name ['a', 'b']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'v']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Predicted till now 25
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category c
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Predicted till now 26
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category i
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 6
+ category bb
+ categories Name ['h', 'bb']
+ Attribute Name 14
+curRoot.splitVal0
+ Split Val 0.0
+ Predicted till now 27
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category d
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Predicted till now 28
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category e
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 6
+ Predicted till now 29
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category w
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'v']
+ Attribute Name 0
+ category b
+ categories Name ['a', 'b']
+ Attribute Name 14
+curRoot.splitVal0
+ Split Val 10000.0
+ Attribute Name 13
+curRoot.splitVal0
+ Split Val 500.0
+ Predicted till now 30
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category aa
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Predicted till now 31
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category x
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Predicted till now 32
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category i
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 6
+ category bb
+ categories Name ['h', 'bb']
+ Attribute Name 14
+curRoot.splitVal0
+ Split Val 5000.0
+ Predicted till now 33
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category e
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Predicted till now 34
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category q
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 0
+ category a
+ categories Name ['a', 'b']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'v']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Predicted till now 35
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category w
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'v']
+ Attribute Name 0
+ category b
+ categories Name ['a', 'b']
+ Attribute Name 14
+curRoot.splitVal0
+ Split Val 35.0
+ Attribute Name 13
+curRoot.splitVal0
+ Split Val 434.0
+ Predicted till now 36
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category cc
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Predicted till now 37
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category x
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Predicted till now 38
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category cc
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Predicted till now 39
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category ff
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 4
+ category g
+ categories Name ['p', 'g']
+ Predicted till now 40
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category c
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'bb', 'v']
+ Attribute Name 4
+ category g
+ categories Name ['p', 'g']
+ Attribute Name 0
+ category b
+ categories Name ['a', 'b']
+ Attribute Name 14
+curRoot.splitVal0
+ Split Val 221.0
+ Attribute Name 13
+curRoot.splitVal0
+ Split Val 0.0
+ Attribute Name 12
+ category g
+ categories Name ['g']
+ Attribute Name 10
+curRoot.splitVal0
+ Split Val 12.0
+ Predicted till now 41
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category c
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Predicted till now 42
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category w
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Predicted till now 43
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category w
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'v']
+ Attribute Name 0
+ category b
+ categories Name ['a', 'b']
+ Attribute Name 14
+curRoot.splitVal0
+ Split Val 0.0
+ Attribute Name 4
+ category g
+ categories Name ['p', 'g']
+ Predicted till now 44
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category c
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Predicted till now 45
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category c
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 6
+ category h
+ categories Name ['h', 'bb', 'v']
+ Attribute Name 4
+ category g
+ categories Name ['p', 'g']
+ Predicted till now 46
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category q
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 0
+ category a
+ categories Name ['a', 'b']
+ Attribute Name 6
+ category h
+ categories Name ['h', 'v']
+ Predicted till now 47
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category cc
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Predicted till now 48
+ Attribute Name 8
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category i
+ categories Name ['aa', 'c', 'e', 'd', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'ff', 'x', 'w']
+ Predicted till now 49
+ Attribute Name 8
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category c
+ categories Name ['aa', 'c', 'e', 'd', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'ff', 'x', 'w']
+ Attribute Name 12
+ category g
+ categories Name ['p', 's', 'g']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Predicted till now 50
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category c
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 6
+ category h
+ categories Name ['h', 'bb', 'v']
+ Predicted till now 51
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category q
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 0
+ category b
+ categories Name ['a', 'b']
+ Predicted till now 52
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category w
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'bb', 'v']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 4
+ category g
+ categories Name ['p', 'g']
+ Attribute Name 14
+curRoot.splitVal0
+ Split Val 5800.0
+ Attribute Name 13
+curRoot.splitVal0
+ Split Val 400.0
+ Predicted till now 53
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category w
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'bb', 'v']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 4
+ category g
+ categories Name ['p', 'g']
+ Attribute Name 14
+curRoot.splitVal0
+ Split Val 200.0
+ Attribute Name 13
+curRoot.splitVal0
+ Split Val 239.0
+ Predicted till now 54
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category cc
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Predicted till now 55
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category w
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'bb', 'v']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 4
+ category p
+ categories Name ['p', 'g']
+ Predicted till now 56
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category cc
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Predicted till now 57
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category i
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 6
+ category h
+ categories Name ['h', 'bb']
+ Predicted till now 58
+ Attribute Name 8
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category x
+ categories Name ['aa', 'c', 'e', 'd', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'ff', 'x', 'w']
+ Attribute Name 6
+ category h
+ categories Name ['h', 'v']
+ Predicted till now 59
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category q
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 0
+ category b
+ categories Name ['a', 'b']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 14
+curRoot.splitVal0
+ Split Val 0.0
+ Attribute Name 13
+curRoot.splitVal0
+ Split Val 80.0
+ Predicted till now 60
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category m
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Predicted till now 61
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category d
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Predicted till now 62
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category q
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 0
+ category a
+ categories Name ['a', 'b']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'v']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Predicted till now 63
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category q
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 0
+ category a
+ categories Name ['a', 'b']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'v']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 14
+curRoot.splitVal0
+ Split Val 0.0
+ Attribute Name 13
+curRoot.splitVal0
+ Split Val 0.0
+ Attribute Name 12
+ category g
+ categories Name ['g']
+ Attribute Name 10
+curRoot.splitVal0
+ Split Val 1.0
+ Predicted till now 64
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category cc
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Predicted till now 65
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category cc
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Predicted till now 66
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category c
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Predicted till now 67
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category m
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Predicted till now 68
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category w
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Predicted till now 69
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category x
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Predicted till now 70
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category e
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Predicted till now 71
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category d
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Predicted till now 72
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category cc
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Predicted till now 73
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category m
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 12
+ category s
+ categories Name ['s', 'g']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 14
+curRoot.splitVal0
+ Split Val 0.0
+ Predicted till now 74
+ Attribute Name 8
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category c
+ categories Name ['aa', 'c', 'e', 'd', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'ff', 'x', 'w']
+ Attribute Name 12
+ category g
+ categories Name ['p', 's', 'g']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Predicted till now 75
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category q
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 0
+ category b
+ categories Name ['a', 'b']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 14
+curRoot.splitVal0
+ Split Val 0.0
+ Attribute Name 13
+curRoot.splitVal0
+ Split Val 160.0
+ Predicted till now 76
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category aa
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'v']
+ Attribute Name 12
+ category g
+ categories Name ['s', 'g']
+ Attribute Name 0
+ category b
+ categories Name ['a', 'b']
+ Predicted till now 77
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category aa
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'v']
+ Attribute Name 12
+ category g
+ categories Name ['s', 'g']
+ Attribute Name 0
+ category a
+ categories Name ['a', 'b']
+ Attribute Name 4
+ category p
+ categories Name ['p', 'g']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Predicted till now 78
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category k
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Predicted till now 79
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category c
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'bb', 'v']
+ Attribute Name 12
+ category g
+ categories Name ['s', 'g']
+ Attribute Name 0
+ category b
+ categories Name ['a', 'b']
+ Predicted till now 80
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category ff
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 4
+ category g
+ categories Name ['p', 'g']
+ Predicted till now 81
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category m
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 12
+ category s
+ categories Name ['s', 'g']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 14
+curRoot.splitVal0
+ Split Val 0.0
+ Predicted till now 82
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category m
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 12
+ category s
+ categories Name ['s', 'g']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 14
+curRoot.splitVal0
+ Split Val 0.0
+ Predicted till now 83
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category d
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Predicted till now 84
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category aa
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'v']
+ Attribute Name 12
+ category g
+ categories Name ['s', 'g']
+ Attribute Name 0
+ category b
+ categories Name ['a', 'b']
+ Predicted till now 85
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category c
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 6
+ category bb
+ categories Name ['h', 'bb', 'v']
+ Attribute Name 4
+ category g
+ categories Name ['p', 'g']
+ Predicted till now 86
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category d
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Predicted till now 87
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category aa
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'v']
+ Attribute Name 12
+ category g
+ categories Name ['s', 'g']
+ Attribute Name 0
+ category b
+ categories Name ['a', 'b']
+ Predicted till now 88
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category aa
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'v']
+ Attribute Name 12
+ category g
+ categories Name ['s', 'g']
+ Attribute Name 0
+ category b
+ categories Name ['a', 'b']
+ Predicted till now 89
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category j
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Predicted till now 90
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category c
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 6
+ category h
+ categories Name ['h', 'bb', 'v']
+ Predicted till now 91
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category c
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 11
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'bb', 'v']
+ Attribute Name 12
+ category g
+ categories Name ['s', 'g']
+ Attribute Name 0
+ category b
+ categories Name ['a', 'b']
+ Predicted till now 92
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category aa
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'v']
+ Attribute Name 12
+ category g
+ categories Name ['s', 'g']
+ Attribute Name 0
+ category b
+ categories Name ['a', 'b']
+ Predicted till now 93
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category c
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 6
+ category h
+ categories Name ['h', 'bb', 'v']
+ Predicted till now 94
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category c
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'bb', 'v']
+ Attribute Name 14
+curRoot.splitVal0
+ Split Val 225.0
+ Attribute Name 13
+curRoot.splitVal0
+ Split Val 0.0
+ Predicted till now 95
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category i
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 6
+ category bb
+ categories Name ['h', 'bb']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 0
+ category a
+ categories Name ['a', 'b']
+ Attribute Name 14
+curRoot.splitVal0
+ Split Val 0.0
+ Attribute Name 13
+curRoot.splitVal0
+ Split Val 171.0
+ Predicted till now 96
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category aa
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'v']
+ Attribute Name 12
+ category g
+ categories Name ['s', 'g']
+ Attribute Name 0
+ category b
+ categories Name ['a', 'b']
+ Predicted till now 97
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category c
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 6
+ category bb
+ categories Name ['h', 'bb', 'v']
+ Attribute Name 4
+ category g
+ categories Name ['p', 'g']
+ Predicted till now 98
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category f
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category q
+ categories Name ['aa', 'c', 'e', 'd', 'cc', 'k', 'j', 'm', 'q', 'i', 'ff', 'w', 'x']
+ Attribute Name 0
+ category a
+ categories Name ['a', 'b']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 14
+curRoot.splitVal0
+ Split Val 0.0
+ Predicted till now 99
+ Attribute Name 8
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 9
+ category t
+ categories Name ['t', 'f']
+ Attribute Name 5
+ category q
+ categories Name ['aa', 'c', 'e', 'ff', 'i', 'k', 'j', 'm', 'q', 'cc', 'r', 'w', 'x', 'd']
+ Attribute Name 0
+ category a
+ categories Name ['a', 'b']
+ Attribute Name 6
+ category v
+ categories Name ['h', 'v']
+ Attribute Name 11
+ category t
+ categories Name ['t', 'f']
+64.0

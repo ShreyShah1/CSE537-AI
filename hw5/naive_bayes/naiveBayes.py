@@ -22,6 +22,9 @@ class NaiveBayes(object):
 	
 		
         def calProbability(self, A, B):
+		############################################
+		# Laplcian Smoothing
+		############################################
 		return float(A + 1)/float(B + 3)
 
 	def getCount(self, num, featureNum, instances):

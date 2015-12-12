@@ -17,7 +17,27 @@ def readData(filePath):
 		attribute = line.strip('\n').split(',')
 		lenAttribute = len(attribute)
 		attributes.append(attribute)
-	
+
+	# Filling with most common values
+	for i in range(0, lenAttribute):
+		maxDict = {}
+		for attribute in attributes:
+			if '?' == attribute[i]:
+				continue
+			if attribute[i] not in maxDict:
+				maxDict[attribute[i]] = 1
+			else:
+				maxDict[attribute[i]] += 1
+		maxVal = -1
+		maxKey = -1
+		for key, val in maxDict.iteritems():
+			if maxVal <= val:
+				maxVal = val
+				maxKey = key
+		for idx, attribute in enumerate(attributes):
+			if '?' == attribute[i]:
+				attributes[idx][i] = maxKey
+
 	# Attributes List.
 	# Uncomment when done.
 	attributesList = []

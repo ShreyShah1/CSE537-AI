@@ -39,11 +39,7 @@ class Discrete(Attribute):
 		for instance in data:
 			classification = instance[cIndex]
 			category = instance[self.attributeName]
-			# Ignore the missing data.
-			if category == '?':
-				continue
 
-			category = instance[self.attributeName]
 			if category not in dictPosNeg:
 				# Initialise the dict here.
 				dictPosNeg[category] = [0, 0]
@@ -73,9 +69,7 @@ class Discrete(Attribute):
 	
 		for instance in data:
 			category = instance[self.attributeName]
-			# Ignore the missing data.
-			if category == '?':
-				continue
+
 			if category not in spiltedData:
 				spiltedData[category] = []
 
@@ -97,9 +91,7 @@ class Continous(Attribute):
 		sVal = 0
 		for instance in data:
 			splitVal = instance[self.attributeName]
-			# Ignore the missing data.
-			if splitVal == '?':
-				continue
+			
 			splitVal = float(splitVal)
 			if splitVal not in dictVal:
 				curVal = self.getInformationGain1(splitVal, data, cIndex)
@@ -123,9 +115,7 @@ class Continous(Attribute):
 		for instance in data:
 			classification = instance[cIndex]
 			continousSplitVal = instance[self.attributeName]
-			# Ignore the missing data.
-			if continousSplitVal == '?':
-				continue
+			
 			continousSplitVal = float(continousSplitVal)
 			
 			if (continousSplitVal <= splitVal):
@@ -160,9 +150,6 @@ class Continous(Attribute):
 					   'Right': []}			
 		for instance in data:			
 			continousSplitVal = instance[self.attributeName]
-			# Ignore the missing data.
-			if continousSplitVal == '?':
-				continue
 
 			continousSplitVal = float(continousSplitVal)
 			if (continousSplitVal <= self.splitVal):
@@ -295,7 +282,6 @@ class DecisionTree(object):
 def accuracy(root, testingData, cIndex):
 	predictedVals = []
 	for i in range(0, len(testingData)):
-			print " Predicted till now " + str(i)
 			predictedVals.append(predictPosNeg(root, testingData[i], cIndex))
 	correct = 0
 	for tup in predictedVals:
@@ -307,18 +293,18 @@ def predictPosNeg(root, instance, cIndex):
 	if (root.isLeaf == True):
 		return (root.classification, instance[cIndex])
 
-	print " Root " + str(root.attributeObj.attributeName)
 	attributeName = root.attributeObj.attributeName	
+
 	curRoot = root.attributeObj
 	if (type(curRoot).__name__ == 'Discrete'):
 		category = instance[attributeName]
-		if (category == '?'):
+		if (category not in curRoot.categoriesName):
 			return ('+','+')
-		print " categoriesName " + str(curRoot.categoriesName)
 		index  = curRoot.categoriesName.index(category)
 		return predictPosNeg(curRoot.categoriesVal[index], instance, cIndex)
 	else:
 		splitVal = float(instance[attributeName])
+		
 		if (splitVal <= curRoot.splitVal):
 			return predictPosNeg(curRoot.nextNodes[0], instance, cIndex)
 		else:	
@@ -327,11 +313,8 @@ def predictPosNeg(root, instance, cIndex):
 def main(args):
 	decisionTree = DecisionTree() 	
 	cIndex, attributesList, data = readData.readData(args.input)
-	decisionTree.makeTree(decisionTree.root, cIndex, attributesList, data)
-	decisionTree.printTree(decisionTree.root)
-	#print " Instance Verifying " + str(data[6])
-	#print "Prediction " + str(predictPosNeg(decisionTree.root, data[6], cIndex))
-	#:print accuracy(decisionTree.root, data[0:100], cIndex)
+	decisionTree.makeTree(decisionTree.root, cIndex, attributesList, data[0:500])
+	print accuracy(decisionTree.root, data[500:600], cIndex)
 
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser(description="HomeWork Five")

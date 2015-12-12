@@ -2,6 +2,7 @@ import argparse
 import math
 import readData
 import sys
+import time
 
 NO_OF_FEATURES = 784
 TRAINING_LABELS_PATH = 'traininglabels.txt' 
@@ -71,12 +72,51 @@ class NaiveBayes(object):
 			else: 	
 				digitAccuracy[tup[1]][2] += 1
 	    	
-		print "digit		Accuracy:"	
+		print "Digit	Accuracy:"	
 		for tup in digitAccuracy:
 			print str(tup[0])+"	"+str(tup[1]*100.0/ tup[2])
 					
 
 		return correct * 100.0/len(predictedVals)
+
+	def confusionmatrix(self, predictedVals):
+		matrix = [[0 for x in range(12)] for x in range(12)]
+		
+		for tup in predictedVals:
+			matrix[tup[0]][tup[1]] += 1
+		
+		for i in range(10):
+			cost = 0
+		 	for j in range(10):
+				cost += matrix[i][j]
+			matrix[i][10] = cost
+			matrix[i][11] = matrix[i][i] * 100.0 / cost
+
+		for i in range(10):
+			cost = 0
+		 	for j in range(10):
+				cost += matrix[j][i]
+			matrix[10][i] = cost
+			matrix[11][i] = matrix[i][i] * 100.0 / cost
+
+		print 'Predicted/Actual ',
+	        for i in range(10):  
+	              print i,
+        	print 'Total',
+		print '%'
+	
+       	
+		for i in range(12):
+			if(i<10):	print i,
+			if(i == 10): 	print 'Total',
+			if(i == 11):	print '%',
+			for j in range(12):
+			     	if(i == 11 or j == 11):
+					print("%.2f" % matrix[i][j]),
+				else:
+					print matrix[i][j],
+			print
+				
 	
 	def predictLabel(self, instance):
 		maxSum = -sys.maxint - 1
@@ -99,6 +139,7 @@ class NaiveBayes(object):
 		return predictLabel
 
 def main(args):
+	ticks = time.time()
 	trainingData = readData.readData(TRAINING_LABELS_PATH, TRAINING_IMAGES_PATH)
 	totalInstances = 0
 	for i in range(0, len(trainingData)):
@@ -109,7 +150,11 @@ def main(args):
 	nb.naiveBayes()
 	testingData = readData.readData(TEST_LABELS_PATH, TEST_IMAGES_PATH)
 	predictedVals = nb.predictLabels(testingData)
+	ticks = time.time() - ticks
 	print "Total Accuracy: 	"+str(nb.accuracy(predictedVals))
+	print "Execution Time: 	"+str(ticks)
+	print "Confusion Matrix:\n "
+	nb.confusionmatrix(predictedVals)
 
 if __name__ == "__main__":
         parser = argparse.ArgumentParser(description="HomeWork Five")
